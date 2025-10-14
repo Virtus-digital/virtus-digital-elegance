@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-bg-white.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -11,7 +12,12 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
