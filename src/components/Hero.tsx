@@ -21,17 +21,20 @@ const Hero = () => {
     >
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-muted-foreground animate-fade-up">
+          Virtus Digital
+        </h2>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
           We Create Digital Experiences
           <br />
           <span className="text-gradient">That Connect.</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           Virtus Digital helps brands grow with strategy, design, and data-driven creativity.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: "0.5s" }}>
           <Button
             size="lg"
             variant="hero"
