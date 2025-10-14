@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import virtusLogo from "@/assets/virtus-logo.jpg";
+import virtusLogo from "@/assets/virtus-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={virtusLogo} alt="Virtus Digital" className="h-10 w-auto" />
+            <img src={virtusLogo} alt="Virtus Digital" className="h-14 w-auto" />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
