@@ -37,7 +37,7 @@ const About = () => {
             <img
               src={teamImage}
               alt="Virtus Digital Team"
-              className="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
+              className="rounded-lg shadow-2xl hover:scale-105 transition-all duration-500"
             />
           </div>
         </div>
