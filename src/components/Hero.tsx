@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -12,16 +11,8 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
-
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up">
