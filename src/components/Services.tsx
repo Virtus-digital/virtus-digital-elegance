@@ -41,16 +41,23 @@ const Services = () => {
             return (
               <Card
                 key={index}
-                className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-foreground cursor-pointer"
+                className="group relative overflow-hidden border-2 cursor-pointer transition-all duration-500 hover:border-foreground hover:shadow-2xl hover:-translate-y-3 animate-fade-in bg-gradient-to-br from-card to-card/50"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardHeader>
-                  <div className="mb-4 p-3 bg-foreground text-background w-fit rounded-md group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="h-6 w-6" />
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Glow effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-foreground/20 to-foreground/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                
+                <CardHeader className="relative z-10">
+                  <div className="mb-4 p-3 bg-foreground text-background w-fit rounded-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+                    <Icon className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl transition-colors duration-300 group-hover:text-foreground">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
+                <CardContent className="relative z-10">
+                  <CardDescription className="text-base transition-all duration-300 group-hover:text-foreground/80">
                     {service.description}
                   </CardDescription>
                 </CardContent>
