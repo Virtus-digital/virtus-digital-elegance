@@ -482,20 +482,19 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-8xl mx-auto mb-16">
             {portfolioPreview.map((project, index) => (
               <div 
                 key={index} 
                 className="group relative overflow-hidden rounded-2xl glass-strong hover:border-primary/50 card-hover transition-all duration-500 fade-in-up"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="relative h-[320px] overflow-hidden">
+                <div className="relative h-[280px] overflow-hidden">
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                    <p className="text-sm text-blue-300">{project.client}</p>
+                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>
                   </div>
                 </div>
               </div>

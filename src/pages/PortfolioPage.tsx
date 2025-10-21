@@ -95,7 +95,7 @@ const PortfolioPage = () => {
       {/* Portfolio Grid */}
       <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
             {projects.map((project) => (
               <Card 
                 key={project.id} 
@@ -114,16 +114,8 @@ const PortfolioPage = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
                       
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-primary/90 backdrop-blur-sm">
-                          {project.category}
-                        </Badge>
-                      </div>
-
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                        <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                        <p className="text-sm text-blue-300 mb-2">{project.client}</p>
-                        <p className="text-sm text-white/80 line-clamp-2">{project.description}</p>
+                        <h3 className="text-2xl font-bold">{project.title}</h3>
                       </div>
                     </div>
                   </div>
