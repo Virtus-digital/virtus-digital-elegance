@@ -1,133 +1,127 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Megaphone, Share2, Target, Code, TrendingUp, PenTool, BarChart, Zap } from "lucide-react";
+import { Megaphone, Share2, Code2, Search, Monitor } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const allServices = [
+const getAllServices = (t: (key: string) => string) => [
   {
-    title: "Digital Advertising",
-    description: "Strategic campaigns that reach your audience across all digital channels with precision and impact. We leverage data-driven insights to maximize ROI and create compelling narratives that convert.",
-    details: "Google Ads • Facebook Ads • Display Campaigns • Video Marketing • Retargeting",
+    titleKey: "service.digital-marketing.title",
+    descKey: "service.digital-marketing.desc",
+    detailsKey: "service.digital-marketing.details",
     icon: Megaphone,
-    features: [
+    features: (lang: string) => lang === 'tr' ? [
+      "Google Ads (Arama, Görüntülü, YouTube, Alışveriş)",
+      "Meta Reklamları (Facebook & Instagram)",
+      "TikTok Reklamları",
+      "LinkedIn Reklamları",
+      "Kampanya Stratejisi & Planlama",
+      "ROI Optimizasyonu"
+    ] : [
+      "Google Ads (Search, Display, YouTube, Shopping)",
+      "Meta Ads (Facebook & Instagram)",
+      "TikTok Ads",
+      "LinkedIn Ads",
       "Campaign Strategy & Planning",
-      "Ad Creative Development",
-      "A/B Testing & Optimization",
-      "Performance Tracking & Reporting",
-      "Budget Management",
-      "Conversion Rate Optimization"
+      "ROI Optimization"
     ],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
   },
   {
-    title: "Social Media Management",
-    description: "Building engaged communities and amplifying your brand voice across social platforms. From content creation to community management, we handle it all.",
-    details: "Content Strategy • Community Management • Influencer Marketing • Analytics & Reporting",
-    icon: Share2,
-    features: [
-      "Social Media Strategy",
-      "Content Creation & Curation",
-      "Community Engagement",
-      "Influencer Partnerships",
-      "Social Listening & Analytics",
-      "Paid Social Campaigns"
-    ],
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop"
-  },
-  {
-    title: "Brand Strategy & Identity",
-    description: "Crafting memorable brand experiences that resonate with your target audience. We create cohesive brand identities that stand out in crowded markets.",
-    details: "Brand Positioning • Visual Identity • Brand Guidelines • Messaging Strategy",
-    icon: Target,
-    features: [
-      "Brand Research & Analysis",
-      "Logo & Visual Identity Design",
-      "Brand Guidelines Development",
-      "Messaging & Voice Definition",
-      "Brand Positioning Strategy",
-      "Brand Launch & Activation"
-    ],
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop"
-  },
-  {
-    title: "Web & App Development",
-    description: "Creating beautiful, functional digital products that drive results and delight users. Our development team brings designs to life with clean, scalable code.",
-    details: "Web Applications • Mobile Apps • E-commerce • Progressive Web Apps • API Integration",
-    icon: Code,
-    features: [
-      "Custom Web Development",
-      "Mobile App Development (iOS/Android)",
-      "E-commerce Solutions",
-      "API Integration & Development",
-      "Progressive Web Apps",
-      "Maintenance & Support"
+    titleKey: "service.web-dev.title",
+    descKey: "service.web-dev.desc",
+    detailsKey: "service.web-dev.details",
+    icon: Monitor,
+    features: (lang: string) => lang === 'tr' ? [
+      "WordPress Siteler",
+      "E-Ticaret (OpenCart, WooCommerce, Shopify)",
+      "No-Code / Low-Code (Wix, Squarespace)",
+      "Özel Kodlu Siteler",
+      "Yönetim Panelleri",
+      "Mobil Uyumlu & SEO Dostu"
+    ] : [
+      "WordPress Sites",
+      "E-Commerce (OpenCart, WooCommerce, Shopify)",
+      "No-Code / Low-Code (Wix, Squarespace)",
+      "Custom Coded Sites",
+      "Admin Panels",
+      "Mobile Responsive & SEO Friendly"
     ],
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=600&fit=crop"
   },
   {
-    title: "SEO & Content Marketing",
-    description: "Boost your organic visibility and attract qualified traffic through strategic SEO and compelling content that ranks and converts.",
-    details: "Technical SEO • Content Strategy • Link Building • Local SEO",
-    icon: TrendingUp,
-    features: [
-      "Technical SEO Audit & Optimization",
-      "Keyword Research & Strategy",
-      "Content Creation & Optimization",
-      "Link Building Campaigns",
-      "Local SEO Optimization",
-      "SEO Performance Reporting"
+    titleKey: "service.custom-software.title",
+    descKey: "service.custom-software.desc",
+    detailsKey: "service.custom-software.details",
+    icon: Code2,
+    features: (lang: string) => lang === 'tr' ? [
+      "CRM & ERP Sistemleri",
+      "Stok ve Envanter Yönetimi",
+      "Özel CMS",
+      "Rezervasyon / Randevu Sistemleri",
+      "3. Parti Entegrasyonlar",
+      "Ölçeklenebilir Altyapı"
+    ] : [
+      "CRM & ERP Systems",
+      "Stock and Inventory Management",
+      "Custom CMS",
+      "Reservation / Appointment Systems",
+      "3rd Party Integrations",
+      "Scalable Infrastructure"
+    ],
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+  },
+  {
+    titleKey: "service.seo.title",
+    descKey: "service.seo.desc",
+    detailsKey: "service.seo.details",
+    icon: Search,
+    features: (lang: string) => lang === 'tr' ? [
+      "On-page & Teknik SEO",
+      "Anahtar Kelime Analizi",
+      "Rakip Analizi",
+      "Yerel SEO",
+      "İçerik Optimizasyonu",
+      "Backlink Stratejisi"
+    ] : [
+      "On-page & Technical SEO",
+      "Keyword Analysis",
+      "Competitor Analysis",
+      "Local SEO",
+      "Content Optimization",
+      "Backlink Strategy"
     ],
     image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&h=600&fit=crop"
   },
   {
-    title: "Graphic Design & Creative",
-    description: "Eye-catching designs that communicate your message effectively and leave a lasting impression on your audience.",
-    details: "Brand Identity • Marketing Materials • Digital Assets • Print Design",
-    icon: PenTool,
-    features: [
-      "Brand Identity Design",
-      "Marketing Collateral",
-      "Social Media Graphics",
-      "Infographics & Data Visualization",
-      "Presentation Design",
-      "Print & Packaging Design"
+    titleKey: "service.social-media.title",
+    descKey: "service.social-media.desc",
+    detailsKey: "service.social-media.details",
+    icon: Share2,
+    features: (lang: string) => lang === 'tr' ? [
+      "Aylık İçerik Planlama",
+      "Görsel Tasarım & Video",
+      "Reels & Hikaye Prodüksiyon",
+      "YouTube & TikTok Video",
+      "Yorum & Mesaj Takibi",
+      "Performans Raporlama"
+    ] : [
+      "Monthly Content Planning",
+      "Visual Design & Video",
+      "Reels & Story Production",
+      "YouTube & TikTok Video",
+      "Comment & Message Tracking",
+      "Performance Reporting"
     ],
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop"
-  },
-  {
-    title: "Analytics & Data Insights",
-    description: "Turn data into actionable insights. We help you understand your customers and optimize every aspect of your digital presence.",
-    details: "Google Analytics • Data Visualization • Performance Tracking • Custom Reports",
-    icon: BarChart,
-    features: [
-      "Analytics Setup & Configuration",
-      "Custom Dashboard Creation",
-      "Performance Tracking",
-      "Customer Journey Analysis",
-      "Conversion Funnel Optimization",
-      "Monthly Reporting & Insights"
-    ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
-  },
-  {
-    title: "Marketing Automation",
-    description: "Streamline your marketing efforts with powerful automation that nurtures leads and drives conversions at scale.",
-    details: "Email Marketing • Lead Nurturing • Workflow Automation • CRM Integration",
-    icon: Zap,
-    features: [
-      "Email Marketing Campaigns",
-      "Marketing Automation Setup",
-      "Lead Scoring & Nurturing",
-      "CRM Integration",
-      "Workflow Automation",
-      "Campaign Performance Analysis"
-    ],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop"
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop"
   }
 ];
 
 const ServicesPage = () => {
+  const { t, language } = useLanguage();
+  const allServices = getAllServices(t);
+  
   return (
     <div className="min-h-screen bg-[#0b0f19]">
       <Navbar />
@@ -142,10 +136,10 @@ const ServicesPage = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Our Services
+              {t('services.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
-              Comprehensive digital solutions designed to elevate your brand, engage your audience, and drive measurable results across all channels.
+              {t('services.subtitle')}
             </p>
           </div>
         </div>
@@ -170,7 +164,7 @@ const ServicesPage = () => {
                       <div className={`relative h-[400px] overflow-hidden ${!isEven ? 'lg:col-start-2' : ''}`}>
                         <img 
                           src={service.image} 
-                          alt={service.title}
+                          alt={t(service.titleKey)}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20"></div>
@@ -182,17 +176,17 @@ const ServicesPage = () => {
                           <div className="p-4 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-xl shadow-lg">
                             <Icon className="h-8 w-8" />
                           </div>
-                          <h3 className="text-3xl font-bold text-white">{service.title}</h3>
+                          <h3 className="text-3xl font-bold text-white">{t(service.titleKey)}</h3>
                         </div>
 
                         <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                          {service.description}
+                          {t(service.descKey)}
                         </p>
 
                         <div className="mb-6">
-                          <p className="text-sm font-semibold text-blue-400 mb-3">What We Offer:</p>
+                          <p className="text-sm font-semibold text-blue-400 mb-3">{t('services.what-we-offer')}</p>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            {service.features.map((feature, idx) => (
+                            {service.features(language).map((feature, idx) => (
                               <div key={idx} className="flex items-center gap-2">
                                 <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
                                 <span className="text-sm text-gray-400">{feature}</span>
@@ -213,7 +207,7 @@ const ServicesPage = () => {
                             }
                           }}
                         >
-                          Get Started
+                          {t('services.get-started')}
                         </Button>
                       </div>
                     </div>
@@ -234,10 +228,10 @@ const ServicesPage = () => {
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your Digital Presence?
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how our services can help you achieve your business goals.
+            {t('cta.subtitle')}
           </p>
           <Button 
             size="lg" 
@@ -245,7 +239,7 @@ const ServicesPage = () => {
             className="min-w-[200px]"
             onClick={() => window.location.href = '/contact'}
           >
-            Contact Us Today
+            {t('cta.button')}
           </Button>
         </div>
       </section>

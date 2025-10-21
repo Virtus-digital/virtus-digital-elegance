@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles, ChevronDown } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -16,9 +19,9 @@ const Hero = () => {
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "-1s" }}></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "-1s" }}></div>
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "-1s" }}></div>
       </div>
 
       {/* Grid pattern overlay */}
@@ -28,46 +31,46 @@ const Hero = () => {
       }}></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-up">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6 sm:mb-8 animate-fade-up">
           <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Digital Excellence Since 2020</span>
+          <span className="text-xs sm:text-sm font-medium text-primary">{t('hero.badge')}</span>
         </div>
 
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-muted-foreground animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          Virtus Digital
+        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-muted-foreground animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          {t('hero.subtitle')}
         </h2>
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up leading-tight" style={{ animationDelay: "0.2s" }}>
-          We Create Digital Experiences
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 animate-fade-up leading-tight px-2" style={{ animationDelay: "0.2s" }}>
+          {t('hero.title1')}
           <br />
           <span className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-            That Connect.
+            {t('hero.title2')}
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up leading-relaxed" style={{ animationDelay: "0.4s" }}>
-          Virtus Digital helps brands grow with strategy, design, and data-driven creativity.
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-12 animate-fade-up leading-relaxed px-2" style={{ animationDelay: "0.4s" }}>
+          {t('hero.description1')}
           <br />
-          <span className="text-primary font-semibold">Transform your vision into digital reality.</span>
+          <span className="text-primary font-semibold">{t('hero.description2')}</span>
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: "0.6s" }}>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-up px-2" style={{ animationDelay: "0.6s" }}>
           <Button
             size="lg"
             variant="hero"
             onClick={() => scrollToSection("portfolio")}
-            className="min-w-[200px]"
+            className="w-full sm:w-auto sm:min-w-[180px] text-sm sm:text-base"
           >
-            View Our Work
+            {t('hero.cta1')}
           </Button>
           <Button
             size="lg"
             variant="outline"
             onClick={() => scrollToSection("contact")}
-            className="min-w-[200px]"
+            className="w-full sm:w-auto sm:min-w-[180px] text-sm sm:text-base"
           >
-            Let's Talk
+            {t('hero.cta2')}
           </Button>
         </div>
       </div>

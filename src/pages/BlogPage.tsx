@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const posts = [
   {
@@ -72,6 +73,8 @@ const posts = [
 ];
 
 const BlogPage = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-[#0b0f19]">
       <Navbar />
@@ -86,10 +89,10 @@ const BlogPage = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Our Blog
+              {t('blog.page.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
-              Insights, strategies, and the latest trends in digital marketing. Stay informed and stay ahead.
+              {t('blog.page.subtitle')}
             </p>
           </div>
         </div>
@@ -110,7 +113,7 @@ const BlogPage = () => {
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className="bg-primary/90 backdrop-blur-sm text-lg px-4 py-1">
-                          Featured
+                          {t('blog.featured')}
                         </Badge>
                       </div>
                     </div>
@@ -139,7 +142,7 @@ const BlogPage = () => {
                         </div>
                       </div>
                       <Button variant="default" className="w-fit group/btn">
-                        Read Article
+                        {t('blog.read-article')}
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
                     </div>
@@ -199,7 +202,7 @@ const BlogPage = () => {
                       variant="link" 
                       className="p-0 h-auto text-primary group-hover:gap-2 transition-all"
                     >
-                      Read More 
+                      {t('blog.read-more')} 
                       <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
@@ -220,15 +223,15 @@ const BlogPage = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Subscribe to Our Newsletter
+              {t('blog.newsletter.title')}
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Get the latest insights, tips, and strategies delivered straight to your inbox.
+              {t('blog.newsletter.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('blog.newsletter.placeholder')}
                 className="flex-1 px-6 py-4 rounded-lg bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white placeholder:text-white/60 focus:outline-none focus:border-white/60 transition-all"
               />
               <Button 
@@ -236,7 +239,7 @@ const BlogPage = () => {
                 variant="secondary"
                 className="min-w-[150px]"
               >
-                Subscribe
+                {t('blog.newsletter.button')}
               </Button>
             </div>
           </div>

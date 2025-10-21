@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Linkedin, Instagram, MapPin, Clock, Send } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { z } from "zod";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -18,6 +19,7 @@ const contactSchema = z.object({
 });
 
 const ContactPage = () => {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -39,15 +41,15 @@ const ContactPage = () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+        title: t('contact.success.title'),
+        description: t('contact.success.desc'),
       });
       
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
-          title: "Validation Error",
+          title: t('contact.error.title'),
           description: error.errors[0].message,
           variant: "destructive",
         });
@@ -71,10 +73,10 @@ const ContactPage = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Let's Work Together
+              {t('contact.page.title')}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Ready to transform your digital presence? Get in touch with us today and let's create something amazing.
+              {t('contact.page.subtitle')}
             </p>
           </div>
         </div>
@@ -93,7 +95,7 @@ const ContactPage = () => {
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">Phone</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('contact.phone')}</h3>
                       <p className="text-muted-foreground">+1 (555) 123-4567</p>
                       <p className="text-muted-foreground">+1 (555) 987-6543</p>
                     </div>
@@ -108,7 +110,7 @@ const ContactPage = () => {
                       <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">Email</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('contact.email.label')}</h3>
                       <p className="text-muted-foreground">hello@virtusdigital.com</p>
                       <p className="text-muted-foreground">support@virtusdigital.com</p>
                     </div>
@@ -123,7 +125,7 @@ const ContactPage = () => {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">Office</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('contact.office')}</h3>
                       <p className="text-muted-foreground">
                         123 Digital Avenue<br />
                         Suite 456<br />
@@ -141,10 +143,10 @@ const ContactPage = () => {
                       <Clock className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">Business Hours</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{t('contact.hours')}</h3>
                       <p className="text-muted-foreground">
-                        Monday - Friday<br />
-                        9:00 AM - 6:00 PM PST
+                        {t('contact.hours.days')}<br />
+                        {t('contact.hours.time')}
                       </p>
                     </div>
                   </div>
@@ -153,7 +155,7 @@ const ContactPage = () => {
 
               <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
+                  <h3 className="font-semibold text-foreground mb-4">{t('contact.follow')}</h3>
                   <div className="flex gap-3">
                     <a
                       href="https://linkedin.com"
@@ -191,20 +193,20 @@ const ContactPage = () => {
               <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                    Send Us a Message
+                    {t('contact.form.title')}
                   </h2>
                   <p className="text-muted-foreground mb-8">
-                    Fill out the form below and we'll get back to you within 24 hours.
+                    {t('contact.form.subtitle')}
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="text-sm font-medium text-foreground mb-2 block">
-                          Name *
+                          {t('contact.form.name')}
                         </label>
                         <Input
-                          placeholder="Your Name"
+                          placeholder={t('contact.form.name.placeholder')}
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className="h-12 border-primary/20 focus:border-primary bg-background/50"
@@ -213,11 +215,11 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <label className="text-sm font-medium text-foreground mb-2 block">
-                          Email *
+                          {t('contact.form.email.label')}
                         </label>
                         <Input
                           type="email"
-                          placeholder="your.email@example.com"
+                          placeholder={t('contact.form.email.placeholder')}
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="h-12 border-primary/20 focus:border-primary bg-background/50"
@@ -229,11 +231,11 @@ const ContactPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="text-sm font-medium text-foreground mb-2 block">
-                          Phone
+                          {t('contact.form.phone')}
                         </label>
                         <Input
                           type="tel"
-                          placeholder="+1 (555) 123-4567"
+                          placeholder={t('contact.form.phone.placeholder')}
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="h-12 border-primary/20 focus:border-primary bg-background/50"
@@ -241,10 +243,10 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <label className="text-sm font-medium text-foreground mb-2 block">
-                          Subject *
+                          {t('contact.form.subject')}
                         </label>
                         <Input
-                          placeholder="Project Inquiry"
+                          placeholder={t('contact.form.subject.placeholder')}
                           value={formData.subject}
                           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                           className="h-12 border-primary/20 focus:border-primary bg-background/50"
@@ -255,10 +257,10 @@ const ContactPage = () => {
 
                     <div>
                       <label className="text-sm font-medium text-foreground mb-2 block">
-                        Message *
+                        {t('contact.form.message.label')}
                       </label>
                       <Textarea
-                        placeholder="Tell us about your project..."
+                        placeholder={t('contact.form.message.placeholder')}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="min-h-40 border-primary/20 focus:border-primary bg-background/50"
@@ -272,7 +274,7 @@ const ContactPage = () => {
                       className="w-full h-14 text-base gap-2"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {isSubmitting ? t('contact.sending') : t('contact.send')}
                       <Send className="h-4 w-4" />
                     </Button>
                   </form>

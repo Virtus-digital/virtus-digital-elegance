@@ -4,32 +4,36 @@ import { Button } from "@/components/ui/button";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const posts = [
+const getPosts = (t: (key: string) => string) => [
   {
-    title: "The Future of Digital Marketing in 2025",
-    date: "March 15, 2025",
-    excerpt: "Explore the latest trends shaping the digital marketing landscape and how brands can stay ahead.",
+    titleKey: "blog.post1.title",
+    dateKey: "blog.post1.date",
+    excerptKey: "blog.post1.excerpt",
+    categoryKey: "blog.post1.category",
     image: blog1,
-    category: "Marketing"
   },
   {
-    title: "Building a Social Media Strategy That Works",
-    date: "March 10, 2025",
-    excerpt: "Learn how to create engaging content and build meaningful connections with your audience.",
+    titleKey: "blog.post2.title",
+    dateKey: "blog.post2.date",
+    excerptKey: "blog.post2.excerpt",
+    categoryKey: "blog.post2.category",
     image: blog2,
-    category: "Social Media"
   },
   {
-    title: "Brand Identity: More Than Just a Logo",
-    date: "March 5, 2025",
-    excerpt: "Discover why comprehensive brand identity goes beyond visual design to create lasting impact.",
+    titleKey: "blog.post3.title",
+    dateKey: "blog.post3.date",
+    excerptKey: "blog.post3.excerpt",
+    categoryKey: "blog.post3.category",
     image: blog3,
-    category: "Branding"
   },
 ];
 
 const Blog = () => {
+  const { t } = useLanguage();
+  const posts = getPosts(t);
+  
   return (
     <section id="blog" className="py-32 bg-gradient-to-b from-background to-secondary/20 relative overflow-hidden">
       {/* Background decoration */}
@@ -40,10 +44,10 @@ const Blog = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-            Latest Insights
+            {t('blog.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Thoughts, trends, and strategies from our team of experts.
+            {t('blog.subtitle')}
           </p>
         </div>
 
@@ -56,33 +60,33 @@ const Blog = () => {
               <div className="relative overflow-hidden">
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={t(post.titleKey)}
                   className="w-full h-56 object-cover group-hover:scale-110 transition-all duration-700"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 rounded-full bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-semibold">
-                    {post.category}
+                    {t(post.categoryKey)}
                   </span>
                 </div>
               </div>
               <CardHeader>
                 <div className="flex items-center gap-2 text-sm text-primary mb-3">
                   <Calendar className="h-4 w-4" />
-                  <span>{post.date}</span>
+                  <span>{t(post.dateKey)}</span>
                 </div>
                 <CardTitle className="text-xl hover:text-primary transition-colors cursor-pointer line-clamp-2">
-                  {post.title}
+                  {t(post.titleKey)}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base mb-6 line-clamp-3">
-                  {post.excerpt}
+                  {t(post.excerptKey)}
                 </CardDescription>
                 <Button 
                   variant="link" 
                   className="p-0 h-auto text-primary group-hover:gap-2 transition-all"
                 >
-                  Read More 
+                  {t('blog.read-more')} 
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>

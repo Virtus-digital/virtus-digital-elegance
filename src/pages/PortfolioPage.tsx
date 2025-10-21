@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Calendar, Target, TrendingUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const projects = [
   {
@@ -50,6 +51,7 @@ const projects = [
 ];
 
 const PortfolioPage = () => {
+  const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
@@ -66,26 +68,25 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Our Portfolio
+              {t('portfolio.page.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-8">
-              We help more than <span className="text-blue-400 font-semibold">700+ brands</span> worldwide increase their
-              turnover with high-performing websites and digital experiences.
+              {t('portfolio.page.subtitle')}<span className="text-blue-400 font-semibold">{t('portfolio.page.subtitle.bold')}</span>{t('portfolio.page.subtitle2')}
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
               <div className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
                 <div className="text-4xl font-bold text-primary mb-2">700+</div>
-                <div className="text-sm text-gray-400">Projects Delivered</div>
+                <div className="text-sm text-gray-400">{t('portfolio.stats.projects')}</div>
               </div>
               <div className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
                 <div className="text-4xl font-bold text-primary mb-2">98%</div>
-                <div className="text-sm text-gray-400">Client Satisfaction</div>
+                <div className="text-sm text-gray-400">{t('portfolio.stats.satisfaction')}</div>
               </div>
               <div className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
                 <div className="text-4xl font-bold text-primary mb-2">150%</div>
-                <div className="text-sm text-gray-400">Avg. ROI Increase</div>
+                <div className="text-sm text-gray-400">{t('portfolio.stats.roi')}</div>
               </div>
             </div>
           </div>
@@ -143,67 +144,67 @@ const PortfolioPage = () => {
                 />
 
                 {/* Project Info Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="p-4 bg-secondary/30 rounded-lg border border-primary/20">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Target className="h-4 w-4 text-primary" />
-                      <strong className="text-primary text-sm">Client</strong>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="p-4 bg-secondary/30 rounded-lg border border-primary/20">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Target className="h-4 w-4 text-primary" />
+                        <strong className="text-primary text-sm">{t('portfolio.dialog.client')}</strong>
+                      </div>
+                      <span className="text-white">{selectedProject?.client}</span>
                     </div>
-                    <span className="text-white">{selectedProject?.client}</span>
-                  </div>
-                  
-                  <div className="p-4 bg-secondary/30 rounded-lg border border-primary/20">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="h-4 w-4 text-primary" />
-                      <strong className="text-primary text-sm">Duration</strong>
+                    
+                    <div className="p-4 bg-secondary/30 rounded-lg border border-primary/20">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Calendar className="h-4 w-4 text-primary" />
+                        <strong className="text-primary text-sm">{t('portfolio.dialog.duration')}</strong>
+                      </div>
+                      <span className="text-white">{selectedProject?.duration}</span>
                     </div>
-                    <span className="text-white">{selectedProject?.duration}</span>
-                  </div>
 
-                  <div className="p-4 bg-secondary/30 rounded-lg border border-primary/20">
-                    <div className="flex items-center gap-2 mb-2">
-                      <TrendingUp className="h-4 w-4 text-primary" />
-                      <strong className="text-primary text-sm">Result</strong>
+                    <div className="p-4 bg-secondary/30 rounded-lg border border-primary/20">
+                      <div className="flex items-center gap-2 mb-2">
+                        <TrendingUp className="h-4 w-4 text-primary" />
+                        <strong className="text-primary text-sm">{t('portfolio.dialog.result')}</strong>
+                      </div>
+                      <span className="text-white">{selectedProject?.result}</span>
                     </div>
-                    <span className="text-white">{selectedProject?.result}</span>
                   </div>
-                </div>
 
-                {/* Description */}
-                <div className="p-6 bg-secondary/30 rounded-lg border border-primary/20">
-                  <strong className="text-primary block mb-3">Project Description</strong>
-                  <p className="text-gray-300 leading-relaxed">{selectedProject?.description}</p>
-                </div>
-
-                {/* Goal */}
-                <div className="p-6 bg-secondary/30 rounded-lg border border-primary/20">
-                  <strong className="text-primary block mb-3">Project Goal</strong>
-                  <p className="text-gray-300">{selectedProject?.goal}</p>
-                </div>
-
-                {/* Technologies */}
-                <div className="p-6 bg-secondary/30 rounded-lg border border-primary/20">
-                  <strong className="text-primary block mb-3">Technologies Used</strong>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject?.technologies.map((tech, idx) => (
-                      <Badge key={idx} variant="outline" className="border-primary/40">
-                        {tech}
-                      </Badge>
-                    ))}
+                  {/* Description */}
+                  <div className="p-6 bg-secondary/30 rounded-lg border border-primary/20">
+                    <strong className="text-primary block mb-3">{t('portfolio.dialog.description')}</strong>
+                    <p className="text-gray-300 leading-relaxed">{selectedProject?.description}</p>
                   </div>
-                </div>
 
-                {/* CTA Button */}
-                {selectedProject?.url && (
-                  <div className="pt-4">
-                    <Button asChild className="gap-2 w-full md:w-auto">
-                      <a href={selectedProject.url} target="_blank" rel="noopener noreferrer">
-                        Visit Website
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </Button>
+                  {/* Goal */}
+                  <div className="p-6 bg-secondary/30 rounded-lg border border-primary/20">
+                    <strong className="text-primary block mb-3">{t('portfolio.dialog.goal')}</strong>
+                    <p className="text-gray-300">{selectedProject?.goal}</p>
                   </div>
-                )}
+
+                  {/* Technologies */}
+                  <div className="p-6 bg-secondary/30 rounded-lg border border-primary/20">
+                    <strong className="text-primary block mb-3">{t('portfolio.dialog.technologies')}</strong>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject?.technologies.map((tech, idx) => (
+                        <Badge key={idx} variant="outline" className="border-primary/40">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  {selectedProject?.url && (
+                    <div className="pt-4">
+                      <Button asChild className="gap-2 w-full md:w-auto">
+                        <a href={selectedProject.url} target="_blank" rel="noopener noreferrer">
+                          {t('portfolio.dialog.visit')}
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  )}
               </div>
             </DialogDescription>
           </DialogHeader>
@@ -219,10 +220,10 @@ const PortfolioPage = () => {
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Want to Be Our Next Success Story?
+            {t('portfolio.cta.title')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's create something amazing together. Get in touch to discuss your project.
+            {t('portfolio.cta.subtitle')}
           </p>
           <Button 
             size="lg" 
@@ -230,7 +231,7 @@ const PortfolioPage = () => {
             className="min-w-[200px]"
             onClick={() => window.location.href = '/contact'}
           >
-            Start Your Project
+            {t('portfolio.cta.button')}
           </Button>
         </div>
       </section>

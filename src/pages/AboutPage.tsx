@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Award, Users, Zap, Heart, Target, TrendingUp, CheckCircle2, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const team = [
   {
@@ -66,57 +67,61 @@ const testimonials = [
   }
 ];
 
-const process = [
+const getProcess = (t: (key: string) => string) => [
   {
     step: "01",
-    title: "Discovery & Research",
-    description: "We dive deep into your business, audience, and goals to understand what makes you unique and what your customers need.",
+    titleKey: "about.process.1.title",
+    descKey: "about.process.1.desc",
     icon: Target
   },
   {
     step: "02",
-    title: "Strategy & Planning",
-    description: "Based on insights, we craft a tailored strategy with clear objectives, timelines, and KPIs to measure success.",
+    titleKey: "about.process.2.title",
+    descKey: "about.process.2.desc",
     icon: TrendingUp
   },
   {
     step: "03",
-    title: "Design & Development",
-    description: "Our creative team brings the strategy to life with stunning designs and robust development that exceeds expectations.",
+    titleKey: "about.process.3.title",
+    descKey: "about.process.3.desc",
     icon: Zap
   },
   {
     step: "04",
-    title: "Launch & Optimize",
-    description: "We launch your project with precision, then continuously monitor and optimize for maximum performance and ROI.",
+    titleKey: "about.process.4.title",
+    descKey: "about.process.4.desc",
     icon: CheckCircle2
   }
 ];
 
-const values = [
+const getValues = (t: (key: string) => string) => [
   {
-    title: "Innovation",
-    description: "We stay ahead of trends and embrace new technologies to deliver cutting-edge solutions.",
+    titleKey: "about.value.innovation",
+    descKey: "about.value.innovation.desc",
     icon: Zap
   },
   {
-    title: "Excellence",
-    description: "Quality is non-negotiable. We strive for perfection in every project we undertake.",
+    titleKey: "about.value.excellence",
+    descKey: "about.value.excellence.desc",
     icon: Award
   },
   {
-    title: "Collaboration",
-    description: "Your success is our success. We work as partners, not just vendors.",
+    titleKey: "about.value.collaboration",
+    descKey: "about.value.collaboration.desc",
     icon: Users
   },
   {
-    title: "Passion",
-    description: "We love what we do, and it shows in the energy and creativity we bring to every project.",
+    titleKey: "about.value.passion",
+    descKey: "about.value.passion.desc",
     icon: Heart
   }
 ];
 
 const AboutPage = () => {
+  const { t } = useLanguage();
+  const process = getProcess(t);
+  const values = getValues(t);
+  
   return (
     <div className="min-h-screen bg-[#0b0f19]">
       <Navbar />
@@ -131,10 +136,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Who We Are
+              {t('about.page.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
-              We're more than a digital agency — we're your growth partner, dedicated to transforming your vision into digital reality.
+              {t('about.page.subtitle')}
             </p>
           </div>
         </div>
@@ -145,10 +150,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-8">
             <p className="text-lg text-gray-300 leading-relaxed">
-              At Virtus Digital, we believe in the power of digital transformation. Our team of creative strategists, designers, and developers work together to create experiences that not only look beautiful but deliver measurable results.
+              {t('about.page.desc1')}
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              Founded on principles of creativity, precision, and innovation, we've helped hundreds of brands establish their digital presence and achieve their growth objectives. From startups to established enterprises, we bring the same level of dedication and expertise to every project.
+              {t('about.page.desc2')}
             </p>
           </div>
 
@@ -156,19 +161,19 @@ const AboutPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mt-16">
             <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">700+</div>
-              <div className="text-sm text-gray-400 font-medium">Projects Completed</div>
+              <div className="text-sm text-gray-400 font-medium">{t('about.stats.projects')}</div>
             </div>
             <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">500+</div>
-              <div className="text-sm text-gray-400 font-medium">Happy Clients</div>
+              <div className="text-sm text-gray-400 font-medium">{t('about.stats.clients')}</div>
             </div>
             <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">5+</div>
-              <div className="text-sm text-gray-400 font-medium">Years Experience</div>
+              <div className="text-sm text-gray-400 font-medium">{t('about.stats.experience')}</div>
             </div>
             <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">98%</div>
-              <div className="text-sm text-gray-400 font-medium">Satisfaction Rate</div>
+              <div className="text-sm text-gray-400 font-medium">{t('about.stats.satisfaction')}</div>
             </div>
           </div>
         </div>
@@ -179,10 +184,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Our Values
+              {t('about.values.title')}
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              The principles that guide everything we do
+              {t('about.values.subtitle')}
             </p>
           </div>
 
@@ -195,8 +200,8 @@ const AboutPage = () => {
                     <div className="inline-flex p-4 bg-primary/20 rounded-xl mb-4">
                       <Icon className="h-8 w-8 text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2 text-white">{value.title}</h3>
-                    <p className="text-sm text-gray-400">{value.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-white">{t(value.titleKey)}</h3>
+                    <p className="text-sm text-gray-400">{t(value.descKey)}</p>
                   </CardContent>
                 </Card>
               );
@@ -210,10 +215,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Our Process
+              {t('about.process.title')}
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              A proven methodology that delivers results every time
+              {t('about.process.subtitle')}
             </p>
           </div>
 
@@ -232,9 +237,9 @@ const AboutPage = () => {
                           <div className="p-3 bg-primary/20 rounded-lg">
                             <Icon className="h-6 w-6 text-primary" />
                           </div>
-                          <h3 className="text-2xl font-bold text-white">{item.title}</h3>
+                          <h3 className="text-2xl font-bold text-white">{t(item.titleKey)}</h3>
                         </div>
-                        <p className="text-lg text-gray-300 leading-relaxed">{item.description}</p>
+                        <p className="text-lg text-gray-300 leading-relaxed">{t(item.descKey)}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -250,10 +255,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              Meet Our Team
+              {t('about.team.title')}
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Talented professionals dedicated to your success
+              {t('about.team.subtitle')}
             </p>
           </div>
 
@@ -280,10 +285,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              What Our Clients Say
+              {t('about.testimonials.page.title')}
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Don't just take our word for it — hear from those we've helped succeed
+              {t('about.testimonials.page.subtitle')}
             </p>
           </div>
 
@@ -325,16 +330,16 @@ const AboutPage = () => {
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Work With Us?
+            {t('about.cta.page.title')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you achieve your digital goals.
+            {t('about.cta.page.subtitle')}
           </p>
           <button 
             className="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-xl"
             onClick={() => window.location.href = '/contact'}
           >
-            Get in Touch
+            {t('about.cta.page.button')}
           </button>
         </div>
       </section>

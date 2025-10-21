@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Sparkles, ChevronDown, Megaphone, Share2, Target, Code, ArrowRight, Star, TrendingUp, Users, Award } from "lucide-react";
+import { Sparkles, ChevronDown, Megaphone, Share2, Target, Code, ArrowRight, Star, TrendingUp, Users, Award, Monitor, Code2, Search } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -17,48 +19,42 @@ const Index = () => {
 
   const featuredServices = [
     {
-      title: "Digital Advertising",
-      tagline: "Strategic campaigns that convert",
-      description: "Strategic campaigns that reach your audience across all digital channels with precision and impact. We leverage data-driven insights to maximize ROI and create compelling narratives that convert.",
+      titleKey: "service.digital-marketing.title",
+      taglineKey: "index.service.digital.tagline",
+      descKey: "service.digital-marketing.desc",
       icon: Megaphone,
     },
     {
-      title: "Social Media Management",
-      tagline: "Build engaged communities",
-      description: "Building engaged communities and amplifying your brand voice across social platforms. From content creation to community management, we handle it all with strategic precision.",
-      icon: Share2,
+      titleKey: "service.web-dev.title",
+      taglineKey: "index.service.web.tagline",
+      descKey: "service.web-dev.desc",
+      icon: Monitor,
     },
     {
-      title: "Brand Strategy",
-      tagline: "Craft memorable experiences",
-      description: "Crafting memorable brand experiences that resonate with your audience. We create cohesive brand identities that stand out in crowded markets and drive customer loyalty.",
-      icon: Target,
+      titleKey: "service.custom-software.title",
+      taglineKey: "index.service.software.tagline",
+      descKey: "service.custom-software.desc",
+      icon: Code2,
     },
     {
-      title: "Web Development",
-      tagline: "Beautiful, functional products",
-      description: "Creating beautiful, functional digital products that drive results and delight users. Our development team brings designs to life with clean, scalable code.",
-      icon: Code,
+      titleKey: "service.seo.title",
+      taglineKey: "index.service.seo.tagline",
+      descKey: "service.seo.desc",
+      icon: Search,
     },
   ];
 
   const portfolioPreview = [
     {
-      title: "ERM Rent a Car",
-      client: "ERM",
-      result: "+42% conversions",
+      titleKey: "project.erm.title",
       image: "/erm.png",
     },
     {
-      title: "Ravenalab",
-      client: "Travel Agency",
-      result: "3x inquiries",
+      titleKey: "project.ravena.title",
       image: "/ravena.png",
     },
     {
-      title: "Fertina IVF",
-      client: "Fertility Clinic",
-      result: "+65% appointments",
+      titleKey: "project.fertina.title",
       image: "/fertina.png",
     },
   ];
@@ -336,15 +332,15 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <h1 className="mb-8 fade-in-up" style={{ animationDelay: "0.2s" }}>
               <span className="block text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4">
-                We Create Digital
+                {t('hero.title.index1')}
               </span>
               <span className="block text-6xl md:text-7xl lg:text-8xl font-bold text-gradient">
-                Experiences That Connect
+                {t('hero.title.index2')}
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed fade-in-up" style={{ animationDelay: "0.4s" }}>
-              Transform your vision into digital reality with strategic design, cutting-edge development, and data-driven marketing that delivers measurable results.
+              {t('hero.description.index')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center fade-in-up" style={{ animationDelay: "0.6s" }}>
@@ -353,7 +349,7 @@ const Index = () => {
                 className="btn-primary min-w-[220px] h-14 text-lg font-semibold group"
                 onClick={() => scrollToSection("services")}
               >
-                Explore Our Services
+                {t('hero.cta.explore')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -363,7 +359,7 @@ const Index = () => {
                 className="btn-secondary min-w-[220px] h-14 text-lg font-semibold group"
               >
                 <Link to="/contact">
-                  Start Your Project
+                  {t('hero.cta.start')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -390,13 +386,13 @@ const Index = () => {
         <div className="container-custom relative z-10">
           <div className="text-center mb-20 fade-in-up">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient">
-              What We Do Best
+              {t('index.services.title')}
             </h2>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
-              We don't just build websites or run ads. We craft comprehensive digital strategies that transform how your audience perceives and interacts with your brand.
+              {t('index.services.subtitle1')}
             </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              From initial concept to final execution, we're with you every step of the way—turning challenges into opportunities and ideas into measurable results.
+              {t('index.services.subtitle2')}
             </p>
           </div>
 
@@ -421,10 +417,10 @@ const Index = () => {
                         </div>
                         <div className="flex-1 text-left">
                           <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors mb-2">
-                            {service.title}
+                            {t(service.titleKey)}
                           </h3>
                           <p className="text-sm text-blue-400 font-medium">
-                            {service.tagline}
+                            {t(service.taglineKey)}
                           </p>
                         </div>
                       </div>
@@ -432,11 +428,11 @@ const Index = () => {
                     <AccordionContent className="px-8 pb-8">
                       <div className="pt-6 pl-24">
                         <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                          {service.description}
+                          {t(service.descKey)}
                         </p>
                         <Button size="sm" variant="link" className="text-primary p-0 h-auto font-semibold" asChild>
                           <Link to="/services">
-                            Learn More
+                            {t('index.services.learn')}
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>
                         </Button>
@@ -450,11 +446,11 @@ const Index = () => {
 
           <div className="text-center fade-in-up">
             <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-              And that's just the beginning. We offer 8+ specialized services designed to cover every aspect of your digital presence.
+              {t('index.services.more')}
             </p>
             <Button size="lg" asChild className="btn-primary group">
               <Link to="/services">
-                Explore All Services
+                {t('index.services.explore')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -472,13 +468,13 @@ const Index = () => {
         <div className="container-custom relative z-10">
           <div className="text-center mb-20 fade-in-up">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient">
-              Success Stories That Speak
+              {t('index.portfolio.title')}
             </h2>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
-              Numbers don't lie. We've helped over 700 brands worldwide transform their digital presence and achieve remarkable growth. Here are some of our proudest moments.
+              {t('index.portfolio.subtitle1')}
             </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              Each project is a partnership. Each success is shared. Let's write your success story next.
+              {t('index.portfolio.subtitle2')}
             </p>
           </div>
 
@@ -490,11 +486,11 @@ const Index = () => {
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <div className="relative h-[280px] overflow-hidden">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
+                  <img src={project.image} alt={t(project.titleKey)} className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
-                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>
+                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">{t(project.titleKey)}</h3>
                   </div>
                 </div>
               </div>
@@ -503,11 +499,11 @@ const Index = () => {
 
           <div className="text-center">
             <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
-              These are just 3 of our 700+ successful projects. Each one represents a unique challenge, a creative solution, and a satisfied client.
+              {t('index.portfolio.more')}
             </p>
             <Button size="lg" asChild className="group">
               <Link to="/portfolio">
-                See Our Complete Portfolio
+                {t('index.portfolio.view')}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -525,10 +521,10 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-                Why We're Different
+                {t('index.why.title')}
               </h2>
               <p className="text-2xl md:text-3xl text-white/90 font-semibold leading-relaxed mb-8">
-                We're not just another digital agency. We're storytellers, problem-solvers, and growth hackers rolled into one.
+                {t('index.why.subtitle')}
               </p>
             </div>
 
@@ -541,10 +537,10 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
-                    Award-Winning Excellence
+                    {t('index.why.award.title')}
                   </h3>
                   <p className="text-lg text-gray-300 leading-relaxed">
-                    Our work speaks for itself. We've been recognized by industry leaders for our innovative approaches to digital marketing, design thinking, and data-driven strategies. But awards are just the cherry on top—what really matters is the impact we create for your business.
+                    {t('index.why.award.desc')}
                   </p>
                 </div>
               </div>
@@ -557,10 +553,10 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
-                    A Team That Actually Cares
+                    {t('index.why.team.title')}
                   </h3>
                   <p className="text-lg text-gray-300 leading-relaxed">
-                    We're not a faceless corporation. We're a passionate team of creatives, strategists, developers, and marketers who genuinely care about your success. Your wins are our wins. Your challenges become our missions. We're in this together, from day one to launch day and beyond.
+                    {t('index.why.team.desc')}
                   </p>
                 </div>
               </div>
@@ -573,10 +569,10 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
-                    Results You Can Measure
+                    {t('index.why.results.title')}
                   </h3>
                   <p className="text-lg text-gray-300 leading-relaxed">
-                    Pretty designs are great, but they mean nothing without results. That's why everything we do is backed by data, tested rigorously, and optimized continuously. We don't just promise growth—we deliver it, track it, and prove it with real metrics that matter to your bottom line.
+                    {t('index.why.results.desc')}
                   </p>
                 </div>
               </div>
@@ -584,11 +580,11 @@ const Index = () => {
 
             <div className="text-center bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10 rounded-2xl p-12 border-2 border-primary/20">
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
-                Want to know more about our team, our process, and what makes us tick? <span className="text-blue-400 font-semibold">We'd love to share our story with you.</span>
+                {t('index.why.more')} <span className="text-blue-400 font-semibold">{t('index.why.more.bold')}</span>
               </p>
               <Button size="lg" variant="outline" asChild className="group border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
                 <Link to="/about">
-                  Meet the Team
+                  {t('index.why.cta')}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -607,10 +603,10 @@ const Index = () => {
         <div className="container-custom relative z-10">
           <div className="text-center mb-20 fade-in-up">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient">
-              What Our Clients Say
+              {t('index.testimonials.title')}
             </h2>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Don't just take our word for it. Here's what real business owners have to say about working with us.
+              {t('index.testimonials.subtitle')}
             </p>
           </div>
 
@@ -658,11 +654,11 @@ const Index = () => {
 
           <div className="text-center fade-in-up">
             <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              These are just a few of our success stories. We've helped hundreds of businesses achieve similar—and even better—results. From startups to established enterprises, our clients consistently report dramatic improvements in their digital performance.
+              {t('index.testimonials.more')}
             </p>
             <Button size="lg" asChild className="btn-secondary group">
               <Link to="/about">
-                Read More Success Stories
+                {t('index.testimonials.cta')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -680,10 +676,10 @@ const Index = () => {
         <div className="container-custom relative z-10 text-center">
           <div className="max-w-4xl mx-auto fade-in-up">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-            Ready to Transform Your Digital Presence?
+            {t('index.cta.title')}
           </h2>
             <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Let's discuss how we can help you achieve your business goals and drive real results. Join 700+ successful brands who trust us with their digital transformation.
+              {t('index.cta.subtitle')}
           </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
@@ -692,7 +688,7 @@ const Index = () => {
               asChild
             >
                 <Link to="/contact">
-                  Start Your Project
+                  {t('index.cta.start')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
             </Button>
@@ -703,7 +699,7 @@ const Index = () => {
               asChild
             >
                 <Link to="/portfolio">
-                  View Our Work
+                  {t('index.cta.view')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
             </Button>

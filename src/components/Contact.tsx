@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
 import { z } from "zod";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -13,6 +14,7 @@ const contactSchema = z.object({
 });
 
 const Contact = () => {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -32,15 +34,15 @@ const Contact = () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+        title: t('contact.success.title'),
+        description: t('contact.success.desc'),
       });
       
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
-          title: "Validation Error",
+          title: t('contact.error.title'),
           description: error.errors[0].message,
           variant: "destructive",
         });
@@ -58,61 +60,61 @@ const Contact = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-            Let's Work Together
+        <div className="text-center mb-16 md:mb-20 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            {t('contact.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to transform your digital presence? Get in touch with us today.
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+            {t('contact.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-8">
-            <div className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
-              <h3 className="text-2xl font-bold mb-6 text-primary">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-secondary/30 border border-primary/10 hover:border-primary/30 transition-all">
-                  <div className="p-3 bg-primary/20 rounded-lg">
-                    <Phone className="h-5 w-5 text-primary" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto px-4">
+          <div className="space-y-6 md:space-y-8">
+            <div className="p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">{t('contact.info')}</h3>
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-secondary/30 border border-primary/10 hover:border-primary/30 transition-all">
+                  <div className="p-2 md:p-3 bg-primary/20 rounded-lg">
+                    <Phone className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                   </div>
-                  <span className="text-foreground">+1 (555) 123-4567</span>
+                  <span className="text-sm md:text-base text-foreground">+1 (555) 123-4567</span>
                 </div>
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-secondary/30 border border-primary/10 hover:border-primary/30 transition-all">
-                  <div className="p-3 bg-primary/20 rounded-lg">
-                    <Mail className="h-5 w-5 text-primary" />
+                <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-secondary/30 border border-primary/10 hover:border-primary/30 transition-all">
+                  <div className="p-2 md:p-3 bg-primary/20 rounded-lg">
+                    <Mail className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                   </div>
-                  <span className="text-foreground">hello@virtusdigital.com</span>
+                  <span className="text-sm md:text-base text-foreground">hello@virtusdigital.com</span>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
-              <h3 className="text-2xl font-bold mb-6 text-primary">Follow Us</h3>
-              <div className="flex gap-4">
+            <div className="p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">{t('contact.follow')}</h3>
+              <div className="flex gap-3 md:gap-4">
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 border-2 border-primary/30 rounded-lg hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
+                  className="p-3 md:p-4 border-2 border-primary/30 rounded-lg hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
                 >
-                  <Linkedin className="h-6 w-6" />
+                  <Linkedin className="h-5 w-5 md:h-6 md:w-6" />
                 </a>
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 border-2 border-primary/30 rounded-lg hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
+                  className="p-3 md:p-4 border-2 border-primary/30 rounded-lg hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
                 >
-                  <Instagram className="h-6 w-6" />
+                  <Instagram className="h-5 w-5 md:h-6 md:w-6" />
                 </a>
                 <a
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 border-2 border-primary/30 rounded-lg hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
+                  className="p-3 md:p-4 border-2 border-primary/30 rounded-lg hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
                 >
-                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-5 w-5 md:h-6 md:w-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </a>
@@ -120,42 +122,42 @@ const Contact = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
             <div>
               <Input
-                placeholder="Your Name"
+                placeholder={t('contact.name')}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="h-14 border-primary/20 focus:border-primary bg-background/50"
+                className="h-12 md:h-14 border-primary/20 focus:border-primary bg-background/50 text-sm md:text-base"
                 required
               />
             </div>
             <div>
               <Input
                 type="email"
-                placeholder="Your Email"
+                placeholder={t('contact.email')}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="h-14 border-primary/20 focus:border-primary bg-background/50"
+                className="h-12 md:h-14 border-primary/20 focus:border-primary bg-background/50 text-sm md:text-base"
                 required
               />
             </div>
             <div>
               <Textarea
-                placeholder="Your Message"
+                placeholder={t('contact.message')}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="min-h-40 border-primary/20 focus:border-primary bg-background/50"
+                className="min-h-32 md:min-h-40 border-primary/20 focus:border-primary bg-background/50 text-sm md:text-base"
                 required
               />
             </div>
             <Button
               type="submit"
               size="lg"
-              className="w-full h-14 text-base"
+              className="w-full h-12 md:h-14 text-sm md:text-base"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? t('contact.sending') : t('contact.send')}
             </Button>
           </form>
         </div>
