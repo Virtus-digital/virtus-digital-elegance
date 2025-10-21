@@ -2,19 +2,17 @@ import { Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer className="bg-gradient-to-b from-secondary/20 to-background border-t border-primary/20 py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-sm">
-            © 2025 Virtus Digital. All Rights Reserved.
-          </div>
+          <div className="text-sm text-muted-foreground">© 2025 Virtus Digital.</div>
 
           <div className="flex gap-4">
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted transition-colors duration-300"
+              className="p-2 rounded-lg border border-primary/30 hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
@@ -23,7 +21,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted transition-colors duration-300"
+              className="p-2 rounded-lg border border-primary/30 hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110"
               aria-label="Instagram"
             >
               <Instagram className="h-5 w-5" />
@@ -32,7 +30,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted transition-colors duration-300"
+              className="p-2 rounded-lg border border-primary/30 hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:text-primary-foreground hover:border-transparent transition-all duration-300 hover:scale-110"
               aria-label="X (Twitter)"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
