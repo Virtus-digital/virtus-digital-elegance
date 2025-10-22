@@ -59,34 +59,34 @@ const PortfolioPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
+      <section className="relative pt-24 pb-16 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t('portfolio.page.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
               {t('portfolio.page.subtitle')}<span className="text-blue-400 font-semibold">{t('portfolio.page.subtitle.bold')}</span>{t('portfolio.page.subtitle2')}
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
-              <div className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
-                <div className="text-4xl font-bold text-primary mb-2">700+</div>
-                <div className="text-sm text-gray-400">{t('portfolio.stats.projects')}</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto mt-8">
+              <div className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
+                <div className="text-2xl font-bold text-primary mb-1">700+</div>
+                <div className="text-xs text-gray-400">{t('portfolio.stats.projects')}</div>
               </div>
-              <div className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
-                <div className="text-4xl font-bold text-primary mb-2">98%</div>
-                <div className="text-sm text-gray-400">{t('portfolio.stats.satisfaction')}</div>
+              <div className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
+                <div className="text-2xl font-bold text-primary mb-1">98%</div>
+                <div className="text-xs text-gray-400">{t('portfolio.stats.satisfaction')}</div>
               </div>
-              <div className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
-                <div className="text-4xl font-bold text-primary mb-2">150%</div>
-                <div className="text-sm text-gray-400">{t('portfolio.stats.roi')}</div>
+              <div className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20">
+                <div className="text-2xl font-bold text-primary mb-1">150%</div>
+                <div className="text-xs text-gray-400">{t('portfolio.stats.roi')}</div>
               </div>
             </div>
           </div>
@@ -94,9 +94,9 @@ const PortfolioPage = () => {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
+      <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {projects.map((project) => (
               <Card 
                 key={project.id} 

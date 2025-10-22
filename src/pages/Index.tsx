@@ -1,21 +1,16 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Carousel3D from "@/components/3DCarousel";
 import BannerSlider from "@/components/BannerSlider";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, Star, TrendingUp, Users, Award, Monitor, Code2, Search, Megaphone } from "lucide-react";
+import { ArrowRight, Star, TrendingUp, Users, Award, Monitor, Code2, Search, Megaphone, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const { t } = useLanguage();
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const featuredServices = [
     {
@@ -43,6 +38,46 @@ const Index = () => {
       icon: Search,
     },
   ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        setActiveIndex(prev => prev === -1 ? featuredServices.length - 1 : (prev - 1 + featuredServices.length) % featuredServices.length);
+      }
+      if (e.key === "ArrowRight") {
+        setActiveIndex(prev => prev === -1 ? 0 : (prev + 1) % featuredServices.length);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [featuredServices.length]);
+
+  const setActiveSlide = (index: number) => {
+    if (activeIndex === index) {
+      setActiveIndex(-1);
+    } else {
+      setActiveIndex(index);
+    }
+  };
+
+  const nextSlide = () => {
+    const nextIndex = activeIndex === -1 ? 0 : (activeIndex + 1) % featuredServices.length;
+    setActiveSlide(nextIndex);
+  };
+
+  const prevSlide = () => {
+    const prevIndex = activeIndex === -1 ? featuredServices.length - 1 : (activeIndex - 1 + featuredServices.length) % featuredServices.length;
+    setActiveSlide(prevIndex);
+  };
 
   const portfolioPreview = [
     {
@@ -97,31 +132,31 @@ const Index = () => {
       <BannerSlider />
 
       {/* New Homepage Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
               {t('homepage.new.title')}
             </h2>
-            <p className="text-xl md:text-2xl text-primary font-semibold mb-8">
+            <p className="text-lg md:text-xl text-primary font-semibold mb-6">
               {t('homepage.new.subtitle')}
             </p>
             
-            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
               <p>{t('homepage.new.desc1')}</p>
               <p>{t('homepage.new.desc2')}</p>
             </div>
             
-            <div className="mt-12">
+            <div className="mt-8">
               <Link to="/about">
-                <Button className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white rounded-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105">
+                <Button className="px-6 py-3 text-base font-semibold bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white rounded-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105">
                   {t('homepage.new.button')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -129,7 +164,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Preview with Enhanced Design */}
+      {/* Services Preview with Accordion Slider Design */}
       <section id="services" className="section-padding bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden section-divider">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-starfall-2"></div>
@@ -137,74 +172,131 @@ const Index = () => {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="text-center mb-20 fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient">
+          <div className="text-center mb-12 fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">
               {t('index.services.title')}
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-4">
               {t('index.services.subtitle1')}
             </p>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            <p className="text-base text-gray-400 max-w-2xl mx-auto">
               {t('index.services.subtitle2')}
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto mb-16">
-            <Accordion type="multiple" className="space-y-4">
-              {featuredServices.map((service, index) => {
-                const Icon = service.icon;
-                return (
-                  <AccordionItem
-                    key={index}
-                    value={`service-${index}`}
-                    className="group relative glass-strong rounded-2xl overflow-hidden hover:border-primary/50 card-hover transition-all duration-500 fade-in-up"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <AccordionTrigger className="px-8 py-8 hover:no-underline [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-primary/5 [&[data-state=open]]:to-blue-600/5 transition-all duration-500">
-                      <div className="flex items-center gap-8 w-full">
-                        <div className="relative flex-shrink-0">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 group-data-[state=open]:opacity-40 transition-all duration-500"></div>
-                          <div className="relative p-5 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-2xl shadow-xl group-hover:scale-110 group-hover:rotate-2 group-data-[state=open]:scale-110 group-data-[state=open]:rotate-3 transition-all duration-500">
-                            <Icon className="h-8 w-8" />
-                          </div>
+          {/* Accordion Slider Section */}
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary mb-4">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                En İyi Yaptığımız İşler
+              </div>
+            </div>
+
+            <div className="relative min-h-[300px] sm:h-[400px] md:h-[500px] overflow-visible md:overflow-hidden rounded-3xl shadow-2xl">
+              <div className="flex h-full flex-col md:flex-row">
+                {featuredServices.map((service, index) => {
+                  const isActive = activeIndex === index;
+                  
+                  return (
+                    <div
+                      key={index}
+                      className={`relative cursor-pointer transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) rounded-2xl ${
+                        isActive ? 'flex-[2.5] sm:flex-[2.5] md:flex-[2.5] min-h-[250px]' : 'flex-1 min-h-[80px]'
+                      }`}
+                      onClick={() => setActiveSlide(index)}
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%)`,
+                      }}
+                    >
+                      {/* Background overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"></div>
+                      
+                      {/* Content */}
+                      <div className={`relative z-10 h-full flex flex-col justify-center sm:justify-end md:justify-end p-3 sm:p-4 md:p-6 transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) ${
+                        isActive ? 'pt-8 pb-4 sm:pb-8 md:pb-12' : 'pt-6 pb-2 sm:pb-4 md:pb-6'
+                      }`}>
+                        {/* Service number */}
+                        <div className={`absolute top-2 sm:top-4 md:top-6 left-2 sm:left-4 md:left-6 text-lg sm:text-3xl md:text-5xl font-light text-primary/60 transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) ${
+                          isActive ? 'top-1 sm:top-3 md:top-4 text-sm sm:text-2xl md:text-3xl' : ''
+                        }`}>
+                          {String(index + 1).padStart(2, '0')}
                         </div>
-                        <div className="flex-1 text-left">
-                          <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors mb-2">
+
+                        {/* Service title */}
+                        <div className={`transition-all duration-1000 ease-out ${
+                          isActive ? 'transform-none' : 'sm:transform sm:rotate-90 sm:origin-left'
+                        }`}>
+                          <h3 className={`text-sm sm:text-base md:text-xl font-bold text-white transition-all duration-1000 ease-out ${
+                            isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
+                          }`} style={{ transitionDelay: isActive ? '0.1s' : '0s', marginLeft: '2rem' }}>
                             {t(service.titleKey)}
                           </h3>
-                          <p className="text-sm text-blue-400 font-medium">
+                        </div>
+
+                        {/* Service description */}
+                        <div className={`transition-all duration-1000 ease-out ${
+                          isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
+                        }`}>
+                          <p className={`text-xs sm:text-xs md:text-sm text-gray-300 mb-1 sm:mb-3 md:mb-4 leading-relaxed transition-all duration-1000 ease-out ${
+                            isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
+                          }`} style={{ transitionDelay: isActive ? '0.2s' : '0s', marginLeft: '2rem' }}>
                             {t(service.taglineKey)}
                           </p>
+                          
+                          {/* Service details */}
+                          <div className={`space-y-1 sm:space-y-2 md:space-y-3 mb-3 sm:mb-3 md:mb-4 transition-all duration-1000 ease-out ${
+                            isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
+                          }`} style={{ transitionDelay: isActive ? '0.4s' : '0s', marginLeft: '2rem' }}>
+                            <div className="py-0.5 border-b border-primary/20">
+                              <span className="text-xs text-gray-400">Detaylar:</span>
+                              <p className="text-xs sm:text-xs md:text-sm text-white mt-0.5 leading-relaxed">{t(service.descKey)}</p>
+                            </div>
+                          </div>
+
+                          {/* Performance badges */}
+                          <div className={`flex flex-wrap gap-1 sm:gap-1 md:gap-2 mb-1 transition-all duration-1000 ease-out ${
+                            isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
+                          }`} style={{ transitionDelay: isActive ? '0.6s' : '0s', marginLeft: '2rem' }}>
+                            <div className="flex items-center gap-1 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-primary/10 rounded-full text-xs font-medium">
+                              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary rounded-full"></div>
+                              <span className="hidden sm:inline">Profesyonel</span>
+                              <span className="sm:hidden">Pro</span>
+                            </div>
+                            <div className="flex items-center gap-1 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-primary/10 rounded-full text-xs font-medium">
+                              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary rounded-full"></div>
+                              <span className="hidden sm:inline">Güvenilir</span>
+                              <span className="sm:hidden">Güv</span>
+                            </div>
+                            <div className="flex items-center gap-1 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-primary/10 rounded-full text-xs font-medium">
+                              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary rounded-full"></div>
+                              <span className="hidden sm:inline">Sonuç Odaklı</span>
+                              <span className="sm:hidden">Sonuç</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Add button */}
+                        <div className="absolute bottom-2 sm:bottom-4 md:bottom-6 right-2 sm:right-4 md:right-6 w-4 h-4 sm:w-6 sm:h-6 border-2 border-primary rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white">
+                          <div className="w-1 h-0.5 sm:w-2 sm:h-0.5 bg-primary"></div>
+                          <div className="w-0.5 h-1 sm:w-0.5 sm:h-2 bg-primary absolute"></div>
                         </div>
                       </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-8 pb-8">
-                      <div className="pt-6 pl-24">
-                        <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                          {t(service.descKey)}
-                        </p>
-                        <Button size="sm" variant="link" className="text-primary p-0 h-auto font-semibold" asChild>
-                          <Link to="/services">
-                            {t('index.services.learn')}
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                );
-              })}
-            </Accordion>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
-          <div className="text-center fade-in-up">
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+          <div className="text-center fade-in-up mt-12">
+            <p className="text-base text-gray-300 mb-6 max-w-xl mx-auto">
               {t('index.services.more')}
             </p>
-            <Button size="lg" asChild className="btn-primary group">
+            <Button size="default" asChild className="btn-primary group">
               <Link to="/services">
                 {t('index.services.explore')}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
@@ -262,77 +354,77 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us - Text Heavy */}
-      <section className="py-32 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 right-10 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
                 {t('index.why.title')}
               </h2>
-              <p className="text-2xl md:text-3xl text-white/90 font-semibold leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-white/90 font-semibold leading-relaxed mb-6">
                 {t('index.why.subtitle')}
               </p>
             </div>
 
-            <div className="space-y-12 mb-16">
-              <div className="flex items-start gap-6 group animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <div className="space-y-8 mb-12">
+              <div className="flex items-start gap-4 group animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <div className="flex-shrink-0 mt-1">
-                  <div className="p-3 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <Award className="h-7 w-7" />
+                  <div className="p-2 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <Award className="h-5 w-5" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
                     {t('index.why.award.title')}
                   </h3>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     {t('index.why.award.desc')}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-6 group animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="flex items-start gap-4 group animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <div className="flex-shrink-0 mt-1">
-                  <div className="p-3 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <Users className="h-7 w-7" />
+                  <div className="p-2 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <Users className="h-5 w-5" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
                     {t('index.why.team.title')}
                   </h3>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     {t('index.why.team.desc')}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-6 group animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="flex items-start gap-4 group animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <div className="flex-shrink-0 mt-1">
-                  <div className="p-3 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <TrendingUp className="h-7 w-7" />
+                  <div className="p-2 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <TrendingUp className="h-5 w-5" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
                     {t('index.why.results.title')}
                   </h3>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     {t('index.why.results.desc')}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="text-center bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10 rounded-2xl p-12 border-2 border-primary/20">
-              <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
+            <div className="text-center bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10 rounded-2xl p-8 border-2 border-primary/20">
+              <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6">
                 {t('index.why.more')} <span className="text-blue-400 font-semibold">{t('index.why.more.bold')}</span>
               </p>
-              <Button size="lg" variant="outline" asChild className="group border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
+              <Button size="default" variant="outline" asChild className="group border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
                 <Link to="/about">
                   {t('index.why.cta')}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -351,16 +443,16 @@ const Index = () => {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="text-center mb-20 fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient">
+          <div className="text-center mb-12 fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">
               {t('index.testimonials.title')}
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               {t('index.testimonials.subtitle')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
             {[
               {
                 name: "Jessica Martinez",
@@ -383,33 +475,33 @@ const Index = () => {
             ].map((testimonial, index) => (
               <div 
                 key={index}
-                className="glass-strong rounded-2xl p-8 card-hover transition-all duration-500 fade-in-up"
+                className="glass-strong rounded-2xl p-6 card-hover transition-all duration-500 fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-gray-300 leading-relaxed mb-6 italic">
+                <p className="text-gray-300 leading-relaxed mb-4 italic text-sm">
                   "{testimonial.content}"
                 </p>
                 <div>
-                  <div className="font-bold text-white text-lg">{testimonial.name}</div>
-                  <div className="text-gray-400">{testimonial.role}</div>
+                  <div className="font-bold text-white text-base">{testimonial.name}</div>
+                  <div className="text-gray-400 text-sm">{testimonial.role}</div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="text-center fade-in-up">
-            <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
               {t('index.testimonials.more')}
             </p>
-            <Button size="lg" asChild className="btn-secondary group">
+            <Button size="default" asChild className="btn-secondary group">
               <Link to="/about">
                 {t('index.testimonials.cta')}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
@@ -424,33 +516,33 @@ const Index = () => {
         </div>
 
         <div className="container-custom relative z-10 text-center">
-          <div className="max-w-4xl mx-auto fade-in-up">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
+          <div className="max-w-3xl mx-auto fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             {t('index.cta.title')}
           </h2>
-            <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
               {t('index.cta.subtitle')}
           </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              size="lg" 
-                className="bg-primary text-white hover:bg-primary/90 hover:text-white min-w-[220px] h-14 text-lg font-semibold group shadow-xl"
+              size="default" 
+                className="bg-primary text-white hover:bg-primary/90 hover:text-white min-w-[180px] h-12 text-base font-semibold group shadow-xl"
               asChild
             >
                 <Link to="/contact">
                   {t('index.cta.start')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
             </Button>
             <Button 
-              size="lg" 
+              size="default" 
               variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary min-w-[220px] h-14 text-lg font-semibold group"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary min-w-[180px] h-12 text-base font-semibold group"
               asChild
             >
                 <Link to="/portfolio">
                   {t('index.cta.view')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
             </Button>
             </div>

@@ -1,6 +1,7 @@
-import { Megaphone, Share2, Code2, Search, Monitor, Layers, Server, Database, CheckCircle2 } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useState, useEffect } from "react";
+import { Megaphone, Share2, Code2, Search, Monitor, Layers, Server, Database, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const getSkills = (t: (key: string) => string) => [
@@ -68,6 +69,40 @@ const Services = () => {
   const { t } = useLanguage();
   const skills = getSkills(t);
   const services = getServices(t);
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        setActiveIndex(prev => prev === -1 ? services.length - 1 : (prev - 1 + services.length) % services.length);
+      }
+      if (e.key === "ArrowRight") {
+        setActiveIndex(prev => prev === -1 ? 0 : (prev + 1) % services.length);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [services.length]);
+
+  const setActiveSlide = (index: number) => {
+    if (activeIndex === index) {
+      setActiveIndex(-1);
+    } else {
+      setActiveIndex(index);
+    }
+  };
+
+  const nextSlide = () => {
+    const nextIndex = activeIndex === -1 ? 0 : (activeIndex + 1) % services.length;
+    setActiveSlide(nextIndex);
+  };
+
+  const prevSlide = () => {
+    const prevIndex = activeIndex === -1 ? services.length - 1 : (activeIndex - 1 + services.length) % services.length;
+    setActiveSlide(prevIndex);
+  };
   
   return (
     <section id="services" className="py-32 bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
@@ -119,51 +154,126 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4">
-          <Accordion type="multiple" className="relative">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              
-              return (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="group w-full border-2 border-border/50 rounded-2xl bg-card/90 backdrop-blur-sm overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 -mt-6 first:mt-0 group-data-[state=open]:mt-0"
-                >
-                  <AccordionTrigger className="px-4 sm:px-8 py-6 sm:py-8 hover:no-underline [&[data-state=open]]:bg-gradient-to-r [&[data-state=open]]:from-primary [&[data-state=open]]:to-blue-600 [&[data-state=open]]:text-primary-foreground transition-all duration-500">
-                    <div className="flex items-center gap-4 sm:gap-6 w-full">
-                      <div className="flex items-center gap-4 sm:gap-6 flex-1">
-                        <div className="p-3 sm:p-4 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-xl shadow-lg group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
-                          <Icon className="h-6 w-6 sm:h-8 sm:w-8" />
-                        </div>
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-left">{t(service.titleKey)}</h3>
+        {/* Accordion Slider Section */}
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary mb-4">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              En İyi Yaptığımız İşler
+            </div>
+          </div>
+
+          <div className="relative h-[400px] md:h-[600px] overflow-hidden rounded-2xl shadow-2xl">
+            <div className="flex h-full flex-col md:flex-row">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                const isActive = activeIndex === index;
+                
+                return (
+                  <div
+                    key={index}
+                    className={`relative cursor-pointer transition-all duration-700 ease-out ${
+                      isActive ? 'flex-[2.5] md:flex-[2.5]' : 'flex-1'
+                    }`}
+                    onClick={() => setActiveSlide(index)}
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%)`,
+                    }}
+                  >
+                    {/* Background overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"></div>
+                    
+                    {/* Content */}
+                    <div className={`relative z-10 h-full flex flex-col justify-end p-4 md:p-8 transition-all duration-700 ${
+                      isActive ? 'pb-8 md:pb-16' : 'pb-4 md:pb-8'
+                    }`}>
+                      {/* Service number */}
+                      <div className={`absolute top-4 md:top-8 left-4 md:left-8 text-4xl md:text-6xl font-light text-primary/60 transition-all duration-700 ${
+                        isActive ? 'top-2 md:top-4 text-2xl md:text-4xl' : ''
+                      }`}>
+                        {String(index + 1).padStart(2, '0')}
                       </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-4 sm:px-8 pb-6 sm:pb-8">
-                    <div className="pt-4 sm:pt-6 space-y-4">
-                      <div className="pl-0 sm:pl-24 space-y-4">
-                        <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
+
+                      {/* Service icon and title */}
+                      <div className={`flex items-center gap-2 md:gap-4 mb-2 md:mb-4 transition-all duration-700 ${
+                        isActive ? 'transform-none' : 'md:transform md:rotate-90 md:origin-left'
+                      }`}>
+                        <div className="p-2 md:p-3 bg-gradient-to-br from-primary to-blue-600 text-white rounded-xl shadow-lg">
+                          <Icon className="h-4 w-4 md:h-6 md:w-6" />
+                        </div>
+                        <h3 className={`text-sm md:text-xl font-bold text-foreground transition-all duration-700 ${
+                          isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-8'
+                        }`}>
+                          {t(service.titleKey)}
+                        </h3>
+                      </div>
+
+                      {/* Service description */}
+                      <div className={`transition-all duration-700 ${
+                        isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-8'
+                      }`}>
+                        <p className="text-xs md:text-base text-muted-foreground mb-3 md:mb-6 leading-relaxed">
                           {t(service.descKey)}
                         </p>
-                        <div className="pt-4 mt-4 border-t border-primary/20">
-                          <p className="text-sm font-semibold text-primary mb-2">{t('services.key-services')}</p>
-                          <p className="text-sm sm:text-base text-muted-foreground">
-                            {t(service.detailsKey)}
-                          </p>
+                        
+                        {/* Service details */}
+                        <div className="space-y-2 md:space-y-3 mb-3 md:mb-6">
+                          <div className="flex flex-col md:flex-row md:justify-between md:items-center py-1 md:py-2 border-b border-primary/20">
+                            <span className="text-xs md:text-sm text-muted-foreground">Ana Hizmetler:</span>
+                            <span className="text-xs md:text-sm font-semibold text-foreground">{t(service.detailsKey)}</span>
+                          </div>
+                          <div className="flex flex-col md:flex-row md:justify-between md:items-center py-1 md:py-2 border-b border-primary/20">
+                            <span className="text-xs md:text-sm text-muted-foreground">Özellikler:</span>
+                            <span className="text-xs md:text-sm font-semibold text-foreground">{t(service.featuresKey)}</span>
+                          </div>
                         </div>
-                        <div className="pt-2">
-                          <p className="text-xs sm:text-sm text-foreground/80 italic">
-                            {t(service.featuresKey)}
-                          </p>
+
+                        {/* Performance badges */}
+                        <div className="flex flex-wrap gap-2 md:gap-3">
+                          <div className="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-1 md:py-2 bg-primary/10 rounded-full text-xs md:text-sm font-medium">
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full"></div>
+                            <span>Profesyonel</span>
+                          </div>
+                          <div className="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-1 md:py-2 bg-primary/10 rounded-full text-xs md:text-sm font-medium">
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full"></div>
+                            <span>Güvenilir</span>
+                          </div>
+                          <div className="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-1 md:py-2 bg-primary/10 rounded-full text-xs md:text-sm font-medium">
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full"></div>
+                            <span>Sonuç Odaklı</span>
+                          </div>
                         </div>
                       </div>
+
+                      {/* Add button */}
+                      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 w-6 h-6 md:w-8 md:h-8 border-2 border-primary rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white">
+                        <div className="w-2 h-0.5 md:w-3 md:h-0.5 bg-primary"></div>
+                        <div className="w-0.5 h-2 md:w-0.5 md:h-3 bg-primary absolute"></div>
+                      </div>
                     </div>
-                  </AccordionContent>
-                </AccordionItem>
-              );
-            })}
-          </Accordion>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Navigation arrows */}
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+              onClick={prevSlide}
+            >
+              <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+              onClick={nextSlide}
+            >
+              <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

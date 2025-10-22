@@ -127,18 +127,18 @@ const AboutPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
+      <section className="relative pt-24 pb-16 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t('about.page.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
               {t('about.page.subtitle')}
             </p>
           </div>
@@ -146,13 +146,13 @@ const AboutPage = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
+      <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <p className="text-lg text-gray-300 leading-relaxed">
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-base text-gray-300 leading-relaxed">
               {t('about.page.desc1')}
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-base text-gray-300 leading-relaxed">
               {t('about.page.desc2')}
             </p>
           </div>

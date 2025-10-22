@@ -157,18 +157,18 @@ const ServicesPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
+      <section className="relative pt-24 pb-16 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t('services.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
               {t('services.subtitle')}
             </p>
           </div>
@@ -176,9 +176,9 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
+      <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
-          <div className="space-y-16">
+          <div className="space-y-12">
             {allServices.map((service, index) => {
               const Icon = service.icon;
               const isEven = index % 2 === 0;
@@ -191,7 +191,7 @@ const ServicesPage = () => {
                   <CardContent className="p-0">
                     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
                       {/* Image */}
-                      <div className={`relative h-[400px] overflow-hidden ${!isEven ? 'lg:col-start-2' : ''}`}>
+                      <div className={`relative h-[300px] overflow-hidden ${!isEven ? 'lg:col-start-2' : ''}`}>
                         <img 
                           src={service.image} 
                           alt={t(service.titleKey)}
@@ -201,29 +201,29 @@ const ServicesPage = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="p-8 lg:p-12 flex flex-col justify-center">
-                        <div className="flex items-center gap-4 mb-6">
-                          <div className="p-4 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-xl shadow-lg">
-                            <Icon className="h-8 w-8" />
+                      <div className="p-6 lg:p-8 flex flex-col justify-center">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="p-3 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-xl shadow-lg">
+                            <Icon className="h-6 w-6" />
                           </div>
-                          <h3 className="text-3xl font-bold text-white">{t(service.titleKey)}</h3>
+                          <h3 className="text-2xl font-bold text-white">{t(service.titleKey)}</h3>
                         </div>
 
-                        <p className="text-lg text-gray-300 leading-relaxed mb-4">
+                        <p className="text-base text-gray-300 leading-relaxed mb-3">
                           {t(service.descKey)}
                         </p>
 
-                        <p className="text-base text-gray-400 leading-relaxed mb-6">
+                        <p className="text-sm text-gray-400 leading-relaxed mb-4">
                           {t(service.subheadKey)}
                         </p>
 
-                        <div className="mb-6">
-                          <p className="text-sm font-semibold text-blue-400 mb-3">{t('services.what-we-offer')}</p>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div className="mb-4">
+                          <p className="text-xs font-semibold text-blue-400 mb-2">{t('services.what-we-offer')}</p>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
                             {service.features(language).map((feature, idx) => (
                               <div key={idx} className="flex items-center gap-2">
-                                <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-                                <span className="text-sm text-gray-400">{feature}</span>
+                                <div className="h-1 w-1 rounded-full bg-primary"></div>
+                                <span className="text-xs text-gray-400">{feature}</span>
                               </div>
                             ))}
                           </div>

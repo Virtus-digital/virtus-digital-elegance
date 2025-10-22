@@ -80,18 +80,18 @@ const BlogPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
+      <section className="relative pt-24 pb-16 bg-gradient-to-br from-[#0b0f19] via-[#0d1320] to-[#0b0f19] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t('blog.page.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
               {t('blog.page.subtitle')}
             </p>
           </div>
@@ -99,51 +99,51 @@ const BlogPage = () => {
       </section>
 
       {/* Featured Post */}
-        <section className="py-12 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
+        <section className="py-10 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <Card className="group border-2 border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
                 <CardContent className="p-0">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    <div className="relative h-[400px] overflow-hidden">
+                    <div className="relative h-[250px] overflow-hidden">
                       <img
                         src={posts[0].image}
                         alt={posts[0].title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-primary/90 backdrop-blur-sm text-lg px-4 py-1">
+                      <div className="absolute top-3 left-3">
+                        <Badge className="bg-primary/90 backdrop-blur-sm text-sm px-3 py-1">
                           {t('blog.featured')}
                         </Badge>
                       </div>
                     </div>
-                    <div className="p-8 lg:p-12 flex flex-col justify-center">
-                      <Badge className="w-fit mb-4" variant="outline">
+                    <div className="p-6 lg:p-8 flex flex-col justify-center">
+                      <Badge className="w-fit mb-3" variant="outline">
                         {posts[0].category}
                       </Badge>
-                      <h2 className="text-3xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+                      <h2 className="text-xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
                         {posts[0].title}
                       </h2>
-                      <p className="text-lg text-gray-400 mb-6 leading-relaxed">
+                      <p className="text-sm text-gray-400 mb-4 leading-relaxed">
                         {posts[0].excerpt}
                       </p>
-                      <div className="flex items-center gap-6 text-sm text-gray-400 mb-6">
-                        <div className="flex items-center gap-2">
-                          <User className="h-4 w-4" />
+                      <div className="flex items-center gap-4 text-xs text-gray-400 mb-4">
+                        <div className="flex items-center gap-1">
+                          <User className="h-3 w-3" />
                           <span>{posts[0].author}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4" />
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
                           <span>{posts[0].date}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4" />
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
                           <span>{posts[0].readTime}</span>
                         </div>
                       </div>
-                      <Button variant="default" className="w-fit group/btn">
+                      <Button variant="default" size="sm" className="w-fit group/btn">
                         {t('blog.read-article')}
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
                     </div>
                   </div>
@@ -154,9 +154,9 @@ const BlogPage = () => {
         </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
+      <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {posts.map((post, index) => (
               <Card 
                 key={index} 
@@ -166,16 +166,16 @@ const BlogPage = () => {
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-56 object-cover group-hover:scale-110 transition-all duration-700"
+                    className="w-full h-40 object-cover group-hover:scale-110 transition-all duration-700"
                   />
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary/90 backdrop-blur-sm">
+                  <div className="absolute top-3 left-3">
+                    <Badge className="bg-primary/90 backdrop-blur-sm text-xs">
                       {post.category}
                     </Badge>
                   </div>
                 </div>
-                <CardHeader>
-                  <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                <CardHeader className="p-4">
+                  <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       <span>{post.date}</span>
@@ -185,25 +185,26 @@ const BlogPage = () => {
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  <CardTitle className="text-xl text-white hover:text-primary transition-colors cursor-pointer line-clamp-2">
+                  <CardTitle className="text-lg text-white hover:text-primary transition-colors cursor-pointer line-clamp-2">
                     {post.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base text-gray-400 mb-4 line-clamp-3">
+                <CardContent className="p-4 pt-0">
+                  <CardDescription className="text-sm text-gray-400 mb-3 line-clamp-3">
                     {post.excerpt}
                   </CardDescription>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <User className="h-4 w-4" />
+                    <div className="flex items-center gap-2 text-xs text-gray-400">
+                      <User className="h-3 w-3" />
                       <span>{post.author}</span>
                     </div>
                     <Button 
                       variant="link" 
+                      size="sm"
                       className="p-0 h-auto text-primary group-hover:gap-2 transition-all"
                     >
                       {t('blog.read-more')} 
-                      <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
                 </CardContent>
@@ -214,18 +215,18 @@ const BlogPage = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-blue-600 to-primary relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-r from-primary via-blue-600 to-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               {t('blog.newsletter.title')}
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-base text-white/90 mb-6">
               {t('blog.newsletter.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
