@@ -142,6 +142,24 @@ const Navbar = () => {
                       {language === 'en' && <Check className="h-4 w-4 text-primary" />}
                     </span>
                   </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setLanguage('it')}
+                    className="cursor-pointer"
+                  >
+                    <span className="flex items-center justify-between w-full">
+                      <span>🇮🇹 Italiano</span>
+                      {language === 'it' && <Check className="h-4 w-4 text-primary" />}
+                    </span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setLanguage('ro')}
+                    className="cursor-pointer"
+                  >
+                    <span className="flex items-center justify-between w-full">
+                      <span>🇷🇴 Română</span>
+                      {language === 'ro' && <Check className="h-4 w-4 text-primary" />}
+                    </span>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -172,6 +190,24 @@ const Navbar = () => {
                     <span className="flex items-center justify-between w-full">
                       <span>🇬🇧 English</span>
                       {language === 'en' && <Check className="h-4 w-4 text-primary" />}
+                    </span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setLanguage('it')}
+                    className="cursor-pointer"
+                  >
+                    <span className="flex items-center justify-between w-full">
+                      <span>🇮🇹 Italiano</span>
+                      {language === 'it' && <Check className="h-4 w-4 text-primary" />}
+                    </span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setLanguage('ro')}
+                    className="cursor-pointer"
+                  >
+                    <span className="flex items-center justify-between w-full">
+                      <span>🇷🇴 Română</span>
+                      {language === 'ro' && <Check className="h-4 w-4 text-primary" />}
                     </span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>

@@ -9,110 +9,140 @@ const getAllServices = (t: (key: string) => string) => [
   {
     titleKey: "service.digital-marketing.title",
     descKey: "service.digital-marketing.desc",
-    detailsKey: "service.digital-marketing.details",
+    subheadKey: "service.digital-marketing.details",
     icon: Megaphone,
     features: (lang: string) => lang === 'tr' ? [
       "Google Ads (Arama, Görüntülü, YouTube, Alışveriş)",
-      "Meta Reklamları (Facebook & Instagram)",
-      "TikTok Reklamları",
-      "LinkedIn Reklamları",
-      "Kampanya Stratejisi & Planlama",
-      "ROI Optimizasyonu"
+      "Meta, TikTok, LinkedIn Kampanyaları",
+      "Gelişmiş hedefleme, yeniden pazarlama ve offline dönüşüm izleme",
+      "Haftalık optimizasyon ve şeffaf raporlama"
+    ] : lang === 'ro' ? [
+      "Google Ads (Search, Display, YouTube, Shopping)",
+      "Campanii Meta, TikTok, LinkedIn",
+      "Segmentare avansată a publicului, remarketing și conversii offline",
+      "Optimizare săptămânală și rapoarte transparente"
+    ] : lang === 'it' ? [
+      "Google Ads (Search, Display, YouTube, Shopping)",
+      "Campagne Meta, TikTok, LinkedIn",
+      "Segmentazione avanzata del pubblico, remarketing e conversioni offline",
+      "Ottimizzazione settimanale e report trasparenti"
     ] : [
       "Google Ads (Search, Display, YouTube, Shopping)",
-      "Meta Ads (Facebook & Instagram)",
-      "TikTok Ads",
-      "LinkedIn Ads",
-      "Campaign Strategy & Planning",
-      "ROI Optimization"
+      "Meta, TikTok, LinkedIn Campaigns",
+      "Advanced audience segmentation, remarketing & offline conversions",
+      "Weekly optimization, transparent reports"
     ],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
   },
   {
     titleKey: "service.web-dev.title",
     descKey: "service.web-dev.desc",
-    detailsKey: "service.web-dev.details",
+    subheadKey: "service.web-dev.details",
     icon: Monitor,
     features: (lang: string) => lang === 'tr' ? [
-      "WordPress Siteler",
-      "E-Ticaret (OpenCart, WooCommerce, Shopify)",
-      "No-Code / Low-Code (Wix, Squarespace)",
-      "Özel Kodlu Siteler",
-      "Yönetim Panelleri",
-      "Mobil Uyumlu & SEO Dostu"
+      "WordPress, WooCommerce, Shopify veya özel yazılım altyapıları",
+      "Mobil öncelikli tasarım ve yüksek hız",
+      "SEO uyumlu altyapı ve entegre analitik sistemleri",
+      "Kullanımı kolay yönetim panelleri"
+    ] : lang === 'ro' ? [
+      "WordPress, WooCommerce, Shopify sau framework-uri personalizate",
+      "UX orientat pe mobil și viteză excelentă de încărcare",
+      "Arhitectură SEO și analitice integrate",
+      "Panouri de administrare ușor de utilizat"
+    ] : lang === 'it' ? [
+      "WordPress, WooCommerce, Shopify o framework personalizzati",
+      "Esperienza utente mobile-first e velocità di caricamento elevata",
+      "Architettura SEO e analitiche integrate",
+      "Pannelli di amministrazione facili da usare"
     ] : [
-      "WordPress Sites",
-      "E-Commerce (OpenCart, WooCommerce, Shopify)",
-      "No-Code / Low-Code (Wix, Squarespace)",
-      "Custom Coded Sites",
-      "Admin Panels",
-      "Mobile Responsive & SEO Friendly"
+      "WordPress, WooCommerce, Shopify, or custom frameworks",
+      "Mobile-first UX, blazing load speed",
+      "SEO-ready architecture & analytics integrated",
+      "Admin panels that you actually enjoy using"
     ],
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=600&fit=crop"
   },
   {
     titleKey: "service.custom-software.title",
     descKey: "service.custom-software.desc",
-    detailsKey: "service.custom-software.details",
+    subheadKey: "service.custom-software.details",
     icon: Code2,
     features: (lang: string) => lang === 'tr' ? [
-      "CRM & ERP Sistemleri",
-      "Stok ve Envanter Yönetimi",
-      "Özel CMS",
-      "Rezervasyon / Randevu Sistemleri",
-      "3. Parti Entegrasyonlar",
-      "Ölçeklenebilir Altyapı"
+      "CRM ve ERP platformları",
+      "Rezervasyon, stok ve belge takip sistemleri",
+      "API ve üçüncü parti entegrasyonlar (ödeme, SMS, WhatsApp, CRM)",
+      "Güvenli ve ölçeklenebilir altyapı, log sistemi"
+    ] : lang === 'ro' ? [
+      "Platforme CRM și ERP",
+      "Sisteme de rezervare, inventar și urmărire a documentelor",
+      "Integrare API și terți (plăți, SMS, WhatsApp, CRM)",
+      "Arhitectură sigură și scalabilă cu jurnale de audit"
+    ] : lang === 'it' ? [
+      "Piattaforme CRM ed ERP",
+      "Sistemi di prenotazione, inventario e tracciamento documenti",
+      "Integrazioni API e di terze parti (pagamenti, SMS, WhatsApp, CRM)",
+      "Architettura sicura e scalabile con log di controllo"
     ] : [
-      "CRM & ERP Systems",
-      "Stock and Inventory Management",
-      "Custom CMS",
-      "Reservation / Appointment Systems",
-      "3rd Party Integrations",
-      "Scalable Infrastructure"
+      "CRM & ERP platforms",
+      "Reservation, inventory & document tracking systems",
+      "API & third-party integrations (payment, SMS, WhatsApp, CRM)",
+      "Secure, scalable architecture & audit logs"
     ],
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
   },
   {
     titleKey: "service.seo.title",
     descKey: "service.seo.desc",
-    detailsKey: "service.seo.details",
+    subheadKey: "service.seo.details",
     icon: Search,
     features: (lang: string) => lang === 'tr' ? [
-      "On-page & Teknik SEO",
-      "Anahtar Kelime Analizi",
-      "Rakip Analizi",
-      "Yerel SEO",
-      "İçerik Optimizasyonu",
-      "Backlink Stratejisi"
+      "Teknik ve Sayfa İçi SEO denetimleri",
+      "Anahtar kelime ve rakip analizi",
+      "İçerik optimizasyonu, blog planlaması",
+      "Google Haritalar görünürlüğü için yerel SEO"
+    ] : lang === 'ro' ? [
+      "Audituri SEO tehnice și On-Page",
+      "Cercetare de cuvinte cheie și analiză concurențială",
+      "Optimizare conținut și planificare blog",
+      "SEO local pentru vizibilitate pe Google Maps"
+    ] : lang === 'it' ? [
+      "Audit SEO tecnici e On-Page",
+      "Ricerca di parole chiave e analisi dei concorrenti",
+      "Ottimizzazione dei contenuti e pianificazione dei blog",
+      "SEO locale per la visibilità su Google Maps"
     ] : [
-      "On-page & Technical SEO",
-      "Keyword Analysis",
-      "Competitor Analysis",
-      "Local SEO",
-      "Content Optimization",
-      "Backlink Strategy"
+      "Technical & On-Page SEO audits",
+      "Keyword + Competitor Research",
+      "Content optimization, blog planning",
+      "Local SEO for Google Maps visibility"
     ],
     image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&h=600&fit=crop"
   },
   {
     titleKey: "service.social-media.title",
     descKey: "service.social-media.desc",
-    detailsKey: "service.social-media.details",
+    subheadKey: "service.social-media.details",
     icon: Share2,
     features: (lang: string) => lang === 'tr' ? [
-      "Aylık İçerik Planlama",
-      "Görsel Tasarım & Video",
-      "Reels & Hikaye Prodüksiyon",
-      "YouTube & TikTok Video",
-      "Yorum & Mesaj Takibi",
-      "Performans Raporlama"
+      "Aylık içerik planlama ve üretim",
+      "Reels, hikayeler, YouTube Shorts",
+      "Topluluk yönetimi ve etkileşim",
+      "Analitik takibi ve sürekli optimizasyon"
+    ] : lang === 'ro' ? [
+      "Planificare lunară de conținut și producție creativă",
+      "Reels, stories, YouTube Shorts",
+      "Management comunitate și implicarea audienței",
+      "Analitice și optimizare continuă"
+    ] : lang === 'it' ? [
+      "Pianificazione mensile dei contenuti e produzione creativa",
+      "Reels, Stories, YouTube Shorts",
+      "Gestione della community e coinvolgimento del pubblico",
+      "Analisi e ottimizzazione continua"
     ] : [
-      "Monthly Content Planning",
-      "Visual Design & Video",
-      "Reels & Story Production",
-      "YouTube & TikTok Video",
-      "Comment & Message Tracking",
-      "Performance Reporting"
+      "Monthly content planning & creative production",
+      "Reels, stories, YouTube shorts",
+      "Audience engagement & community management",
+      "Analytics & continuous optimization"
     ],
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop"
   }
@@ -179,8 +209,12 @@ const ServicesPage = () => {
                           <h3 className="text-3xl font-bold text-white">{t(service.titleKey)}</h3>
                         </div>
 
-                        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                        <p className="text-lg text-gray-300 leading-relaxed mb-4">
                           {t(service.descKey)}
+                        </p>
+
+                        <p className="text-base text-gray-400 leading-relaxed mb-6">
+                          {t(service.subheadKey)}
                         </p>
 
                         <div className="mb-6">

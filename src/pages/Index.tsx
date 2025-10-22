@@ -4,10 +4,8 @@ import Footer from "@/components/Footer";
 import Carousel3D from "@/components/3DCarousel";
 import BannerSlider from "@/components/BannerSlider";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Sparkles, ChevronDown, Megaphone, Share2, Target, Code, ArrowRight, Star, TrendingUp, Users, Award, Monitor, Code2, Search } from "lucide-react";
+import { ArrowRight, Star, TrendingUp, Users, Award, Monitor, Code2, Search, Megaphone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -22,26 +20,26 @@ const Index = () => {
   const featuredServices = [
     {
       titleKey: "service.digital-marketing.title",
-      taglineKey: "index.service.digital.tagline",
-      descKey: "service.digital-marketing.desc",
+      taglineKey: "service.digital-marketing.desc",
+      descKey: "service.digital-marketing.details",
       icon: Megaphone,
     },
     {
       titleKey: "service.web-dev.title",
-      taglineKey: "index.service.web.tagline",
-      descKey: "service.web-dev.desc",
+      taglineKey: "service.web-dev.desc",
+      descKey: "service.web-dev.details",
       icon: Monitor,
     },
     {
       titleKey: "service.custom-software.title",
-      taglineKey: "index.service.software.tagline",
-      descKey: "service.custom-software.desc",
+      taglineKey: "service.custom-software.desc",
+      descKey: "service.custom-software.details",
       icon: Code2,
     },
     {
       titleKey: "service.seo.title",
-      taglineKey: "index.service.seo.tagline",
-      descKey: "service.seo.desc",
+      taglineKey: "service.seo.desc",
+      descKey: "service.seo.details",
       icon: Search,
     },
   ];
@@ -98,6 +96,38 @@ const Index = () => {
       {/* Banner Slider */}
       <BannerSlider />
 
+      {/* New Homepage Section */}
+      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              {t('homepage.new.title')}
+            </h2>
+            <p className="text-xl md:text-2xl text-primary font-semibold mb-8">
+              {t('homepage.new.subtitle')}
+            </p>
+            
+            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <p>{t('homepage.new.desc1')}</p>
+              <p>{t('homepage.new.desc2')}</p>
+            </div>
+            
+            <div className="mt-12">
+              <Link to="/about">
+                <Button className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white rounded-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105">
+                  {t('homepage.new.button')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Services Preview with Enhanced Design */}
       <section id="services" className="section-padding bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden section-divider">

@@ -74,6 +74,96 @@ const About = () => {
                 </div>
               </div>
             </div>
+
+            {/* New About Content */}
+            <div className="mt-16 space-y-12">
+              {/* Who We Are */}
+              <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  {t('aboutus.who')}
+                </h3>
+                <p className="text-lg text-foreground/90 leading-relaxed">
+                  {t('aboutus.who.desc')}
+                </p>
+              </div>
+
+              {/* Our Evolution */}
+              <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  {t('aboutus.evolution.title')}
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-sm font-bold text-primary">2010</div>
+                    <p className="text-lg text-foreground/90">{t('aboutus.evolution.2010')}</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-sm font-bold text-primary">2022</div>
+                    <p className="text-lg text-foreground/90">{t('aboutus.evolution.2022')}</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-sm font-bold text-primary">2024</div>
+                    <p className="text-lg text-foreground/90">{t('aboutus.evolution.2024')}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Our Expertise */}
+              <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  {t('aboutus.expertise.title')}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-lg text-foreground/90">{t('aboutus.expertise.1')}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-lg text-foreground/90">{t('aboutus.expertise.2')}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-lg text-foreground/90">{t('aboutus.expertise.3')}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-lg text-foreground/90">{t('aboutus.expertise.4')}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Our Principle */}
+              <div className="bg-gradient-to-r from-primary/10 to-blue-500/10 backdrop-blur-sm border border-primary/30 rounded-2xl p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  {t('aboutus.principle')}
+                </h3>
+                <p className="text-xl text-primary font-semibold mb-4">Build with Virtue.</p>
+                <p className="text-lg text-foreground/90">
+                  {t('aboutus.principle.desc')}
+                </p>
+              </div>
+
+              {/* Mission & Vision */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    {t('aboutus.mission')}
+                  </h3>
+                  <p className="text-lg text-foreground/90 leading-relaxed">
+                    {t('aboutus.mission.desc')}
+                  </p>
+                </div>
+                <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    {t('aboutus.vision')}
+                  </h3>
+                  <p className="text-lg text-foreground/90 leading-relaxed">
+                    {t('aboutus.vision.desc')}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
