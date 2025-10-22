@@ -8,46 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Improved Modern Blue, Navy & Gray Theme with better contrast */
-    --background: 220 25% 12%;  /* Slightly lighter dark navy */
+    /* New Color Palette: Teal, Navy, Dark Grey */
+    --background: 220 30% 8%;  /* #222B38 - Very dark grey */
     --foreground: 210 40% 98%;  /* High contrast white */
 
-    --card: 220 20% 16%;  /* Lighter card background */
+    --card: 220 25% 12%;  /* #222158 - Navy background */
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 20% 16%;
+    --popover: 220 25% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;  /* Vibrant blue - #2D7CFF */
+    --primary: 188 85% 40%;  /* #119BBB - Teal/Cyan */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 15% 22%;  /* Lighter secondary */
+    --secondary: 220 25% 12%;  /* Navy secondary */
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 15% 28%;
+    --muted: 220 20% 18%;
     --muted-foreground: 215 20% 75%;  /* Better contrast for muted text */
 
-    --accent: 217 91% 60%;  /* Vibrant blue accent */
+    --accent: 188 85% 40%;  /* Teal accent */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 28%;
-    --input: 220 15% 22%;
-    --ring: 217 91% 60%;
+    --border: 220 20% 18%;
+    --input: 220 25% 12%;
+    --ring: 188 85% 40%;
 
     --radius: 0.75rem;  /* Slightly more rounded */
 
-    /* Enhanced design tokens */
-    --blue-vibrant: 217 91% 60%;  /* #2D7CFF */
-    --blue-dark: 220 60% 25%;
-    --blue-light: 217 91% 70%;
-    --gray-light: 215 20% 75%;  /* Better contrast */
-    --gray-medium: 220 15% 40%;
-    --gray-dark: 220 20% 16%;
-    --navy-deep: 220 25% 12%;
-    --navy-darker: 220 30% 8%;
+    /* New design tokens based on image palette */
+    --teal-primary: 188 85% 40%;  /* #119BBB */
+    --navy-dark: 220 25% 12%;  /* #222158 */
+    --dark-grey: 220 30% 8%;  /* #222B38 */
+    --teal-light: 188 85% 50%;
+    --teal-dark: 188 85% 30%;
+    --navy-light: 220 25% 18%;
+    --grey-light: 215 20% 75%;
+    --grey-medium: 220 15% 40%;
     
     /* Enhanced shadows with better depth */
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -71,7 +71,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
   }
@@ -94,7 +94,7 @@ All colors MUST be HSL.
 
   /* Enhanced typography hierarchy */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.025em;
