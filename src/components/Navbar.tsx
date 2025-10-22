@@ -33,13 +33,16 @@ const Navbar = () => {
     return location.pathname === path;
   };
 
+  const isHome = location.pathname === '/';
+  const showSolidNav = isScrolled || !isHome;
+
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-[#0b0f19]/98 backdrop-blur-md shadow-lg shadow-primary/20 border-b border-blue-500/30" 
-            : "bg-[#0b0f19]/90 backdrop-blur-md border-b border-blue-500/20"
+          showSolidNav
+            ? "bg-[#0b0f19]/95 backdrop-blur-md shadow-lg shadow-primary/20 border-b border-blue-500/30"
+            : "bg-transparent"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 py-4 max-w-full overflow-x-hidden">

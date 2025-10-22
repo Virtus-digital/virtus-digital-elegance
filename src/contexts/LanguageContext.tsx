@@ -35,6 +35,22 @@ const translations = {
     'hero.cta.explore': 'Hizmetlerimizi Keşfedin',
     'hero.cta.start': 'Projenize Başlayın',
     
+    // Banner Slider
+    'banner.slide1.title': 'Kim Olduğumuz',
+    'banner.slide1.subtitle': 'Yaratıcılığı stratejiyle buluşturan dijital ajans',
+    'banner.slide1.description': 'Markanı dijitalde büyütmek için buradayız.',
+    'banner.slide2.title': 'Hizmetler & Uzmanlıklar',
+    'banner.slide2.subtitle': 'Web tasarım, sosyal medya, reklam yönetimi — hepsi tek çatı altında',
+    'banner.slide2.description': 'Sonuç odaklı dijital çözümler.',
+    'banner.slide3.title': 'Değer Teklifi & Farkımız',
+    'banner.slide3.subtitle': 'Yaratıcılıkla ölçülebilir başarıyı birleştiriyoruz',
+    'banner.slide3.description': 'Sadece görünür değil, hatırlanır olun.',
+    'banner.slide4.title': 'Sonuç & Başarı Hikayeleri',
+    'banner.slide4.subtitle': '100+ markanın dijital dönüşümünde yanındaydık',
+    'banner.slide4.description': 'Gerçek sonuçlar, gerçek büyüme.',
+    'banner.cta.explore': 'Hizmetlerimizi Keşfedin',
+    'banner.cta.start': 'Hemen Başlayalım',
+    
     // Index Page
     'index.services.title': 'En İyi Yaptığımız İşler',
     'index.services.subtitle1': 'Sadece web siteleri yapmıyor veya reklam yönetmiyoruz. Hedef kitlenizin markanızı nasıl algıladığını ve etkileşime geçtiğini dönüştüren kapsamlı dijital stratejiler oluşturuyoruz.',
@@ -347,6 +363,22 @@ const translations = {
     'hero.cta2': 'Let\'s Talk',
     'hero.cta.explore': 'Explore Our Services',
     'hero.cta.start': 'Start Your Project',
+    
+    // Banner Slider
+    'banner.slide1.title': 'Who We Are',
+    'banner.slide1.subtitle': 'Digital agency that combines creativity with strategy',
+    'banner.slide1.description': 'We are here to grow your brand in the digital world.',
+    'banner.slide2.title': 'Services & Expertise',
+    'banner.slide2.subtitle': 'Web design, social media, ad management — all under one roof',
+    'banner.slide2.description': 'Result-oriented digital solutions.',
+    'banner.slide3.title': 'Value Proposition & Our Difference',
+    'banner.slide3.subtitle': 'We combine creativity with measurable success',
+    'banner.slide3.description': 'Be not just visible, but memorable.',
+    'banner.slide4.title': 'Results & Success Stories',
+    'banner.slide4.subtitle': 'We were with 100+ brands in their digital transformation',
+    'banner.slide4.description': 'Real results, real growth.',
+    'banner.cta.explore': 'Explore Our Services',
+    'banner.cta.start': 'Let\'s Get Started',
     
     // Index Page
     'index.services.title': 'What We Do Best',
