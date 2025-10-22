@@ -405,4 +405,76 @@ All colors MUST be HSL.
   .container-custom {
     @apply max-w-7xl mx-auto px-6;
   }
+
+  /* 3D Carousel Styles */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-x-90 {
+    transform: rotateX(90deg);
+  }
+
+  /* 3D Carousel Animations */
+  @keyframes spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  @keyframes spinRevert {
+    from {
+      transform: rotateY(360deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+
+  /* 3D Carousel Hover Effects */
+  .carousel-item:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8) !important;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(0,0,0,0.7)) !important;
+  }
+
+  /* 3D Carousel Container */
+  .carousel-3d-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+  }
+
+  /* 3D Carousel Ground Effect */
+  .carousel-ground {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(90deg);
+    background: radial-gradient(circle, rgba(153, 153, 153, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  /* 3D Carousel Center Text */
+  .carousel-center-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotateX(90deg);
+    color: white;
+    font-family: serif;
+    font-size: 1.125rem;
+    text-align: center;
+  }
 }

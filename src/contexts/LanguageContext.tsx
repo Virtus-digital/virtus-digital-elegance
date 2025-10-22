@@ -54,6 +54,8 @@ const translations = {
     'index.portfolio.subtitle2': 'Her proje bir ortaklıktır. Her başarı paylaşılır. Bir sonraki başarı hikayenizi birlikte yazalım.',
     'index.portfolio.more': 'Bunlar 700+ başarılı projemizden sadece 3 tanesi. Her biri benzersiz bir meydan okuma, yaratıcı bir çözüm ve memnun bir müşteriyi temsil ediyor.',
     'index.portfolio.view': 'Tüm Portföyü Görün',
+    'index.portfolio.3d.title': '3D Proje Galerisi',
+    'index.portfolio.click': 'Ziyaret etmek için tıklayın',
     
     'index.why.title': 'Neden Farklıyız',
     'index.why.subtitle': 'Sadece başka bir dijital ajans değiliz. Hikaye anlatıcıları, problem çözücüler ve büyüme hackerleri bir aradayız.',
@@ -258,6 +260,21 @@ const translations = {
     'project.fertina.goal': 'Hizmetler, başarı hikayeleri ve randevu talebi ile klinik web sitesi',
     'project.fertina.result': 'Aydan aya randevu taleplerinde +%65 artış',
     
+    'project.virtus.title': 'Virtus Digital',
+    'project.virtus.client': 'Virtus Digital',
+    'project.virtus.goal': 'Dijital ajans için profesyonel kurumsal web sitesi',
+    'project.virtus.result': 'Marka bilinirliği artışı ve müşteri portföyü genişlemesi',
+    
+    'project.creative.title': 'Creative Solutions',
+    'project.creative.client': 'Creative Solutions',
+    'project.creative.goal': 'Yaratıcı çözümler için modern portföy sitesi',
+    'project.creative.result': 'Yaratıcı projelerin etkili sunumu ve müşteri çekimi',
+    
+    'project.tech.title': 'Tech Innovations',
+    'project.tech.client': 'Tech Innovations',
+    'project.tech.goal': 'Teknoloji şirketi için yenilikçi web platformu',
+    'project.tech.result': 'Teknoloji liderliği vurgusu ve yatırımcı ilgisi',
+    
     // Blog
     'blog.title': 'Son Görüşler',
     'blog.subtitle': 'Uzman ekibimizden düşünceler, trendler ve stratejiler.',
@@ -350,6 +367,8 @@ const translations = {
     'index.portfolio.subtitle2': 'Each project is a partnership. Each success is shared. Let\'s write your success story next.',
     'index.portfolio.more': 'These are just 3 of our 700+ successful projects. Each one represents a unique challenge, a creative solution, and a satisfied client.',
     'index.portfolio.view': 'See Our Complete Portfolio',
+    'index.portfolio.3d.title': '3D Project Gallery',
+    'index.portfolio.click': 'Click to visit',
     
     'index.why.title': 'Why We\'re Different',
     'index.why.subtitle': 'We\'re not just another digital agency. We\'re storytellers, problem-solvers, and growth hackers rolled into one.',
@@ -553,6 +572,21 @@ const translations = {
     'project.fertina.client': 'Fertility Clinic',
     'project.fertina.goal': 'Clinic website with services, success stories and appointment request',
     'project.fertina.result': '+65% appointment requests month-over-month',
+    
+    'project.virtus.title': 'Virtus Digital',
+    'project.virtus.client': 'Virtus Digital',
+    'project.virtus.goal': 'Professional corporate website for digital agency',
+    'project.virtus.result': 'Increased brand awareness and expanded client portfolio',
+    
+    'project.creative.title': 'Creative Solutions',
+    'project.creative.client': 'Creative Solutions',
+    'project.creative.goal': 'Modern portfolio site for creative solutions',
+    'project.creative.result': 'Effective presentation of creative projects and client attraction',
+    
+    'project.tech.title': 'Tech Innovations',
+    'project.tech.client': 'Tech Innovations',
+    'project.tech.goal': 'Innovative web platform for technology company',
+    'project.tech.result': 'Technology leadership emphasis and investor interest',
     
     // Blog
     'blog.title': 'Latest Insights',

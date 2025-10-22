@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Carousel3D from "@/components/3DCarousel";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -46,16 +47,46 @@ const Index = () => {
 
   const portfolioPreview = [
     {
+      id: 1,
       titleKey: "project.erm.title",
       image: "/erm.png",
+      mobileImage: "/erm-mobil.png",
+      url: "https://ermrentacar.com/",
     },
     {
+      id: 2,
       titleKey: "project.ravena.title",
       image: "/ravena.png",
+      mobileImage: "/ravena-mobil.png",
+      url: "https://ravenalab.com/",
     },
     {
+      id: 3,
       titleKey: "project.fertina.title",
       image: "/fertina.png",
+      mobileImage: "/fertina-mobil.png",
+      url: "https://dev2.fertinaivf.com/",
+    },
+    {
+      id: 4,
+      titleKey: "project.virtus.title",
+      image: "/fertina.png",
+      mobileImage: "/fertina-mobil.png",
+      url: "https://virtusdigital.com/",
+    },
+    {
+      id: 5,
+      titleKey: "project.creative.title",
+      image: "/ravena.png",
+      mobileImage: "/ravena-mobil.png",
+      url: "https://creativesolutions.com/",
+    },
+    {
+      id: 6,
+      titleKey: "project.tech.title",
+      image: "/erm.png",
+      mobileImage: "/erm-mobil.png",
+      url: "https://techinnovations.com/",
     },
   ];
 
@@ -458,7 +489,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Portfolio Preview */}
+      {/* Portfolio Preview with 3D Carousel */}
       <section className="section-padding bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden section-divider">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl animate-starfall-2"></div>
@@ -478,23 +509,20 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-8xl mx-auto mb-16">
-            {portfolioPreview.map((project, index) => (
-              <div 
-                key={index} 
-                className="group relative overflow-hidden rounded-2xl glass-strong hover:border-primary/50 card-hover transition-all duration-500 fade-in-up"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="relative h-[280px] overflow-hidden">
-                  <img src={project.image} alt={t(project.titleKey)} className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
-                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">{t(project.titleKey)}</h3>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* 3D Carousel Container */}
+          <div className="relative mb-16">
+            <div className="carousel-3d-container">
+              <Carousel3D 
+                items={portfolioPreview}
+                radius={380}
+                autoRotate={true}
+                rotateSpeed={-60}
+                itemWidth={280}
+                itemHeight={170}
+                mobileItemWidth={180}
+                mobileItemHeight={240}
+              />
+            </div>
           </div>
 
           <div className="text-center">
