@@ -206,7 +206,10 @@ const Index = () => {
                       }`}
                       onClick={() => setActiveSlide(index)}
                       style={{
-                        backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%)`,
+                        backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('/${index + 1}-banner.jpg')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
                       }}
                     >
                       {/* Background overlay */}
