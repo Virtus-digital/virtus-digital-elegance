@@ -62,7 +62,7 @@ const Index = () => {
   }, [featuredServices.length]);
 
   const setActiveSlide = (index: number) => {
-    if (activeIndex === index) {
+    if (activeIndex === index && index !== 0) {
       setActiveIndex(-1);
     } else {
       setActiveIndex(index);
@@ -185,7 +185,7 @@ const Index = () => {
           </div>
 
           {/* Accordion Slider Section */}
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto sm:max-w-5xl">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary mb-4">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -193,7 +193,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="relative min-h-[300px] sm:h-[400px] md:h-[500px] overflow-visible md:overflow-hidden rounded-3xl shadow-2xl">
+            <div className="relative min-h-[180px] sm:h-[300px] md:h-[450px] overflow-visible md:overflow-hidden rounded-xl shadow-2xl">
               <div className="flex h-full flex-col md:flex-row">
                 {featuredServices.map((service, index) => {
                   const isActive = activeIndex === index;
@@ -201,8 +201,8 @@ const Index = () => {
                   return (
                     <div
                       key={index}
-                      className={`relative cursor-pointer transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) rounded-2xl ${
-                        isActive ? 'flex-[2.5] sm:flex-[2.5] md:flex-[2.5] min-h-[250px]' : 'flex-1 min-h-[80px]'
+                      className={`relative cursor-pointer transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) rounded-lg ${
+                        isActive ? 'flex-[2.5] sm:flex-[2] md:flex-[2] min-h-[160px] sm:min-h-[200px] md:min-h-[250px]' : 'flex-1 min-h-[50px] sm:min-h-[70px] md:min-h-[80px]'
                       }`}
                       onClick={() => setActiveSlide(index)}
                       style={{
@@ -213,23 +213,39 @@ const Index = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20"></div>
                       
                       {/* Content */}
-                      <div className={`relative z-10 h-full flex flex-col justify-center sm:justify-end md:justify-end p-3 sm:p-4 md:p-6 transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) ${
-                        isActive ? 'pt-8 pb-4 sm:pb-8 md:pb-12' : 'pt-6 pb-2 sm:pb-4 md:pb-6'
+                      <div className={`relative z-10 h-full flex flex-col justify-center sm:justify-end md:justify-end p-1.5 sm:p-3 md:p-4 transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) ${
+                        isActive ? 'pt-4 pb-2 sm:pt-6 sm:pb-3 md:pt-6 md:pb-8' : 'pt-2 pb-1 sm:pt-4 sm:pb-2 md:pt-4 md:pb-4'
                       }`}>
+                        {/* Title for closed cards - positioned vertically on left */}
+                        <div className={`absolute left-1 sm:left-3 md:left-4 top-1/2 transform -translate-y-1/2 transition-all duration-1000 ease-in-out ${
+                          isActive ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+                        }`}>
+                          <h3 className="text-[10px] sm:text-sm md:text-base font-normal text-white/80" style={{ 
+                            writingMode: 'vertical-rl',
+                            textOrientation: 'mixed',
+                            transform: 'rotate(180deg)',
+                            lineHeight: '1.2'
+                          }}>
+                            {t(service.titleKey)}
+                          </h3>
+                        </div>
                         {/* Service number */}
-                        <div className={`absolute top-2 sm:top-4 md:top-6 left-2 sm:left-4 md:left-6 text-lg sm:text-3xl md:text-5xl font-light text-primary/60 transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) ${
-                          isActive ? 'top-1 sm:top-3 md:top-4 text-sm sm:text-2xl md:text-3xl' : ''
+                        <div className={`absolute top-0.5 sm:top-3 md:top-4 right-2 sm:left-3 md:left-4 text-sm sm:text-2xl md:text-4xl font-light text-primary/60 transition-all duration-800 cubic-bezier(0.4, 0, 0.2, 1) ${
+                          isActive ? 'top-0.5 sm:top-2 md:top-3 text-xs sm:text-xl md:text-2xl' : ''
                         }`}>
                           {String(index + 1).padStart(2, '0')}
                         </div>
 
-                        {/* Service title */}
-                        <div className={`transition-all duration-1000 ease-out ${
-                          isActive ? 'transform-none' : 'sm:transform sm:rotate-90 sm:origin-left'
+                        {/* Service title - only show when active */}
+                        <div className={`transition-all duration-1200 ease-out ${
+                          isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4 scale-95'
                         }`}>
-                          <h3 className={`text-sm sm:text-base md:text-xl font-bold text-white transition-all duration-1000 ease-out ${
-                            isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
-                          }`} style={{ transitionDelay: isActive ? '0.1s' : '0s', marginLeft: '2rem' }}>
+                          <h3 className={`text-xs sm:text-base md:text-lg font-bold text-white transition-all duration-1200 ease-out ${
+                            isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4 scale-95'
+                          }`} style={{ 
+                            transitionDelay: isActive ? '0.2s' : '0s', 
+                            marginLeft: '1rem sm:1.5rem'
+                          }}>
                             {t(service.titleKey)}
                           </h3>
                         </div>
@@ -238,16 +254,16 @@ const Index = () => {
                         <div className={`transition-all duration-1000 ease-out ${
                           isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
                         }`}>
-                          <p className={`text-xs sm:text-xs md:text-sm text-gray-300 mb-1 sm:mb-3 md:mb-4 leading-relaxed transition-all duration-1000 ease-out ${
+                          <p className={`text-xs sm:text-xs md:text-sm text-gray-300 mb-1 sm:mb-2 md:mb-3 leading-relaxed transition-all duration-1000 ease-out ${
                             isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
-                          }`} style={{ transitionDelay: isActive ? '0.2s' : '0s', marginLeft: '2rem' }}>
+                          }`} style={{ transitionDelay: isActive ? '0.2s' : '0s', marginLeft: '1rem sm:1.5rem' }}>
                             {t(service.taglineKey)}
                           </p>
                           
                           {/* Service details */}
-                          <div className={`space-y-1 sm:space-y-2 md:space-y-3 mb-3 sm:mb-3 md:mb-4 transition-all duration-1000 ease-out ${
+                          <div className={`space-y-1 sm:space-y-1 md:space-y-2 mb-2 sm:mb-2 md:mb-3 transition-all duration-1000 ease-out ${
                             isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
-                          }`} style={{ transitionDelay: isActive ? '0.4s' : '0s', marginLeft: '2rem' }}>
+                          }`} style={{ transitionDelay: isActive ? '0.4s' : '0s', marginLeft: '1rem sm:1.5rem' }}>
                             <div className="py-0.5 border-b border-primary/20">
                               <span className="text-xs text-gray-400">Detaylar:</span>
                               <p className="text-xs sm:text-xs md:text-sm text-white mt-0.5 leading-relaxed">{t(service.descKey)}</p>
@@ -257,7 +273,7 @@ const Index = () => {
                           {/* Performance badges */}
                           <div className={`flex flex-wrap gap-1 sm:gap-1 md:gap-2 mb-1 transition-all duration-1000 ease-out ${
                             isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4'
-                          }`} style={{ transitionDelay: isActive ? '0.6s' : '0s', marginLeft: '2rem' }}>
+                          }`} style={{ transitionDelay: isActive ? '0.6s' : '0s', marginLeft: '1rem sm:1.5rem' }}>
                             <div className="flex items-center gap-1 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-primary/10 rounded-full text-xs font-medium">
                               <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary rounded-full"></div>
                               <span className="hidden sm:inline">Profesyonel</span>
@@ -277,7 +293,7 @@ const Index = () => {
                         </div>
 
                         {/* Add button */}
-                        <div className="absolute bottom-2 sm:bottom-4 md:bottom-6 right-2 sm:right-4 md:right-6 w-4 h-4 sm:w-6 sm:h-6 border-2 border-primary rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white">
+                        <div className="absolute bottom-0.5 sm:bottom-3 md:bottom-4 right-2 sm:right-3 md:right-4 w-2 h-2 sm:w-5 sm:h-5 border-2 border-primary rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white">
                           <div className="w-1 h-0.5 sm:w-2 sm:h-0.5 bg-primary"></div>
                           <div className="w-0.5 h-1 sm:w-0.5 sm:h-2 bg-primary absolute"></div>
                         </div>
