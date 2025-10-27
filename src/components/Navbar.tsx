@@ -8,12 +8,24 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { TR, GB, IT, RO } from "country-flag-icons/react/3x2";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
+
+  // Dil seçenekleri ve bayrakları
+  const languageOptions = [
+    { code: 'tr', name: 'Türkçe', flag: TR },
+    { code: 'en', name: 'English', flag: GB },
+    { code: 'it', name: 'Italiano', flag: IT },
+    { code: 'ro', name: 'Română', flag: RO },
+  ];
+
+  // Seçili dilin bilgilerini bul
+  const currentLanguage = languageOptions.find(lang => lang.code === language) || languageOptions[0];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,47 +131,26 @@ const Navbar = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-2 px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/20 text-primary font-medium transition-all duration-300 text-sm">
-                    <Globe className="h-4 w-4" />
+                    <currentLanguage.flag className="h-4 w-6" />
                     <span className="uppercase">{language}</span>
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-40">
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('tr')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇹🇷 Türkçe</span>
-                      {language === 'tr' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('en')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇬🇧 English</span>
-                      {language === 'en' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('it')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇮🇹 Italiano</span>
-                      {language === 'it' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('ro')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇷🇴 Română</span>
-                      {language === 'ro' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
+                  {languageOptions.map((option) => (
+                    <DropdownMenuItem
+                      key={option.code}
+                      onClick={() => setLanguage(option.code)}
+                      className="cursor-pointer"
+                    >
+                      <span className="flex items-center justify-between w-full">
+                        <span className="flex items-center gap-2">
+                          <option.flag className="h-4 w-6" />
+                          {option.name}
+                        </span>
+                        {language === option.code && <Check className="h-4 w-4 text-primary" />}
+                      </span>
+                    </DropdownMenuItem>
+                  ))}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -169,47 +160,26 @@ const Navbar = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/20 text-primary font-medium transition-all duration-300 text-xs sm:text-sm">
-                    <Globe className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <currentLanguage.flag className="h-3 w-4 sm:h-4 sm:w-6" />
                     <span className="uppercase hidden sm:inline">{language}</span>
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-40">
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('tr')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇹🇷 Türkçe</span>
-                      {language === 'tr' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('en')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇬🇧 English</span>
-                      {language === 'en' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('it')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇮🇹 Italiano</span>
-                      {language === 'it' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => setLanguage('ro')}
-                    className="cursor-pointer"
-                  >
-                    <span className="flex items-center justify-between w-full">
-                      <span>🇷🇴 Română</span>
-                      {language === 'ro' && <Check className="h-4 w-4 text-primary" />}
-                    </span>
-                  </DropdownMenuItem>
+                  {languageOptions.map((option) => (
+                    <DropdownMenuItem
+                      key={option.code}
+                      onClick={() => setLanguage(option.code)}
+                      className="cursor-pointer"
+                    >
+                      <span className="flex items-center justify-between w-full">
+                        <span className="flex items-center gap-2">
+                          <option.flag className="h-4 w-6" />
+                          {option.name}
+                        </span>
+                        {language === option.code && <Check className="h-4 w-4 text-primary" />}
+                      </span>
+                    </DropdownMenuItem>
+                  ))}
                 </DropdownMenuContent>
               </DropdownMenu>
               
