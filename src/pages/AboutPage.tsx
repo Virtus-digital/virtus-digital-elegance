@@ -332,14 +332,16 @@ const AboutPage = () => {
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             {t('about.cta.page.subtitle')}
           </p>
-          <Button 
-            size="lg"
-            className="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-xl"
+          <button 
+            className="about-cta-btn px-6 py-3 text-base font-semibold text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            style={{ backgroundColor: '#171c26' }}
             onClick={() => window.location.href = '/contact'}
           >
-            {t('about.cta.page.button')}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+            <span className="flex items-center gap-2">
+              {t('about.cta.page.button')}
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </button>
         </div>
       </section>
 
