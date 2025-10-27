@@ -168,10 +168,12 @@ const Index = () => {
             
             <div className="mt-8">
               <Link to="/about">
-                <Button className="px-6 py-3 text-base font-semibold bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white rounded-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105">
-                  {t('homepage.new.button')}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <button className="px-6 py-3 text-base font-semibold bg-gradient-to-r from-primary to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-primary/90 hover:to-blue-700">
+                  <span className="flex items-center gap-2">
+                    {t('homepage.new.button')}
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </button>
               </Link>
             </div>
           </div>

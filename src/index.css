@@ -137,6 +137,18 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Homepage "Daha Fazla" button with safe hover effects */
+  button:has(span.flex.items-center.gap-2) {
+    overflow: visible !important;
+    transform-origin: center;
+  }
+  
+  button:has(span.flex.items-center.gap-2):hover {
+    overflow: visible !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+  }
+
   .text-gradient {
     @apply bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent;
     background-size: 200% 100%;
