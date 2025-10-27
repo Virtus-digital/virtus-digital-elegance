@@ -105,7 +105,7 @@ const Services = () => {
   };
   
   return (
-    <section id="services" className="py-32 bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
+    <section id="services" className="section-padding bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl"></div>
@@ -114,7 +114,7 @@ const Services = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20 animate-fade-in px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <h2 className="section-title mb-6">
             {t('services.what-we-do')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -124,7 +124,7 @@ const Services = () => {
 
         {/* Skills Section */}
         <div className="mb-16 md:mb-24">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-foreground px-4">
+          <h3 className="card-title text-center mb-8 md:mb-12 px-4">
             {t('services.skills-title')}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">

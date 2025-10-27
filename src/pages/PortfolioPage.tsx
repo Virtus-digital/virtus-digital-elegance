@@ -67,7 +67,7 @@ const PortfolioPage = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h1 className="page-title mb-4">
               {t('portfolio.page.title')}
             </h1>
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">

@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
+    <section id="contact" className="section-padding bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
@@ -61,7 +61,7 @@ const Contact = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <h2 className="section-title mb-6">
             {t('contact.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -72,7 +72,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto px-4">
           <div className="space-y-6 md:space-y-8">
             <div className="p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">{t('contact.info')}</h3>
+              <h3 className="card-title mb-4 md:mb-6 text-primary">{t('contact.info')}</h3>
               <div className="space-y-4 md:space-y-6">
                 <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-secondary/30 border border-primary/10 hover:border-primary/30 transition-all">
                   <div className="p-2 md:p-3 bg-primary/20 rounded-lg">
@@ -90,7 +90,7 @@ const Contact = () => {
             </div>
 
             <div className="p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">{t('contact.follow')}</h3>
+              <h3 className="card-title mb-4 md:mb-6 text-primary">{t('contact.follow')}</h3>
               <div className="flex gap-3 md:gap-4">
                 <a
                   href="https://linkedin.com"
@@ -128,7 +128,7 @@ const Contact = () => {
                 placeholder={t('contact.name')}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="h-12 md:h-14 border-primary/20 focus:border-primary bg-background/50 text-sm md:text-base"
+                className="input-standard"
                 required
               />
             </div>
@@ -138,7 +138,7 @@ const Contact = () => {
                 placeholder={t('contact.email')}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="h-12 md:h-14 border-primary/20 focus:border-primary bg-background/50 text-sm md:text-base"
+                className="input-standard"
                 required
               />
             </div>
@@ -154,7 +154,7 @@ const Contact = () => {
             <Button
               type="submit"
               size="lg"
-              className="w-full h-12 md:h-14 text-sm md:text-base"
+              className="btn-standard w-full"
               disabled={isSubmitting}
             >
               {isSubmitting ? t('contact.sending') : t('contact.send')}

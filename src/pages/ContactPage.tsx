@@ -72,7 +72,7 @@ const ContactPage = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h1 className="page-title mb-4">
               {t('contact.page.title')}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -192,7 +192,7 @@ const ContactPage = () => {
             <div className="lg:col-span-2">
               <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm">
                 <CardContent className="p-8">
-                  <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                  <h2 className="card-title mb-2">
                     {t('contact.form.title')}
                   </h2>
                   <p className="text-muted-foreground mb-8">
@@ -209,7 +209,7 @@ const ContactPage = () => {
                           placeholder={t('contact.form.name.placeholder')}
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="h-12 border-primary/20 focus:border-primary bg-background/50"
+                          className="input-standard"
                           required
                         />
                       </div>
@@ -222,7 +222,7 @@ const ContactPage = () => {
                           placeholder={t('contact.form.email.placeholder')}
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="h-12 border-primary/20 focus:border-primary bg-background/50"
+                          className="input-standard"
                           required
                         />
                       </div>
@@ -238,7 +238,7 @@ const ContactPage = () => {
                           placeholder={t('contact.form.phone.placeholder')}
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="h-12 border-primary/20 focus:border-primary bg-background/50"
+                          className="input-standard"
                         />
                       </div>
                       <div>
@@ -249,7 +249,7 @@ const ContactPage = () => {
                           placeholder={t('contact.form.subject.placeholder')}
                           value={formData.subject}
                           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          className="h-12 border-primary/20 focus:border-primary bg-background/50"
+                          className="input-standard"
                           required
                         />
                       </div>
@@ -271,11 +271,11 @@ const ContactPage = () => {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full h-14 text-base gap-2"
+                      className="btn-standard w-full gap-2"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? t('contact.sending') : t('contact.send')}
-                      <Send className="h-4 w-4" />
+                      <Send className="icon-standard" />
                     </Button>
                   </form>
                 </CardContent>

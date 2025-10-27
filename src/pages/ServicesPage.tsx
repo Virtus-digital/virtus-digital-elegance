@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Megaphone, Share2, Code2, Search, Monitor } from "lucide-react";
+import { Megaphone, Share2, Code2, Search, Monitor, Server } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -116,7 +116,7 @@ const getAllServices = (t: (key: string) => string) => [
       "Content optimization, blog planning",
       "Local SEO for Google Maps visibility"
     ],
-    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&h=600&fit=crop"
+    image: "/2-banner.jpg"
   },
   {
     titleKey: "service.social-media.title",
@@ -144,7 +144,35 @@ const getAllServices = (t: (key: string) => string) => [
       "Audience engagement & community management",
       "Analytics & continuous optimization"
     ],
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop"
+    image: "/3-banner.jpg"
+  },
+  {
+    titleKey: "service.hosting-email.title",
+    descKey: "service.hosting-email.desc",
+    subheadKey: "service.hosting-email.details",
+    icon: Server,
+    features: (lang: string) => lang === 'tr' ? [
+      "Hızlı ve güvenli web hosting servisleri",
+      "Profesyonel email hesapları (@firmaniz.com)",
+      "SSL sertifikası ve güvenlik önlemleri",
+      "7/24 teknik destek ve yedekleme"
+    ] : lang === 'ro' ? [
+      "Servicii de hosting web rapide și sigure",
+      "Conturi de email profesionale (@compania-voastra.com)",
+      "Certificat SSL și măsuri de securitate",
+      "Suport tehnic 24/7 și backup"
+    ] : lang === 'it' ? [
+      "Servizi di hosting web veloci e sicuri",
+      "Account email professionali (@vostra-azienda.com)",
+      "Certificato SSL e misure di sicurezza",
+      "Supporto tecnico 24/7 e backup"
+    ] : [
+      "Fast and secure web hosting services",
+      "Professional email accounts (@yourcompany.com)",
+      "SSL certificate and security measures",
+      "24/7 technical support and backup"
+    ],
+    image: "/4-banner.jpg"
   }
 ];
 
@@ -165,7 +193,7 @@ const ServicesPage = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h1 className="page-title mb-4">
               {t('services.title')}
             </h1>
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
@@ -177,7 +205,7 @@ const ServicesPage = () => {
 
       {/* Services Grid */}
       <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="space-y-12">
             {allServices.map((service, index) => {
               const Icon = service.icon;
@@ -191,33 +219,33 @@ const ServicesPage = () => {
                   <CardContent className="p-0">
                     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
                       {/* Image */}
-                      <div className={`relative h-[300px] overflow-hidden ${!isEven ? 'lg:col-start-2' : ''}`}>
+                      <div className={`relative h-[250px] sm:h-[300px] lg:h-[400px] overflow-hidden ${!isEven ? 'lg:col-start-2' : ''}`}>
                         <img 
                           src={service.image} 
                           alt={t(service.titleKey)}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20"></div>
                       </div>
 
                       {/* Content */}
-                      <div className="p-6 lg:p-8 flex flex-col justify-center">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="p-3 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-xl shadow-lg">
-                            <Icon className="h-6 w-6" />
+                      <div className="p-3 lg:p-5 flex flex-col justify-center">
+                        <div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3">
+                          <div className="p-2 lg:p-3 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-xl shadow-lg">
+                            <Icon className="h-5 w-5 lg:h-6 lg:w-6" />
                           </div>
-                          <h3 className="text-2xl font-bold text-white">{t(service.titleKey)}</h3>
+                          <h3 className="text-lg lg:text-xl font-bold text-white">{t(service.titleKey)}</h3>
                         </div>
 
-                        <p className="text-base text-gray-300 leading-relaxed mb-3">
+                        <p className="text-xs lg:text-sm text-gray-300 leading-relaxed mb-2">
                           {t(service.descKey)}
                         </p>
 
-                        <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                        <p className="text-xs text-gray-400 leading-relaxed mb-3">
                           {t(service.subheadKey)}
                         </p>
 
-                        <div className="mb-4">
+                        <div className="mb-3">
                           <p className="text-xs font-semibold text-blue-400 mb-2">{t('services.what-we-offer')}</p>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
                             {service.features(language).map((feature, idx) => (
@@ -231,7 +259,7 @@ const ServicesPage = () => {
 
                         <Button 
                           variant="default" 
-                          className="w-fit mt-4"
+                          className="w-fit mt-3"
                           onClick={() => {
                             const contactSection = document.getElementById('contact');
                             if (contactSection) {

@@ -404,7 +404,7 @@ All colors MUST be HSL.
 
   .section-divider::after {
     content: '';
-    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent;
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-primary to-transparent;
   }
 
   /* Enhanced glass morphism */
@@ -423,6 +423,48 @@ All colors MUST be HSL.
 
   .container-custom {
     @apply max-w-7xl mx-auto px-6;
+  }
+
+  /* Standardized Typography Classes */
+  .page-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent;
+  }
+
+  .card-title {
+    @apply text-xl md:text-2xl font-bold text-foreground;
+  }
+
+  /* Standardized Component Classes */
+  .btn-standard {
+    @apply h-12 md:h-14 text-sm md:text-base font-medium;
+  }
+
+  .input-standard {
+    @apply h-12 md:h-14 text-sm md:text-base border-primary/20 focus:border-primary bg-background/50;
+  }
+
+  .image-standard {
+    @apply h-[200px] sm:h-[250px] md:h-[280px] object-cover;
+  }
+
+  .stats-number {
+    @apply text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .card-standard {
+    @apply border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500;
+  }
+
+  .icon-standard {
+    @apply h-5 w-5;
+  }
+
+  .icon-large {
+    @apply h-6 w-6;
   }
 
   /* 3D Carousel Styles */

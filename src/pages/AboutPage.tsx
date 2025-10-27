@@ -101,7 +101,7 @@ const AboutPage = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h1 className="page-title mb-4">
               {t('about.page.title')}
             </h1>
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
@@ -251,7 +251,7 @@ const AboutPage = () => {
       <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h2 className="section-title mb-4">
               {t('about.process.title')}
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
@@ -291,7 +291,7 @@ const AboutPage = () => {
       <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h2 className="section-title mb-4">
               {t('about.team.title')}
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">

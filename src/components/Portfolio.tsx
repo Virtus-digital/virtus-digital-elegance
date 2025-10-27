@@ -41,7 +41,7 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section id="portfolio" className="py-32 bg-gradient-to-b from-background to-secondary/20 relative overflow-hidden">
+    <section id="portfolio" className="section-padding bg-gradient-to-b from-background to-secondary/20 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
@@ -50,7 +50,7 @@ const Portfolio = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-14 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <h2 className="section-title mb-6">
             {t('portfolio.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -66,8 +66,8 @@ const Portfolio = () => {
                   className="cursor-pointer"
                   onClick={() => setSelectedProject(project)}
                 >
-                  <div className="relative h-[200px] sm:h-[250px] md:h-[280px]">
-                    <img src={project.image} alt={t(project.titleKey)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="relative image-standard">
+                    <img src={project.image} alt={t(project.titleKey)} className="w-full h-full group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
                       <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">{t(project.titleKey)}</h3>

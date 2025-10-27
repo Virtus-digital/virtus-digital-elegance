@@ -5,7 +5,7 @@ const About = () => {
   const { t } = useLanguage();
   
   return (
-    <section id="about" className="py-32 bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
+    <section id="about" className="section-padding bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 right-10 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
@@ -13,7 +13,7 @@ const About = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <h2 className="section-title mb-6">
             {t('about.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -32,15 +32,15 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
               <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-                <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">50+</div>
+                <div className="stats-number mb-2">50+</div>
                 <div className="text-sm text-muted-foreground font-medium">{t('about.projects')}</div>
               </div>
               <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-                <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">30+</div>
+                <div className="stats-number mb-2">30+</div>
                 <div className="text-sm text-muted-foreground font-medium">{t('about.clients')}</div>
               </div>
               <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-                <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">5+</div>
+                <div className="stats-number mb-2">5+</div>
                 <div className="text-sm text-muted-foreground font-medium">{t('about.experience')}</div>
               </div>
             </div>
@@ -79,7 +79,7 @@ const About = () => {
             <div className="mt-16 space-y-12">
               {/* Who We Are */}
               <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                <h3 className="card-title mb-6">
                   {t('aboutus.who')}
                 </h3>
                 <p className="text-lg text-foreground/90 leading-relaxed">
@@ -89,7 +89,7 @@ const About = () => {
 
               {/* Our Evolution */}
               <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                <h3 className="card-title mb-6">
                   {t('aboutus.evolution.title')}
                 </h3>
                 <div className="space-y-4">
@@ -110,7 +110,7 @@ const About = () => {
 
               {/* Our Expertise */}
               <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                <h3 className="card-title mb-6">
                   {t('aboutus.expertise.title')}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -135,7 +135,7 @@ const About = () => {
 
               {/* Our Principle */}
               <div className="bg-gradient-to-r from-primary/10 to-blue-500/10 backdrop-blur-sm border border-primary/30 rounded-2xl p-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                <h3 className="card-title mb-4">
                   {t('aboutus.principle')}
                 </h3>
                 <p className="text-xl text-primary font-semibold mb-4">Build with Virtue.</p>
@@ -147,7 +147,7 @@ const About = () => {
               {/* Mission & Vision */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                  <h3 className="card-title mb-4">
                     {t('aboutus.mission')}
                   </h3>
                   <p className="text-lg text-foreground/90 leading-relaxed">
@@ -155,7 +155,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                  <h3 className="card-title mb-4">
                     {t('aboutus.vision')}
                   </h3>
                   <p className="text-lg text-foreground/90 leading-relaxed">

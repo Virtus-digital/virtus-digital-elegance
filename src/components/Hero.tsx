@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-secondary/30 to-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-secondary/30 to-background section-padding"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -41,7 +41,7 @@ const Hero = () => {
           {t('hero.subtitle')}
         </h2>
         
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 animate-fade-up leading-tight px-2" style={{ animationDelay: "0.2s" }}>
+        <h1 className="page-title mb-4 sm:mb-6 animate-fade-up leading-tight px-2" style={{ animationDelay: "0.2s" }}>
           {t('hero.title1')}
           <br />
           <span className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
@@ -60,7 +60,7 @@ const Hero = () => {
             size="lg"
             variant="hero"
             onClick={() => scrollToSection("portfolio")}
-            className="w-full sm:w-auto sm:min-w-[180px] text-sm sm:text-base"
+            className="btn-standard w-full sm:w-auto sm:min-w-[180px]"
           >
             {t('hero.cta1')}
           </Button>
@@ -68,7 +68,7 @@ const Hero = () => {
             size="lg"
             variant="outline"
             onClick={() => scrollToSection("contact")}
-            className="w-full sm:w-auto sm:min-w-[180px] text-sm sm:text-base"
+            className="btn-standard w-full sm:w-auto sm:min-w-[180px]"
           >
             {t('hero.cta2')}
           </Button>

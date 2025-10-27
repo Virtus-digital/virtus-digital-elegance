@@ -147,7 +147,7 @@ const Index = () => {
       </div>
 
       {/* New Homepage Section */}
-      <section id="homepage-intro" className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
+      <section id="homepage-intro" className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden section-divider">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
