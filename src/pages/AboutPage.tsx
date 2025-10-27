@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Award, Users, Zap, Heart, Target, TrendingUp, CheckCircle2, Star } from "lucide-react";
+import { Award, Users, Zap, Heart, Target, TrendingUp, CheckCircle2, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const team = [
@@ -29,41 +30,6 @@ const team = [
     role: "UX/UI Designer",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
     bio: "Creating intuitive experiences that users love"
-  }
-];
-
-const testimonials = [
-  {
-    name: "Jessica Martinez",
-    role: "CEO, TechStart Inc.",
-    company: "TechStart",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop",
-    content: "Virtus Digital transformed our online presence completely. Their strategic approach and attention to detail resulted in a 300% increase in qualified leads within just 3 months. Highly recommended!",
-    rating: 5
-  },
-  {
-    name: "Robert Thompson",
-    role: "Marketing Director, GrowthCo",
-    company: "GrowthCo",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    content: "Working with Virtus has been a game-changer. Their team's expertise in digital advertising helped us achieve ROI we never thought possible. Professional, responsive, and results-driven.",
-    rating: 5
-  },
-  {
-    name: "Amanda Lee",
-    role: "Founder, StyleHub",
-    company: "StyleHub",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop",
-    content: "The website they built for us is not just beautiful—it's a conversion machine. Our online sales have doubled, and customer feedback has been overwhelmingly positive. Thank you, Virtus!",
-    rating: 5
-  },
-  {
-    name: "James Wilson",
-    role: "VP of Sales, MegaCorp",
-    company: "MegaCorp",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
-    content: "Exceptional service from start to finish. The team at Virtus understood our vision and delivered beyond expectations. Our brand has never looked better, and the results speak for themselves.",
-    rating: 5
   }
 ];
 
@@ -135,7 +101,7 @@ const AboutPage = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t('about.page.title')}
             </h1>
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
@@ -145,169 +111,150 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* About Content Section */}
       <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto space-y-6">
-            <p className="text-base text-gray-300 leading-relaxed">
-              {t('about.page.desc1')}
-            </p>
-            <p className="text-base text-gray-300 leading-relaxed">
-              {t('about.page.desc2')}
-            </p>
-          </div>
-
-          {/* New About Content */}
-          <div className="mt-16 space-y-12">
-            {/* Who We Are */}
-            <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                {t('aboutus.who')}
-              </h3>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                {t('aboutus.who.desc')}
+          <div className="max-w-5xl mx-auto space-y-8">
+            <div className="text-center mb-12">
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                {t('about.page.desc1')}
+              </p>
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                {t('about.page.desc2')}
               </p>
             </div>
 
-            {/* Our Evolution */}
-            <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                {t('aboutus.evolution.title')}
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl font-bold text-primary">2010</span>
-                  <p className="text-lg text-gray-300">{t('aboutus.evolution.2010')}</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl font-bold text-primary">2022</span>
-                  <p className="text-lg text-gray-300">{t('aboutus.evolution.2022')}</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl font-bold text-primary">2024</span>
-                  <p className="text-lg text-gray-300">{t('aboutus.evolution.2024')}</p>
-                </div>
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+              <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
+                <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">700+</div>
+                <div className="text-sm text-gray-400 font-medium">{t('about.stats.projects')}</div>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
+                <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">500+</div>
+                <div className="text-sm text-gray-400 font-medium">{t('about.stats.clients')}</div>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
+                <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">5+</div>
+                <div className="text-sm text-gray-400 font-medium">{t('about.stats.experience')}</div>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
+                <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">98%</div>
+                <div className="text-sm text-gray-400 font-medium">{t('about.stats.satisfaction')}</div>
               </div>
             </div>
 
-            {/* Our Expertise */}
-            <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                {t('aboutus.expertise.title')}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-300">{t('aboutus.expertise.1')}</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-300">{t('aboutus.expertise.2')}</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-300">{t('aboutus.expertise.3')}</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-300">{t('aboutus.expertise.4')}</p>
-                </div>
-              </div>
+            {/* About Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {/* Who We Are */}
+              <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-500">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {t('aboutus.who')}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {t('aboutus.who.desc')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Our Principle */}
+              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-blue-500/10 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/30 transition-all duration-500">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {t('aboutus.principle')}
+                  </h3>
+                  <p className="text-primary font-semibold mb-4">Build with Virtue.</p>
+                  <p className="text-gray-300">
+                    {t('aboutus.principle.desc')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Mission */}
+              <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-500">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {t('aboutus.mission')}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {t('aboutus.mission.desc')}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Vision */}
+              <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-500">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {t('aboutus.vision')}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {t('aboutus.vision.desc')}
+                  </p>
+                </CardContent>
+              </Card>
             </div>
 
-            {/* Our Principle */}
-            <div className="bg-gradient-to-r from-primary/10 to-blue-500/10 backdrop-blur-sm border border-primary/30 rounded-2xl p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-[1.02]">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                {t('aboutus.principle')}
-              </h3>
-              <p className="text-xl text-primary font-semibold mb-4">Build with Virtue.</p>
-              <p className="text-lg text-gray-300">
-                {t('aboutus.principle.desc')}
-              </p>
-            </div>
-
-            {/* Mission & Vision */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {t('aboutus.mission')}
+            {/* Evolution Timeline */}
+            <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 mb-16">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                  {t('aboutus.evolution.title')}
                 </h3>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  {t('aboutus.mission.desc')}
-                </p>
-              </div>
-              <div className="bg-card/20 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {t('aboutus.vision')}
-                </h3>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  {t('aboutus.vision.desc')}
-                </p>
-              </div>
-            </div>
-          </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <p className="text-gray-300">{t('aboutus.evolution.2010')}</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <p className="text-gray-300">{t('aboutus.evolution.2022')}</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <p className="text-gray-300">{t('aboutus.evolution.2024')}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mt-16">
-            <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">700+</div>
-              <div className="text-sm text-gray-400 font-medium">{t('about.stats.projects')}</div>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">500+</div>
-              <div className="text-sm text-gray-400 font-medium">{t('about.stats.clients')}</div>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">5+</div>
-              <div className="text-sm text-gray-400 font-medium">{t('about.stats.experience')}</div>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">98%</div>
-              <div className="text-sm text-gray-400 font-medium">{t('about.stats.satisfaction')}</div>
-            </div>
+            {/* Expertise */}
+            <Card className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-500">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                  {t('aboutus.expertise.title')}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-gray-300">{t('aboutus.expertise.1')}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-gray-300">{t('aboutus.expertise.2')}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-gray-300">{t('aboutus.expertise.3')}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
+                    <p className="text-gray-300">{t('aboutus.expertise.4')}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              {t('about.values.title')}
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              {t('about.values.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <Card key={index} className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <div className="inline-flex p-4 bg-primary/20 rounded-xl mb-4">
-                      <Icon className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 text-white">{t(value.titleKey)}</h3>
-                    <p className="text-sm text-gray-400">{t(value.descKey)}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Process Section */}
       <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t('about.process.title')}
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
               {t('about.process.subtitle')}
             </p>
           </div>
@@ -317,19 +264,19 @@ const AboutPage = () => {
               const Icon = item.icon;
               return (
                 <Card key={index} className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-500">
-                  <CardContent className="p-8">
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col md:flex-row gap-4 items-start">
                       <div className="flex-shrink-0">
-                        <div className="text-6xl font-bold text-primary/20">{item.step}</div>
+                        <div className="text-4xl font-bold text-primary/20">{item.step}</div>
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="p-3 bg-primary/20 rounded-lg">
-                            <Icon className="h-6 w-6 text-primary" />
+                          <div className="p-2 bg-primary/20 rounded-lg">
+                            <Icon className="h-5 w-5 text-primary" />
                           </div>
-                          <h3 className="text-2xl font-bold text-white">{t(item.titleKey)}</h3>
+                          <h3 className="text-xl font-bold text-white">{t(item.titleKey)}</h3>
                         </div>
-                        <p className="text-lg text-gray-300 leading-relaxed">{t(item.descKey)}</p>
+                        <p className="text-gray-300 leading-relaxed">{t(item.descKey)}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -344,10 +291,10 @@ const AboutPage = () => {
       <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
               {t('about.team.title')}
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
               {t('about.team.subtitle')}
             </p>
           </div>
@@ -355,12 +302,12 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
               <Card key={index} className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-2">
-                <CardContent className="p-6 text-center">
-                  <Avatar className="w-32 h-32 mx-auto mb-4 border-4 border-primary/20">
+                <CardContent className="p-4 text-center">
+                  <Avatar className="w-24 h-24 mx-auto mb-3 border-4 border-primary/20">
                     <AvatarImage src={member.image} alt={member.name} />
                     <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                   </Avatar>
-                  <h3 className="text-xl font-bold mb-1 text-white">{member.name}</h3>
+                  <h3 className="text-lg font-bold mb-1 text-white">{member.name}</h3>
                   <p className="text-sm text-blue-400 font-semibold mb-2">{member.role}</p>
                   <p className="text-sm text-gray-400">{member.bio}</p>
                 </CardContent>
@@ -370,46 +317,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19]">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
-              {t('about.testimonials.page.title')}
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              {t('about.testimonials.page.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-2 border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 leading-relaxed mb-6 italic">
-                    "{testimonial.content}"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <Avatar className="w-12 h-12 border-2 border-primary/20">
-                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                      <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div className="font-semibold text-white">{testimonial.name}</div>
-                      <div className="text-sm text-gray-400">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary via-blue-600 to-primary relative overflow-hidden">
@@ -419,18 +326,20 @@ const AboutPage = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('about.cta.page.title')}
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             {t('about.cta.page.subtitle')}
           </p>
-          <button 
+          <Button 
+            size="lg"
             className="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-xl"
             onClick={() => window.location.href = '/contact'}
           >
             {t('about.cta.page.button')}
-          </button>
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </section>
 

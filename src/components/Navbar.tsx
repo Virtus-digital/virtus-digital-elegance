@@ -45,10 +45,10 @@ const Navbar = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 py-4 max-w-full overflow-x-hidden">
+        <div className="container mx-auto px-4 sm:px-6 py-4 max-w-7xl">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 ml-4">
               <Link to="/" className="text-2xl font-bold text-white hover:text-primary transition-colors">
                 Virtus
               </Link>
@@ -115,7 +115,7 @@ const Navbar = () => {
             </div>
             
             {/* Desktop Language Switcher */}
-            <div className="hidden lg:flex flex-shrink-0">
+            <div className="hidden lg:flex flex-shrink-0 mr-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-2 px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/20 text-primary font-medium transition-all duration-300 text-sm">
@@ -165,7 +165,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden flex items-center gap-2 sm:gap-4">
+            <div className="lg:hidden flex items-center gap-2 sm:gap-4 mr-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/20 text-primary font-medium transition-all duration-300 text-xs sm:text-sm">

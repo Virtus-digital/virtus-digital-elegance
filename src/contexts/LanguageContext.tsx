@@ -36,31 +36,33 @@ const translations = {
     'hero.cta.start': 'Projenize Başlayın',
     
     // Banner Slider
-    'banner.slide1.title': 'Kim Olduğumuz',
-    'banner.slide1.subtitle': 'Yaratıcılığı stratejiyle buluşturan dijital ajans',
-    'banner.slide1.description': 'Markanı dijitalde büyütmek için buradayız.',
-    'banner.slide2.title': 'Hizmetler & Uzmanlıklar',
-    'banner.slide2.subtitle': 'Web tasarım, sosyal medya, reklam yönetimi — hepsi tek çatı altında',
-    'banner.slide2.description': 'Sonuç odaklı dijital çözümler.',
-    'banner.slide3.title': 'Değer Teklifi & Farkımız',
-    'banner.slide3.subtitle': 'Yaratıcılıkla ölçülebilir başarıyı birleştiriyoruz',
-    'banner.slide3.description': 'Sadece görünür değil, hatırlanır olun.',
-    'banner.slide4.title': 'Sonuç & Başarı Hikayeleri',
-    'banner.slide4.subtitle': '100+ markanın dijital dönüşümünde yanındaydık',
-    'banner.slide4.description': 'Gerçek sonuçlar, gerçek büyüme.',
+    'banner.slide1.title': 'Marka Özü',
+    'banner.slide1.subtitle': 'Build with Virtue. Perform with Data.',
+    'banner.slide1.description': 'Stratejiden koda, reklamlardan analitiğe kadar — Virtus Digital performans odaklı uçtan uca dijital ekosistemler tasarlar.',
+    'banner.slide2.title': 'Dijital Pazarlama Uzmanlığı',
+    'banner.slide2.subtitle': '15+ Yıllık Deneyimle Veriye Dayalı Dijital Pazarlama.',
+    'banner.slide2.description': 'Sertifikalı bir Google Partner olarak, kanıtlanmış stratejiler ve hassas izleme ile markaları Google, Meta ve YouTube\'da ölçeklendiriyoruz.',
+    'banner.slide3.title': 'IT & Özel Geliştirme',
+    'banner.slide3.subtitle': 'İşinizi Güçlendiren Kod.',
+    'banner.slide3.description': 'Özel CRM\'lerden çok dilli web sitelerine kadar — iş mantığınıza uygun, güvenilir ve ölçeklenebilir sistemler tasarlıyoruz.',
+    'banner.slide4.title': 'Harekete Geçme Çağrısı',
+    'banner.slide4.subtitle': 'Büyüme Yolculuğunuza Başlamaya Hazır mısınız?',
+    'banner.slide4.description': 'Vizyonunuzu yüksek performansa dönüştürelim.',
     'banner.cta.explore': 'Hizmetlerimizi Keşfedin',
     'banner.cta.start': 'Hemen Başlayalım',
 
     // Homepage (About Us content)
     'home.headline': 'Güvenilir Dijital Büyüme Ortağınız – Koddan Başarıya',
     'home.p1': 'Virtus Digital, web geliştirme, özel yazılım, reklamcılık ve analitik alanlarında uçtan uca dijital çözümler sunan tam kapsamlı bir teknoloji ve pazarlama şirketidir. Resmî bir Google Partner ajansı olarak, 15 yılı aşkın deneyimimiz mühendislik titizliğini veriye dayalı pazarlamayla birleştirerek markaların daha akıllı ve güçlü büyümesini sağlar.',
-    'home.p2': '2010 yılında kurulan, 2022 yılında Digitalize Cyprus markasıyla genişleyen ve 2024 yılında Virtus Digital çatısı altında yeniden yapılanan şirketimiz, bugün Avrupa ve Asya genelinde hizmet vermektedir. Geliştirici, stratejist ve yaratıcı uzmanlardan oluşan ekibimiz, ölçülebilir ve ölçeklenebilir çözümler üreterek dijital yatırımları gerçek büyümeye dönüştürür.',
+    'home.p2': '',
 
     // About (About Us page dedicated content)
     'aboutus.who': 'Virtus Digital; yazılım, web geliştirme ve performans pazarlaması alanlarında uçtan uca çözümler sunan teknoloji odaklı bir ajanstır. 2010 yılında kurulmuş olup, teknik uzmanlık ile yaratıcı zekâyı bir araya getirerek ölçülebilir dijital başarılar üretmektedir.',
+    'aboutus.evolution.title': 'Gelişimimiz',
     'aboutus.evolution.2010': '2010 – Dijital pazarlama ve yazılım hizmetleri sunmaya başladık.',
     'aboutus.evolution.2022': '2022 – Digitalize Cyprus markasını hayata geçirerek Google Partner olduk.',
-    'aboutus.evolution.2024': '2024 – Virtus Digital markasıyla Avrupa ve Asya’da hizmet ağımızı genişlettik.',
+    'aboutus.evolution.2024': '2024 – Virtus Digital markasıyla Avrupa ve Asya\'da hizmet ağımızı genişlettik.',
+    'aboutus.expertise.title': 'Uzmanlık Alanlarımız',
     'aboutus.expertise.1': 'Özel kodlu web siteleri ve CRM sistemleri',
     'aboutus.expertise.2': 'Google, Meta, YouTube ve LinkedIn reklamları',
     'aboutus.expertise.3': 'Analitik, SEO ve takip sistemleri',
@@ -75,9 +77,8 @@ const translations = {
     'aboutus.vision.desc': 'Kalite, yenilik ve ölçülebilir başarıyla tanınan güvenilir bir global dijital iş ortağı olmak.',
     
     // Index Page
-    'index.services.title': 'En İyi Yaptığımız İşler',
-    'index.services.subtitle1': 'Sadece web siteleri yapmıyor veya reklam yönetmiyoruz. Hedef kitlenizin markanızı nasıl algıladığını ve etkileşime geçtiğini dönüştüren kapsamlı dijital stratejiler oluşturuyoruz.',
-    'index.services.subtitle2': 'İlk konseptten son uygulamaya kadar her adımda yanınızdayız—zorlukları fırsatlara, fikirleri ölçülebilir sonuçlara dönüştürüyoruz.',
+    'index.services.title': 'Teknolojinin Performansla Buluştuğu Yer.',
+    'index.services.subtitle1': 'Koddan reklama kadar — performans, ölçeklenebilirlik ve ilham için tasarlanmış dijital ekosistemler geliştiriyoruz.',
     'index.services.more': 'Ve bu sadece başlangıç. Dijital varlığınızın her yönünü kapsamak için tasarlanmış 5 ana hizmet sunuyoruz.',
     'index.services.explore': 'Tüm Hizmetleri Keşfedin',
     'index.services.learn': 'Daha Fazla Bilgi',
@@ -88,28 +89,59 @@ const translations = {
     'index.service.software.tagline': 'Süreçlerinizi dijitalleştirin',
     'index.service.seo.tagline': 'Organik görünürlüğünüzü artırın',
     
-    'index.portfolio.title': 'Konuşan Başarı Hikayeleri',
-    'index.portfolio.subtitle1': 'Rakamlar yalan söylemez. Dünya çapında 700\'den fazla markaya dijital varlıklarını dönüştürme ve olağanüstü büyüme elde etmede yardımcı olduk. İşte en gurur duyduğumuz anlardan bazıları.',
-    'index.portfolio.subtitle2': 'Her proje bir ortaklıktır. Her başarı paylaşılır. Bir sonraki başarı hikayenizi birlikte yazalım.',
+    'index.portfolio.title': 'Kanıtlanmış Sonuçlar. Gerçek Etki.',
+    'index.portfolio.subtitle1': 'Yüksek performanslı reklam kampanyalarından özel yazılımlara kadar, fikirleri ölçülebilir büyümeye dönüştürüyoruz.',
     'index.portfolio.more': 'Bunlar 700+ başarılı projemizden sadece 3 tanesi. Her biri benzersiz bir meydan okuma, yaratıcı bir çözüm ve memnun bir müşteriyi temsil ediyor.',
     'index.portfolio.view': 'Tüm Portföyü Görün',
     'index.portfolio.3d.title': '3D Proje Galerisi',
     'index.portfolio.click': 'Ziyaret etmek için tıklayın',
     
-    'index.why.title': 'Neden Farklıyız',
+    'index.why.title': 'Neden Bizi Seçmelisiniz',
     'index.why.subtitle': 'Sadece başka bir dijital ajans değiliz. Hikaye anlatıcıları, problem çözücüler ve büyüme hackerleri bir aradayız.',
-    'index.why.award.title': 'Ödüllü Mükemmellik',
-    'index.why.award.desc': 'İşimiz kendini gösteriyor. Dijital pazarlama, tasarım düşüncesi ve veri odaklı stratejilerdeki yenilikçi yaklaşımlarımızla sektör liderleri tarafından tanındık. Ancak ödüller sadece pasta üzerindeki çilektir—gerçekten önemli olan işletmeniz için yarattığımız etkidir.',
-    'index.why.team.title': 'Gerçekten Önemseyen Bir Ekip',
-    'index.why.team.desc': 'Yüzsüz bir şirket değiliz. Başarınızı gerçekten önemseyen yaratıcılar, stratejistler, geliştiriciler ve pazarlamacılardan oluşan tutkulu bir ekibiz. Sizin kazanımlarınız bizim kazanımlarımız. Zorluklarınız bizim misyonlarımız oluyor. İlk günden lansman gününe ve ötesine kadar bu işte birlikteyiz.',
-    'index.why.results.title': 'Ölçebileceğiniz Sonuçlar',
-    'index.why.results.desc': 'Güzel tasarımlar harika ama sonuçsuz hiçbir şey ifade etmezler. Bu yüzden yaptığımız her şey verilerle desteklenir, titizlikle test edilir ve sürekli optimize edilir. Sadece büyüme vaat etmiyoruz—onu sunuyor, takip ediyor ve alt satırınız için önemli olan gerçek metriklerle kanıtlıyoruz.',
-    'index.why.more': 'Ekibimiz, sürecimiz ve bizi harekete geçiren şeyler hakkında daha fazla bilgi edinmek ister misiniz?',
-    'index.why.more.bold': 'Hikayemizi sizinle paylaşmaktan mutluluk duyarız.',
-    'index.why.cta': 'Ekiple Tanışın',
     
-    'index.testimonials.title': 'Müşterilerimiz Ne Diyor',
-    'index.testimonials.subtitle': 'Sadece bizim sözümüze güvenmeyin. İşte bizimle çalışma hakkında gerçek işletme sahiplerinin söyledikleri.',
+    // Core Values
+    'index.why.values.title': 'Temel Değerler ve Yaklaşım',
+    'index.why.values.integrity.title': 'Önce Dürüstlük',
+    'index.why.values.integrity.desc': 'Satılacak olanı değil, gerekli olanı söyleriz. Müşterilerimizin gerçek ihtiyaçlarını anlayarak en uygun çözümleri sunuyoruz.',
+    'index.why.values.customer.title': 'Müşteri Odaklı Yaklaşım',
+    'index.why.values.customer.desc': 'Her proje, hedeflerinizi anlayarak başlar. Sizin başarınız bizim başarımızdır ve bu yaklaşım her kararımızda öncelikli.',
+    'index.why.values.passion.title': 'Her Detayda Tutku',
+    'index.why.values.passion.desc': 'Yaptığımız işi seviyoruz, bu da sonuçlara yansıyor. Her projede tutkumuzu ve kalite standartlarımızı görebilirsiniz.',
+    
+    // Expertise
+    'index.why.expertise.title': 'Uzmanlık ve Yetkinlik',
+    'index.why.expertise.google.title': 'Sertifikalı Google Partner',
+    'index.why.expertise.google.desc': 'Performans pazarlamasında kanıtlanmış uzmanlık. Google\'ın resmi partneri olarak en güncel stratejileri uyguluyoruz.',
+    'index.why.expertise.team.title': 'Full-Stack Geliştirme Ekibi',
+    'index.why.expertise.team.desc': 'Front-end\'ten back-end\'e birden fazla teknolojiye hakim. Modern teknolojilerle güçlü ve ölçeklenebilir çözümler üretiyoruz.',
+    'index.why.expertise.experience.title': 'Sektörler Arası Deneyim',
+    'index.why.expertise.experience.desc': 'Sağlık, inşaat, turizm gibi alanlara özel dijital çözümler üretiyoruz. Her sektörün ihtiyaçlarını anlayarak özelleştirilmiş stratejiler geliştiriyoruz.',
+    
+    // How We Work
+    'index.why.work.title': 'Nasıl Çalışıyoruz',
+    'index.why.work.endtoend.title': 'Uçtan Uca Teslim',
+    'index.why.work.endtoend.desc': 'Fikirden yayına kadar tüm süreçleri biz yönetiyoruz. Tasarımdan geliştirmeye, pazarlamadan optimizasyona kadar her şeyi kapsıyoruz.',
+    'index.why.work.agile.title': 'Çevik ve Veriye Dayalı',
+    'index.why.work.agile.desc': 'Ölçülebilir sonuçlar için sürekli test ve iyileştirme yapıyoruz. Her kararımız verilerle desteklenir ve sürekli optimize edilir.',
+    'index.why.work.longterm.title': 'Uzun Vadeli Yaklaşım',
+    'index.why.work.longterm.desc': 'Teslimden sonra da destek ve optimizasyon sunuyoruz. Sadece proje teslim etmiyoruz, sürekli büyümenizi destekliyoruz.',
+    
+    // What Defines Us
+    'index.why.defines.title': 'Bizi Tanımlayanlar',
+    'index.why.defines.honest.title': 'Dürüst İş Birliği',
+    'index.why.defines.honest.desc': 'Gerçekten fayda sağlayacak çözümleri öneriyoruz. Sadece satış odaklı değil, değer odaklı yaklaşım sergiliyoruz.',
+    'index.why.defines.trusted.title': 'Güvene Dayalı Ortaklık',
+    'index.why.defines.trusted.desc': 'Başarımız müşterilerimizin başarısıyla büyür. Uzun vadeli ilişkiler kurarak birlikte büyüyoruz.',
+    'index.why.defines.creation.title': 'Üretmenin Keyfi',
+    'index.why.defines.creation.desc': 'Müşterilerimizin memnuniyetini görmekten mutluluk duyuyoruz. Her proje bizim için bir tutku ve yaratıcılık fırsatı.',
+    
+    // CTA
+    'index.why.cta.title': 'Ekibimiz, sürecimiz ve bizi harekete geçiren şeyler hakkında daha fazla bilgi edinmek ister misiniz?',
+    'index.why.cta.subtitle': 'Hikayemizi sizinle paylaşmaktan mutluluk duyarız.',
+    'index.why.cta.button': 'Hakkımızda Daha Fazla Bilgi',
+    
+    'index.testimonials.title': 'Kanıtlanmış Sonuçlar. Gerçek Etki.',
+    'index.testimonials.subtitle': 'Yüksek performanslı reklam kampanyalarından özel yazılımlara kadar, fikirleri ölçülebilir büyümeye dönüştürüyoruz.',
     'index.testimonials.more': 'Bunlar başarı hikayelerimizden sadece birkaçı. Yüzlerce işletmenin benzer—ve hatta daha iyi—sonuçlar elde etmesine yardımcı olduk. Yeni başlayanlardan yerleşik işletmelere kadar müşterilerimiz sürekli olarak dijital performanslarında dramatik iyileşmeler bildiriyor.',
     'index.testimonials.cta': 'Daha Fazla Başarı Hikayesi',
     
@@ -119,11 +151,17 @@ const translations = {
     'index.cta.view': 'Çalışmalarımızı Görün',
     
     // New Homepage Section
-    'homepage.new.title': 'Virtus Digital ile Dijitalde Güç Kazanın',
-    'homepage.new.subtitle': 'Güvenilir Dijital Büyüme Ortağınız – Koddan Başarıya',
+    'homepage.new.title': 'Build with Virtue, Perform with Data',
+    'homepage.new.subtitle': 'Gerçek sonuçlar üreten teknoloji ve pazarlama çözümleri geliştiren mühendisler, stratejistler ve yaratıcı profesyonellerden oluşan bir ekibiz.',
     'homepage.new.desc1': 'Virtus Digital, web geliştirme, özel yazılım, reklamcılık ve analitik alanlarında uçtan uca dijital çözümler sunan tam kapsamlı bir teknoloji ve pazarlama şirketidir. Resmî bir Google Partner ajansı olarak, 15 yılı aşkın deneyimimiz mühendislik titizliğini veriye dayalı pazarlamayla birleştirerek markaların daha akıllı ve güçlü büyümesini sağlar.',
-    'homepage.new.desc2': '2010 yılında kurulan, 2022 yılında Digitalize Cyprus markasıyla genişleyen ve 2024 yılında Virtus Digital çatısı altında yeniden yapılanan şirketimiz, bugün Avrupa ve Asya genelinde hizmet vermektedir. Geliştirici, stratejist ve yaratıcı uzmanlardan oluşan ekibimiz, ölçülebilir ve ölçeklenebilir çözümler üreterek dijital yatırımları gerçek büyümeye dönüştürür.',
+    'homepage.new.desc2': '',
     'homepage.new.button': 'Daha Fazla',
+    
+    // Trusted Partner Section
+    'homepage.trusted.title': 'Güvenilir Dijital Büyüme Ortağınız – Koddan Başarıya',
+    'homepage.trusted.desc1': 'Virtus Digital, web geliştirme, özel yazılım, reklamcılık ve analitik alanlarında uçtan uca dijital çözümler sunan tam kapsamlı bir teknoloji ve pazarlama şirketidir. Resmî bir Google Partner ajansı olarak, 15 yılı aşkın deneyimimiz mühendislik titizliğini veriye dayalı pazarlamayla birleştirerek markaların daha akıllı ve güçlü büyümesini sağlar.',
+    'homepage.trusted.desc2': '2010 yılında kurulan, 2022 yılında Digitalize Cyprus markasıyla genişleyen ve 2024 yılında Virtus Digital çatısı altında yeniden yapılanan şirketimiz, bugün Avrupa ve Asya genelinde hizmet vermektedir. Geliştirici, stratejist ve yaratıcı uzmanlardan oluşan ekibimiz, ölçülebilir ve ölçeklenebilir çözümler üreterek dijital yatırımları gerçek büyümeye dönüştürür.',
+    'homepage.trusted.button': 'Daha Fazla',
     
     // Portfolio Page
     'portfolio.page.title': 'Portföyümüz',
@@ -260,6 +298,11 @@ const translations = {
     'service.social-media.details': 'Görseller, hikaye anlatımı ve performans odaklı stratejilerle sosyal medya varlığınızı büyütüyoruz.',
     'service.social-media.features': 'Aylık içerik planlama ve üretim • Reels, hikayeler, YouTube Shorts • Topluluk yönetimi ve etkileşim • Analitik takibi ve sürekli optimizasyon',
     
+    'service.hosting-email.title': 'Hosting ve Email Servisleri',
+    'service.hosting-email.desc': 'Güvenilir Dijital Altyapı',
+    'service.hosting-email.details': 'Hızlı, güvenli ve ölçeklenebilir hosting çözümleri ile profesyonel email servisleri sunuyoruz.',
+    'service.hosting-email.features': 'SSD hosting, SSL sertifikaları • Email hosting ve kurumsal email • 7/24 teknik destek • Yedekleme ve güvenlik hizmetleri',
+    
     // CTA
     'cta.title': 'Dijital Varlığınızı Dönüştürmeye Hazır mısınız?',
     'cta.subtitle': 'Hizmetlerimizin işletme hedeflerinize nasıl ulaşmanıza yardımcı olabileceğini konuşalım.',
@@ -395,31 +438,33 @@ const translations = {
     'hero.cta.start': 'Start Your Project',
     
     // Banner Slider
-    'banner.slide1.title': 'Who We Are',
-    'banner.slide1.subtitle': 'Digital agency that combines creativity with strategy',
-    'banner.slide1.description': 'We are here to grow your brand in the digital world.',
-    'banner.slide2.title': 'Services & Expertise',
-    'banner.slide2.subtitle': 'Web design, social media, ad management — all under one roof',
-    'banner.slide2.description': 'Result-oriented digital solutions.',
-    'banner.slide3.title': 'Value Proposition & Our Difference',
-    'banner.slide3.subtitle': 'We combine creativity with measurable success',
-    'banner.slide3.description': 'Be not just visible, but memorable.',
-    'banner.slide4.title': 'Results & Success Stories',
-    'banner.slide4.subtitle': 'We were with 100+ brands in their digital transformation',
-    'banner.slide4.description': 'Real results, real growth.',
+    'banner.slide1.title': 'Brand Essence',
+    'banner.slide1.subtitle': 'Build with Virtue. Perform with Data.',
+    'banner.slide1.description': 'From strategy to code, ads to analytics — Virtus Digital crafts complete growth ecosystems built for performance.',
+    'banner.slide2.title': 'Digital Marketing Expertise',
+    'banner.slide2.subtitle': '15+ Years of Data-Driven Digital Marketing.',
+    'banner.slide2.description': 'As a certified Google Partner, we blend proven strategy and precision tracking to scale brands across Google, Meta & YouTube.',
+    'banner.slide3.title': 'IT & Custom Development',
+    'banner.slide3.subtitle': 'Code that Powers Business.',
+    'banner.slide3.description': 'From custom CRMs to multilingual websites, we engineer reliable, scalable systems tailored to your business logic.',
+    'banner.slide4.title': 'Call to Action',
+    'banner.slide4.subtitle': 'Ready to Build Your Growth Stack?',
+    'banner.slide4.description': 'Let\'s turn your vision into performance.',
     'banner.cta.explore': 'Explore Our Services',
     'banner.cta.start': 'Let\'s Get Started',
 
     // Homepage (About Us content)
     'home.headline': 'Trusted Digital Growth Partner – From Code to Conversion',
     'home.p1': 'Virtus Digital is a full-service technology and marketing company delivering complete digital ecosystems — from custom-coded websites and CRMs to Google-grade advertising and analytics. As an official Google Partner agency, our 15-year track record combines engineering precision with data-driven marketing to help brands grow smarter and perform better.',
-    'home.p2': 'Founded in 2010, expanded under the Digitalize Cyprus brand in 2022, and restructured as Virtus Digital in 2024, we now operate globally, serving clients across Europe and Asia. Our multidisciplinary team of developers, strategists, and creative professionals builds measurable, scalable solutions that turn digital investment into real business growth.',
+    'home.p2': '',
 
     // About (About Us page dedicated content)
     'aboutus.who': 'Virtus Digital is a technology-driven agency providing end-to-end solutions in software, web development, and performance marketing. Founded in 2010, we unite technical expertise and creative intelligence to deliver measurable digital success.',
+    'aboutus.evolution.title': 'Our Evolution',
     'aboutus.evolution.2010': '2010 – Began offering professional digital marketing and software services.',
     'aboutus.evolution.2022': '2022 – Launched the Digitalize Cyprus brand and became an official Google Partner.',
     'aboutus.evolution.2024': '2024 – Established Virtus Digital, expanding operations across Europe and Asia.',
+    'aboutus.expertise.title': 'Our Expertise',
     'aboutus.expertise.1': 'Custom-coded websites and CRMs',
     'aboutus.expertise.2': 'Google, Meta, YouTube & LinkedIn Ads',
     'aboutus.expertise.3': 'Analytics, tracking, and SEO',
@@ -434,9 +479,8 @@ const translations = {
     'aboutus.vision.desc': 'To become a trusted, global digital partner known for quality, innovation, and measurable success.',
     
     // Index Page
-    'index.services.title': 'What We Do Best',
-    'index.services.subtitle1': 'We don\'t just build websites or run ads. We craft comprehensive digital strategies that transform how your audience perceives and interacts with your brand.',
-    'index.services.subtitle2': 'From initial concept to final execution, we\'re with you every step of the way—turning challenges into opportunities and ideas into measurable results.',
+    'index.services.title': 'Where Technology Meets Performance.',
+    'index.services.subtitle1': 'From code to campaigns — our team delivers complete digital ecosystems designed to perform, scale, and inspire.',
     'index.services.more': 'And that\'s just the beginning. We offer 5 main services designed to cover every aspect of your digital presence.',
     'index.services.explore': 'Explore All Services',
     'index.services.learn': 'Learn More',
@@ -447,28 +491,59 @@ const translations = {
     'index.service.software.tagline': 'Digitize your processes',
     'index.service.seo.tagline': 'Increase your organic visibility',
     
-    'index.portfolio.title': 'Success Stories That Speak',
-    'index.portfolio.subtitle1': 'Numbers don\'t lie. We\'ve helped over 700 brands worldwide transform their digital presence and achieve remarkable growth. Here are some of our proudest moments.',
-    'index.portfolio.subtitle2': 'Each project is a partnership. Each success is shared. Let\'s write your success story next.',
+    'index.portfolio.title': 'Proven Results. Real Impact.',
+    'index.portfolio.subtitle1': 'From high-performance ad campaigns to custom-coded systems — we turn ideas into measurable growth.',
     'index.portfolio.more': 'These are just 3 of our 700+ successful projects. Each one represents a unique challenge, a creative solution, and a satisfied client.',
     'index.portfolio.view': 'See Our Complete Portfolio',
     'index.portfolio.3d.title': '3D Project Gallery',
     'index.portfolio.click': 'Click to visit',
     
-    'index.why.title': 'Why We\'re Different',
+    'index.why.title': 'Why Choose Us',
     'index.why.subtitle': 'We\'re not just another digital agency. We\'re storytellers, problem-solvers, and growth hackers rolled into one.',
-    'index.why.award.title': 'Award-Winning Excellence',
-    'index.why.award.desc': 'Our work speaks for itself. We\'ve been recognized by industry leaders for our innovative approaches to digital marketing, design thinking, and data-driven strategies. But awards are just the cherry on top—what really matters is the impact we create for your business.',
-    'index.why.team.title': 'A Team That Actually Cares',
-    'index.why.team.desc': 'We\'re not a faceless corporation. We\'re a passionate team of creatives, strategists, developers, and marketers who genuinely care about your success. Your wins are our wins. Your challenges become our missions. We\'re in this together, from day one to launch day and beyond.',
-    'index.why.results.title': 'Results You Can Measure',
-    'index.why.results.desc': 'Pretty designs are great, but they mean nothing without results. That\'s why everything we do is backed by data, tested rigorously, and optimized continuously. We don\'t just promise growth—we deliver it, track it, and prove it with real metrics that matter to your bottom line.',
-    'index.why.more': 'Want to know more about our team, our process, and what makes us tick?',
-    'index.why.more.bold': 'We\'d love to share our story with you.',
-    'index.why.cta': 'Meet the Team',
     
-    'index.testimonials.title': 'What Our Clients Say',
-    'index.testimonials.subtitle': 'Don\'t just take our word for it. Here\'s what real business owners have to say about working with us.',
+    // Core Values
+    'index.why.values.title': 'Core Values & Mindset',
+    'index.why.values.integrity.title': 'Integrity First',
+    'index.why.values.integrity.desc': 'We say what\'s needed, not what sells. We understand our clients\' real needs and provide the most suitable solutions.',
+    'index.why.values.customer.title': 'Customer-Centric Approach',
+    'index.why.values.customer.desc': 'Every project starts by understanding your goals. Your success is our success, and this approach is our priority in every decision.',
+    'index.why.values.passion.title': 'Passion in Every Pixel',
+    'index.why.values.passion.desc': 'We love what we build, and it shows. You can see our passion and quality standards in every project.',
+    
+    // Expertise
+    'index.why.expertise.title': 'Expertise & Capability',
+    'index.why.expertise.google.title': 'Certified Google Partner',
+    'index.why.expertise.google.desc': 'Proven expertise in performance marketing. As Google\'s official partner, we apply the latest strategies.',
+    'index.why.expertise.team.title': 'Full-Stack Development Team',
+    'index.why.expertise.team.desc': 'Skilled in multiple technologies, from front-end to back-end. We create powerful and scalable solutions with modern technologies.',
+    'index.why.expertise.experience.title': 'Cross-Industry Experience',
+    'index.why.expertise.experience.desc': 'We create digital solutions tailored for healthcare, construction, tourism and more. We develop customized strategies by understanding each sector\'s needs.',
+    
+    // How We Work
+    'index.why.work.title': 'How We Work',
+    'index.why.work.endtoend.title': 'End-to-End Delivery',
+    'index.why.work.endtoend.desc': 'We manage all processes from idea to launch. We cover everything from design to development, marketing to optimization.',
+    'index.why.work.agile.title': 'Agile & Data-Driven',
+    'index.why.work.agile.desc': 'We continuously test and improve for measurable results. Every decision is data-backed and continuously optimized.',
+    'index.why.work.longterm.title': 'Long-Term Focus',
+    'index.why.work.longterm.desc': 'We provide support and optimization even after delivery. We don\'t just deliver projects, we support your continuous growth.',
+    
+    // What Defines Us
+    'index.why.defines.title': 'What Defines Us',
+    'index.why.defines.honest.title': 'Honest Collaboration',
+    'index.why.defines.honest.desc': 'We only recommend what truly benefits our clients. We don\'t just focus on sales, but on value-driven approach.',
+    'index.why.defines.trusted.title': 'Trusted Partnerships',
+    'index.why.defines.trusted.desc': 'Our success grows with yours. We grow together by building long-term relationships.',
+    'index.why.defines.creation.title': 'Enjoyment in Creation',
+    'index.why.defines.creation.desc': 'We take pride in making our clients happy. Every project is a passion and creativity opportunity for us.',
+    
+    // CTA
+    'index.why.cta.title': 'Want to know more about our team, our process, and what makes us tick?',
+    'index.why.cta.subtitle': 'We\'d love to share our story with you.',
+    'index.why.cta.button': 'Learn More About Us',
+    
+    'index.testimonials.title': 'Proven Results. Real Impact.',
+    'index.testimonials.subtitle': 'From high-performance ad campaigns to custom-coded systems — we turn ideas into measurable growth.',
     'index.testimonials.more': 'These are just a few of our success stories. We\'ve helped hundreds of businesses achieve similar—and even better—results. From startups to established enterprises, our clients consistently report dramatic improvements in their digital performance.',
     'index.testimonials.cta': 'Read More Success Stories',
     
@@ -478,11 +553,17 @@ const translations = {
     'index.cta.view': 'View Our Work',
     
     // New Homepage Section
-    'homepage.new.title': 'Gain Digital Power with Virtus Digital',
-    'homepage.new.subtitle': 'Trusted Digital Growth Partner – From Code to Conversion',
+    'homepage.new.title': 'Build with Virtue, Perform with Data',
+    'homepage.new.subtitle': 'A team of engineers, strategists, and creators crafting technology and marketing that drive real results.',
     'homepage.new.desc1': 'Virtus Digital is a full-service technology and marketing company delivering complete digital ecosystems — from custom-coded websites and CRMs to Google-grade advertising and analytics. As an official Google Partner agency, our 15-year track record combines engineering precision with data-driven marketing to help brands grow smarter and perform better.',
-    'homepage.new.desc2': 'Founded in 2010, expanded under the Digitalize Cyprus brand in 2022, and restructured as Virtus Digital in 2024, we now operate globally, serving clients across Europe and Asia. Our multidisciplinary team of developers, strategists, and creative professionals builds measurable, scalable solutions that turn digital investment into real business growth.',
+    'homepage.new.desc2': '',
     'homepage.new.button': 'Learn More',
+    
+    // Trusted Partner Section
+    'homepage.trusted.title': 'Trusted Digital Growth Partner – From Code to Conversion',
+    'homepage.trusted.desc1': 'Virtus Digital is a full-service technology and marketing company delivering complete digital ecosystems — from custom-coded websites and CRMs to Google-grade advertising and analytics. As an official Google Partner agency, our 15-year track record combines engineering precision with data-driven marketing to help brands grow smarter and perform better.',
+    'homepage.trusted.desc2': 'Founded in 2010, expanded under the Digitalize Cyprus brand in 2022, and restructured as Virtus Digital in 2024, we now operate globally, serving clients across Europe and Asia. Our multidisciplinary team of developers, strategists, and creative professionals builds measurable, scalable solutions that turn digital investment into real business growth.',
+    'homepage.trusted.button': 'Learn More',
     
     // Portfolio Page
     'portfolio.page.title': 'Our Portfolio',
@@ -728,6 +809,11 @@ const translations = {
     'service.social-media.desc': 'Creative That Connects.',
     'service.social-media.details': 'We manage and grow your social presence with visuals, storytelling, and performance-driven strategy.',
     'service.social-media.features': 'Monthly content planning & creative production • Reels, stories, YouTube shorts • Audience engagement & community management • Analytics & continuous optimization',
+    
+    'service.hosting-email.title': 'Hosting & Email Services',
+    'service.hosting-email.desc': 'Reliable Digital Infrastructure',
+    'service.hosting-email.details': 'Fast, secure, and scalable hosting solutions with professional email services.',
+    'service.hosting-email.features': 'SSD hosting, SSL certificates • Email hosting & business email • 24/7 technical support • Backup & security services',
   }
   ,
   it: {
@@ -740,31 +826,33 @@ const translations = {
     'nav.contact': 'Contatti',
 
     // Banner Slider
-    'banner.slide1.title': 'Chi Siamo',
-    'banner.slide1.subtitle': 'Agenzia digitale che unisce creatività e strategia',
-    'banner.slide1.description': 'Siamo qui per far crescere il tuo brand nel mondo digitale.',
-    'banner.slide2.title': 'Servizi & Competenze',
-    'banner.slide2.subtitle': 'Web design, social media e advertising — tutto in un unico partner',
-    'banner.slide2.description': 'Soluzioni digitali orientate ai risultati.',
-    'banner.slide3.title': 'Proposta di Valore & Differenza',
-    'banner.slide3.subtitle': 'Uniamo creatività e risultati misurabili',
-    'banner.slide3.description': 'Non solo visibile, ma memorabile.',
-    'banner.slide4.title': 'Risultati & Case Study',
-    'banner.slide4.subtitle': 'Al fianco di 100+ brand nella loro trasformazione digitale',
-    'banner.slide4.description': 'Risultati reali, crescita reale.',
+    'banner.slide1.title': 'Essenza del Brand',
+    'banner.slide1.subtitle': 'Build with Virtue. Perform with Data.',
+    'banner.slide1.description': 'Dalla strategia al codice, dalla pubblicità all\'analisi — Virtus Digital crea ecosistemi digitali completi orientati alle prestazioni.',
+    'banner.slide2.title': 'Esperienza in Marketing Digitale',
+    'banner.slide2.subtitle': 'Oltre 15 anni di marketing digitale basato sui dati.',
+    'banner.slide2.description': 'Come Google Partner certificato, uniamo strategia comprovata e tracciamento preciso per far crescere i brand su Google, Meta e YouTube.',
+    'banner.slide3.title': 'IT & Sviluppo Personalizzato',
+    'banner.slide3.subtitle': 'Codice che alimenta il business.',
+    'banner.slide3.description': 'Dai CRM personalizzati ai siti web multilingue, progettiamo sistemi affidabili e scalabili su misura per la tua azienda.',
+    'banner.slide4.title': 'Chiamata all\'Azione',
+    'banner.slide4.subtitle': 'Pronto a costruire la tua crescita digitale?',
+    'banner.slide4.description': 'Trasformiamo la tua visione in performance.',
     'banner.cta.explore': 'Scopri i Nostri Servizi',
     'banner.cta.start': 'Iniziamo',
     
     // Homepage (About Us content)
     'home.headline': 'Il tuo partner digitale di fiducia – Dal codice alla conversione',
     'home.p1': 'Virtus Digital è un’azienda tecnologica e di marketing a servizio completo che realizza ecosistemi digitali completi — dai siti web personalizzati alla pubblicità di livello Google e analitiche avanzate. In qualità di Google Partner ufficiale, uniamo 15 anni di esperienza, precisione ingegneristica e marketing basato sui dati per far crescere i brand in modo intelligente.',
-    'home.p2': 'Fondata nel 2010, ampliata con il marchio Digitalize Cyprus nel 2022 e riorganizzata come Virtus Digital nel 2024, oggi operiamo in tutto il mondo, offrendo servizi in Europa e Asia. Il nostro team multidisciplinare crea soluzioni scalabili e misurabili che trasformano l’investimento digitale in vera crescita aziendale.',
+    'home.p2': '',
 
     // About (About Us page dedicated content)
-    'aboutus.who': 'Virtus Digital è un’agenzia orientata alla tecnologia che offre soluzioni complete di sviluppo software, web e marketing digitale. Fondata nel 2010, unisce competenza tecnica e creatività per generare successo digitale misurabile.',
+    'aboutus.who': 'Virtus Digital è un\'agenzia orientata alla tecnologia che offre soluzioni complete di sviluppo software, web e marketing digitale. Fondata nel 2010, unisce competenza tecnica e creatività per generare successo digitale misurabile.',
+    'aboutus.evolution.title': 'La Nostra Evoluzione',
     'aboutus.evolution.2010': '2010 – Inizio dei servizi di marketing digitale e sviluppo software.',
     'aboutus.evolution.2022': '2022 – Lancio del marchio Digitalize Cyprus e adesione al programma Google Partner.',
     'aboutus.evolution.2024': '2024 – Nascita del marchio Virtus Digital, espansione delle attività in Europa e Asia.',
+    'aboutus.expertise.title': 'Le Nostre Competenze',
     'aboutus.expertise.1': 'Siti web e CRM personalizzati',
     'aboutus.expertise.2': 'Pubblicità Google, Meta, YouTube e LinkedIn',
     'aboutus.expertise.3': 'Analisi, tracciamento e SEO',
@@ -794,9 +882,8 @@ const translations = {
     'hero.cta.start': 'Inizia il Tuo Progetto',
     
     // Index Page
-    'index.services.title': 'Cosa Facciamo Meglio',
-    'index.services.subtitle1': 'Non costruiamo solo siti web o gestiamo annunci. Creiamo strategie digitali complete che trasformano il modo in cui il tuo pubblico percepisce e interagisce con il tuo brand.',
-    'index.services.subtitle2': 'Dal concetto iniziale all\'esecuzione finale, siamo con te ad ogni passo — trasformando le sfide in opportunità e le idee in risultati misurabili.',
+    'index.services.title': 'Dove la tecnologia incontra le prestazioni.',
+    'index.services.subtitle1': 'Dal codice alle campagne — il nostro team realizza ecosistemi digitali completi, pensati per performare, crescere e ispirare.',
     'index.services.more': 'E questo è solo l\'inizio. Offriamo 5 servizi principali progettati per coprire ogni aspetto della tua presenza digitale.',
     'index.services.explore': 'Esplora Tutti i Servizi',
     'index.services.learn': 'Scopri di Più',
@@ -807,28 +894,59 @@ const translations = {
     'index.service.software.tagline': 'Digitalizza i tuoi processi',
     'index.service.seo.tagline': 'Aumenta la tua visibilità organica',
     
-    'index.portfolio.title': 'Storie di Successo che Parlano',
-    'index.portfolio.subtitle1': 'I numeri non mentono. Abbiamo aiutato oltre 700 brand in tutto il mondo a trasformare la loro presenza digitale e raggiungere una crescita straordinaria. Ecco alcuni dei nostri momenti più orgogliosi.',
-    'index.portfolio.subtitle2': 'Ogni progetto è una partnership. Ogni successo è condiviso. Scriviamo insieme la tua storia di successo.',
+    'index.portfolio.title': 'Risultati comprovati. Impatto reale.',
+    'index.portfolio.subtitle1': 'Dalle campagne pubblicitarie ad alte prestazioni ai sistemi personalizzati — trasformiamo le idee in crescita misurabile.',
     'index.portfolio.more': 'Questi sono solo 3 dei nostri 700+ progetti di successo. Ognuno rappresenta una sfida unica, una soluzione creativa e un cliente soddisfatto.',
     'index.portfolio.view': 'Vedi il Nostro Portfolio Completo',
     'index.portfolio.3d.title': 'Galleria Progetti 3D',
     'index.portfolio.click': 'Clicca per visitare',
     
-    'index.why.title': 'Perché Siamo Diversi',
+    'index.why.title': 'Perché Sceglierci',
     'index.why.subtitle': 'Non siamo solo un\'altra agenzia digitale. Siamo narratori, risolutori di problemi e hacker della crescita in uno.',
-    'index.why.award.title': 'Eccellenza Premiata',
-    'index.why.award.desc': 'Il nostro lavoro parla da solo. Siamo stati riconosciuti dai leader del settore per i nostri approcci innovativi al marketing digitale, al design thinking e alle strategie basate sui dati. Ma i premi sono solo la ciliegina sulla torta—quello che conta davvero è l\'impatto che creiamo per la tua azienda.',
-    'index.why.team.title': 'Un Team che Ci Tiene Davvero',
-    'index.why.team.desc': 'Non siamo una corporazione senza volto. Siamo un team appassionato di creativi, strategisti, sviluppatori e marketer che si preoccupano davvero del tuo successo. Le tue vittorie sono le nostre vittorie. Le tue sfide diventano le nostre missioni. Siamo in questo insieme, dal primo giorno al giorno del lancio e oltre.',
-    'index.why.results.title': 'Risultati che Puoi Misurare',
-    'index.why.results.desc': 'I design belli sono fantastici, ma non significano nulla senza risultati. Ecco perché tutto quello che facciamo è supportato dai dati, testato rigorosamente e ottimizzato continuamente. Non promettiamo solo crescita—la forniamo, la tracciamo e la dimostriamo con metriche reali che contano per il tuo profitto.',
-    'index.why.more': 'Vuoi saperne di più sul nostro team, il nostro processo e cosa ci motiva?',
-    'index.why.more.bold': 'Ci piacerebbe condividere la nostra storia con te.',
-    'index.why.cta': 'Incontra il Team',
     
-    'index.testimonials.title': 'Cosa Dicono i Nostri Clienti',
-    'index.testimonials.subtitle': 'Non credere solo alle nostre parole. Ecco cosa dicono i veri proprietari di aziende sul lavorare con noi.',
+    // Core Values
+    'index.why.values.title': 'Valori e Mentalità',
+    'index.why.values.integrity.title': 'Integrità Prima di Tutto',
+    'index.why.values.integrity.desc': 'Diciamo ciò che serve, non ciò che vende. Comprendiamo i veri bisogni dei nostri clienti e forniamo le soluzioni più adatte.',
+    'index.why.values.customer.title': 'Approccio Orientato al Cliente',
+    'index.why.values.customer.desc': 'Ogni progetto inizia comprendendo i vostri obiettivi. Il vostro successo è il nostro successo, e questo approccio è la nostra priorità in ogni decisione.',
+    'index.why.values.passion.title': 'Passione in Ogni Dettaglio',
+    'index.why.values.passion.desc': 'Amiamo ciò che costruiamo, e si vede. Potete vedere la nostra passione e gli standard di qualità in ogni progetto.',
+    
+    // Expertise
+    'index.why.expertise.title': 'Competenze ed Esperienza',
+    'index.why.expertise.google.title': 'Partner Google Certificato',
+    'index.why.expertise.google.desc': 'Competenza riconosciuta nel performance marketing. Come partner ufficiale di Google, applichiamo le strategie più aggiornate.',
+    'index.why.expertise.team.title': 'Team di Sviluppo Full-Stack',
+    'index.why.expertise.team.desc': 'Esperti in più tecnologie, dal front-end al back-end. Creiamo soluzioni potenti e scalabili con tecnologie moderne.',
+    'index.why.expertise.experience.title': 'Esperienza in Diversi Settori',
+    'index.why.expertise.experience.desc': 'Adattiamo le soluzioni digitali a sanità, edilizia, viaggi e altro ancora. Sviluppiamo strategie personalizzate comprendendo le esigenze di ogni settore.',
+    
+    // How We Work
+    'index.why.work.title': 'Come Lavoriamo',
+    'index.why.work.endtoend.title': 'Gestione Completa',
+    'index.why.work.endtoend.desc': 'Dall\'idea al lancio, tutto gestito internamente. Copriamo tutto dalla progettazione allo sviluppo, dal marketing all\'ottimizzazione.',
+    'index.why.work.agile.title': 'Agile e Basato sui Dati',
+    'index.why.work.agile.desc': 'Costruiamo, testiamo e miglioriamo per risultati misurabili. Ogni decisione è supportata dai dati e continuamente ottimizzata.',
+    'index.why.work.longterm.title': 'Focus a Lungo Termine',
+    'index.why.work.longterm.desc': 'Supportiamo e ottimizziamo anche dopo la consegna. Non consegniamo solo progetti, supportiamo la vostra crescita continua.',
+    
+    // What Defines Us
+    'index.why.defines.title': 'Cosa Ci Definisce',
+    'index.why.defines.honest.title': 'Collaborazione Onesta',
+    'index.why.defines.honest.desc': 'Raccomandiamo solo ciò che porta reale valore. Non ci concentriamo solo sulle vendite, ma su un approccio basato sul valore.',
+    'index.why.defines.trusted.title': 'Partnership di Fiducia',
+    'index.why.defines.trusted.desc': 'Il nostro successo cresce con il vostro. Cresciamo insieme costruendo relazioni a lungo termine.',
+    'index.why.defines.creation.title': 'Piacere nella Creazione',
+    'index.why.defines.creation.desc': 'Siamo orgogliosi di vedere i clienti felici. Ogni progetto è per noi un\'opportunità di passione e creatività.',
+    
+    // CTA
+    'index.why.cta.title': 'Vuoi saperne di più sul nostro team, il nostro processo e cosa ci motiva?',
+    'index.why.cta.subtitle': 'Ci piacerebbe condividere la nostra storia con te.',
+    'index.why.cta.button': 'Scopri di Più su di Noi',
+    
+    'index.testimonials.title': 'Risultati comprovati. Impatto reale.',
+    'index.testimonials.subtitle': 'Dalle campagne pubblicitarie ad alte prestazioni ai sistemi personalizzati — trasformiamo le idee in crescita misurabile.',
     'index.testimonials.more': 'Queste sono solo alcune delle nostre storie di successo. Abbiamo aiutato centinaia di aziende a raggiungere risultati simili—e anche migliori. Dalle startup alle imprese consolidate, i nostri clienti riportano costantemente miglioramenti drammatici nelle loro performance digitali.',
     'index.testimonials.cta': 'Leggi Altre Storie di Successo',
     
@@ -838,11 +956,17 @@ const translations = {
     'index.cta.view': 'Guarda i Nostri Lavori',
     
     // New Homepage Section
-    'homepage.new.title': 'Acquista Potere Digitale con Virtus Digital',
-    'homepage.new.subtitle': 'Il tuo partner digitale di fiducia – Dal codice alla conversione',
+    'homepage.new.title': 'Build with Virtue, Perform with Data',
+    'homepage.new.subtitle': 'Un team di ingegneri, strateghi e creativi che sviluppa tecnologia e marketing capaci di generare risultati concreti.',
     'homepage.new.desc1': 'Virtus Digital è un\'azienda tecnologica e di marketing a servizio completo che realizza ecosistemi digitali completi — dai siti web personalizzati alla pubblicità di livello Google e analitiche avanzate. In qualità di Google Partner ufficiale, uniamo 15 anni di esperienza, precisione ingegneristica e marketing basato sui dati per far crescere i brand in modo intelligente.',
-    'homepage.new.desc2': 'Fondata nel 2010, ampliata con il marchio Digitalize Cyprus nel 2022 e riorganizzata come Virtus Digital nel 2024, oggi operiamo in tutto il mondo, offrendo servizi in Europa e Asia. Il nostro team multidisciplinare crea soluzioni scalabili e misurabili che trasformano l\'investimento digitale in vera crescita aziendale.',
+    'homepage.new.desc2': '',
     'homepage.new.button': 'Scopri di Più',
+    
+    // Trusted Partner Section
+    'homepage.trusted.title': 'Il tuo partner digitale di fiducia – Dal codice alla conversione',
+    'homepage.trusted.desc1': 'Virtus Digital è un\'azienda tecnologica e di marketing a servizio completo che realizza ecosistemi digitali completi — dai siti web personalizzati alla pubblicità di livello Google e analitiche avanzate. In qualità di Google Partner ufficiale, uniamo 15 anni di esperienza, precisione ingegneristica e marketing basato sui dati per far crescere i brand in modo intelligente.',
+    'homepage.trusted.desc2': 'Fondata nel 2010, ampliata con il marchio Digitalize Cyprus nel 2022 e riorganizzata come Virtus Digital nel 2024, oggi operiamo in tutto il mondo, offrendo servizi in Europa e Asia. Il nostro team multidisciplinare crea soluzioni scalabili e misurabili che trasformano l\'investimento digitale in vera crescita aziendale.',
+    'homepage.trusted.button': 'Scopri di Più',
     
     // Portfolio Page
     'portfolio.page.title': 'Il Nostro Portfolio',
@@ -979,6 +1103,11 @@ const translations = {
     'service.social-media.details': 'Gestiamo e facciamo crescere la tua presenza sui social con contenuti visivi, storytelling e strategie orientate alle prestazioni.',
     'service.social-media.features': 'Pianificazione mensile dei contenuti e produzione creativa • Reels, Stories, YouTube Shorts • Gestione della community e coinvolgimento del pubblico • Analisi e ottimizzazione continua',
     
+    'service.hosting-email.title': 'Servizi di Hosting e Email',
+    'service.hosting-email.desc': 'Infrastruttura Digitale Affidabile',
+    'service.hosting-email.details': 'Soluzioni di hosting veloci, sicure e scalabili con servizi email professionali.',
+    'service.hosting-email.features': 'Hosting SSD, certificati SSL • Hosting email e email aziendali • Supporto tecnico 24/7 • Servizi di backup e sicurezza',
+    
     // CTA
     'cta.title': 'Pronto a Trasformare la Tua Presenza Digitale?',
     'cta.subtitle': 'Discutiamo di come i nostri servizi possono aiutarti a raggiungere i tuoi obiettivi aziendali.',
@@ -1100,31 +1229,33 @@ const translations = {
     'nav.contact': 'Contact',
 
     // Banner Slider
-    'banner.slide1.title': 'Cine Suntem',
-    'banner.slide1.subtitle': 'Agenție digitală care îmbină creativitatea cu strategia',
-    'banner.slide1.description': 'Suntem aici pentru a-ți crește brandul în mediul digital.',
-    'banner.slide2.title': 'Servicii & Expertiză',
-    'banner.slide2.subtitle': 'Web design, social media și reclame — toate într-un singur loc',
-    'banner.slide2.description': 'Soluții digitale orientate spre rezultate.',
-    'banner.slide3.title': 'Propoziție de Valoare & Diferența Noastră',
-    'banner.slide3.subtitle': 'Îmbinăm creativitatea cu succesul măsurabil',
-    'banner.slide3.description': 'Nu doar vizibil, ci memorabil.',
-    'banner.slide4.title': 'Rezultate & Studii de Caz',
-    'banner.slide4.subtitle': 'Alături de 100+ branduri în transformarea lor digitală',
-    'banner.slide4.description': 'Rezultate reale, creștere reală.',
+    'banner.slide1.title': 'Esența Brandului',
+    'banner.slide1.subtitle': 'Build with Virtue. Perform with Data.',
+    'banner.slide1.description': 'De la strategie la cod, de la reclame la analiză — Virtus Digital creează ecosisteme digitale complete, construite pentru performanță.',
+    'banner.slide2.title': 'Expertiza în Marketing Digital',
+    'banner.slide2.subtitle': 'Peste 15 ani de marketing digital bazat pe date.',
+    'banner.slide2.description': 'Ca partener certificat Google, combinăm strategii dovedite și urmărire precisă pentru a scala brandurile pe Google, Meta și YouTube.',
+    'banner.slide3.title': 'IT & Dezvoltare Personalizată',
+    'banner.slide3.subtitle': 'Codul care alimentează afacerea.',
+    'banner.slide3.description': 'De la CRM-uri personalizate la site-uri multilingve, proiectăm sisteme fiabile și scalabile adaptate logicii afacerii tale.',
+    'banner.slide4.title': 'Chemare la Acțiune',
+    'banner.slide4.subtitle': 'Pregătit să-ți construiești creșterea digitală?',
+    'banner.slide4.description': 'Să transformăm viziunea ta în performanță.',
     'banner.cta.explore': 'Descoperă Serviciile Noastre',
     'banner.cta.start': 'Să Începem',
     
     // Homepage (About Us content)
     'home.headline': 'Partenerul tău digital de încredere – De la cod la conversie',
     'home.p1': 'Virtus Digital este o companie de tehnologie și marketing care oferă ecosisteme digitale complete — de la site-uri web personalizate și CRM-uri până la publicitate și analiză la nivel Google. Ca agenție Google Partner, combinăm 15 ani de experiență, precizia tehnologică și marketingul bazat pe date pentru a ajuta brandurile să crească inteligent.',
-    'home.p2': 'Fondată în 2010, extinsă sub marca Digitalize Cyprus în 2022 și reorganizată ca Virtus Digital în 2024, compania oferă acum servicii în Europa și Asia. Echipa noastră multidisciplinară creează soluții scalabile și măsurabile care transformă investițiile digitale în creștere reală.',
+    'home.p2': '',
 
     // About (About Us page dedicated content)
     'aboutus.who': 'Virtus Digital este o agenție orientată spre tehnologie care oferă soluții complete în dezvoltare web, software și marketing digital. Fondată în 2010, combină expertiza tehnică și creativitatea strategică pentru a obține rezultate digitale măsurabile.',
+    'aboutus.evolution.title': 'Evoluția Noastră',
     'aboutus.evolution.2010': '2010 – Începerea serviciilor profesionale de marketing digital și software.',
     'aboutus.evolution.2022': '2022 – Lansarea mărcii Digitalize Cyprus și obținerea statutului de Google Partner.',
     'aboutus.evolution.2024': '2024 – Crearea brandului Virtus Digital, extinderea activității în Europa și Asia.',
+    'aboutus.expertise.title': 'Expertiza Noastră',
     'aboutus.expertise.1': 'Site-uri web și CRM-uri personalizate',
     'aboutus.expertise.2': 'Reclame Google, Meta, YouTube și LinkedIn',
     'aboutus.expertise.3': 'Analitice, urmărire și SEO',
@@ -1154,9 +1285,8 @@ const translations = {
     'hero.cta.start': 'Începe Proiectul Tău',
     
     // Index Page
-    'index.services.title': 'Ce Facem Cel Mai Bine',
-    'index.services.subtitle1': 'Nu construim doar site-uri web sau gestionăm anunțuri. Creăm strategii digitale cuprinzătoare care transformă modul în care audiența ta percepe și interacționează cu brandul tău.',
-    'index.services.subtitle2': 'De la conceptul inițial la execuția finală, suntem cu tine la fiecare pas — transformând provocările în oportunități și ideile în rezultate măsurabile.',
+    'index.services.title': 'Acolo unde tehnologia întâlnește performanța.',
+    'index.services.subtitle1': 'De la cod la campanii — echipa noastră creează ecosisteme digitale complete, concepute să performeze, să crească și să inspire.',
     'index.services.more': 'Și acesta este doar începutul. Oferim 5 servicii principale proiectate să acopere fiecare aspect al prezenței tale digitale.',
     'index.services.explore': 'Explorează Toate Serviciile',
     'index.services.learn': 'Află Mai Mult',
@@ -1167,28 +1297,59 @@ const translations = {
     'index.service.software.tagline': 'Digitalizează procesele tale',
     'index.service.seo.tagline': 'Crește-ți vizibilitatea organică',
     
-    'index.portfolio.title': 'Povești de Succes Care Vorbesc',
-    'index.portfolio.subtitle1': 'Numerele nu mint. Am ajutat peste 700 de branduri din întreaga lume să-și transforme prezența digitală și să obțină o creștere remarcabilă. Iată câteva dintre momentele noastre de mândrie.',
-    'index.portfolio.subtitle2': 'Fiecare proiect este un parteneriat. Fiecare succes este împărtășit. Să scriem împreună povestea ta de succes.',
+    'index.portfolio.title': 'Rezultate demonstrate. Impact real.',
+    'index.portfolio.subtitle1': 'De la campanii publicitare de înaltă performanță la sisteme personalizate — transformăm ideile în creștere măsurabilă.',
     'index.portfolio.more': 'Acestea sunt doar 3 din cele peste 700 de proiecte de succes. Fiecare reprezintă o provocare unică, o soluție creativă și un client mulțumit.',
     'index.portfolio.view': 'Vezi Portofoliul Nostru Complet',
     'index.portfolio.3d.title': 'Galerie Proiecte 3D',
     'index.portfolio.click': 'Apasă pentru a vizita',
     
-    'index.why.title': 'De Ce Suntem Diferiți',
+    'index.why.title': 'De Ce Să Ne Alegi',
     'index.why.subtitle': 'Nu suntem doar o altă agenție digitală. Suntem povestitori, rezolvatori de probleme și hackeri ai creșterii într-unul singur.',
-    'index.why.award.title': 'Excență Premiată',
-    'index.why.award.desc': 'Lucrarea noastră vorbește de la sine. Am fost recunoscuți de liderii industriei pentru abordările noastre inovatoare la marketingul digital, design thinking și strategiile bazate pe date. Dar premiile sunt doar cireașa de pe tort—ceea ce contează cu adevărat este impactul pe care îl creăm pentru afacerea ta.',
-    'index.why.team.title': 'O Echipă Care Chiar Îi Pasă',
-    'index.why.team.desc': 'Nu suntem o corporație fără față. Suntem o echipă pasionată de creativi, strategiști, dezvoltatori și marketeri care chiar le pasă de succesul tău. Victoriile tale sunt victoriile noastre. Provocările tale devin misiunile noastre. Suntem în asta împreună, de la prima zi până în ziua lansării și dincolo.',
-    'index.why.results.title': 'Rezultate Pe Care Le Poți Măsura',
-    'index.why.results.desc': 'Designurile frumoase sunt grozave, dar nu înseamnă nimic fără rezultate. De aceea tot ce facem este susținut de date, testat riguros și optimizat continuu. Nu promitem doar creștere—o livrăm, o urmărim și o dovedim cu metrici reale care contează pentru profitul tău.',
-    'index.why.more': 'Vrei să știi mai multe despre echipa noastră, procesul nostru și ce ne motivează?',
-    'index.why.more.bold': 'Ne-ar plăcea să împărtășim povestea noastră cu tine.',
-    'index.why.cta': 'Întâlnește Echipa',
     
-    'index.testimonials.title': 'Ce Spun Clienții Noștri',
-    'index.testimonials.subtitle': 'Nu crede doar cuvântul nostru. Iată ce spun adevărații proprietari de afaceri despre lucrul cu noi.',
+    // Core Values
+    'index.why.values.title': 'Valori și Mentalitate',
+    'index.why.values.integrity.title': 'Integritate Înainte de Toate',
+    'index.why.values.integrity.desc': 'Spunem ce este necesar, nu doar ce se vinde. Înțelegem nevoile reale ale clienților noștri și oferim cele mai potrivite soluții.',
+    'index.why.values.customer.title': 'Abordare Centrată pe Client',
+    'index.why.values.customer.desc': 'Fiecare proiect începe prin înțelegerea obiectivelor voastre. Succesul vostru este succesul nostru, iar această abordare este prioritatea noastră în fiecare decizie.',
+    'index.why.values.passion.title': 'Pasiune în Fiecare Detaliu',
+    'index.why.values.passion.desc': 'Iubim ceea ce facem, iar asta se vede. Vă puteți vedea pasiunea și standardele de calitate în fiecare proiect.',
+    
+    // Expertise
+    'index.why.expertise.title': 'Expertiză și Competență',
+    'index.why.expertise.google.title': 'Partener Google Certificat',
+    'index.why.expertise.google.desc': 'Expertiză recunoscută în performance marketing. Ca partener oficial Google, aplicăm cele mai actualizate strategii.',
+    'index.why.expertise.team.title': 'Echipă Full-Stack',
+    'index.why.expertise.team.desc': 'Specializați în mai multe tehnologii, de la front-end la back-end. Creăm soluții puternice și scalabile cu tehnologii moderne.',
+    'index.why.expertise.experience.title': 'Experiență în Mai Multe Domenii',
+    'index.why.expertise.experience.desc': 'Adaptăm soluțiile digitale pentru sănătate, construcții, turism și multe altele. Dezvoltăm strategii personalizate înțelegând nevoile fiecărui sector.',
+    
+    // How We Work
+    'index.why.work.title': 'Cum Lucrăm',
+    'index.why.work.endtoend.title': 'Livrare Completă',
+    'index.why.work.endtoend.desc': 'De la idee la lansare, totul gestionat intern. Acoperim totul de la design la dezvoltare, de la marketing la optimizare.',
+    'index.why.work.agile.title': 'Agil și Bazat pe Date',
+    'index.why.work.agile.desc': 'Construim, testăm și optimizăm pentru rezultate măsurabile. Fiecare decizie este susținută de date și continuu optimizată.',
+    'index.why.work.longterm.title': 'Abordare pe Termen Lung',
+    'index.why.work.longterm.desc': 'Oferim sprijin și optimizare continuă. Nu livrăm doar proiecte, susținem creșterea voastră continuă.',
+    
+    // What Defines Us
+    'index.why.defines.title': 'Ce Ne Definește',
+    'index.why.defines.honest.title': 'Colaborare Onestă',
+    'index.why.defines.honest.desc': 'Recomandăm doar ceea ce aduce valoare reală. Nu ne concentrăm doar pe vânzări, ci pe o abordare bazată pe valoare.',
+    'index.why.defines.trusted.title': 'Parteneriate de Încredere',
+    'index.why.defines.trusted.desc': 'Succesul nostru crește odată cu al vostru. Creștem împreună construind relații pe termen lung.',
+    'index.why.defines.creation.title': 'Bucurie în Creație',
+    'index.why.defines.creation.desc': 'Ne bucurăm să vedem clienți fericiți. Fiecare proiect este pentru noi o oportunitate de pasiune și creativitate.',
+    
+    // CTA
+    'index.why.cta.title': 'Vrei să știi mai multe despre echipa noastră, procesul nostru și ce ne motivează?',
+    'index.why.cta.subtitle': 'Ne-ar plăcea să împărtășim povestea noastră cu tine.',
+    'index.why.cta.button': 'Află Mai Multe Despre Noi',
+    
+    'index.testimonials.title': 'Rezultate demonstrate. Impact real.',
+    'index.testimonials.subtitle': 'De la campanii publicitare de înaltă performanță la sisteme personalizate — transformăm ideile în creștere măsurabilă.',
     'index.testimonials.more': 'Acestea sunt doar câteva din poveștile noastre de succes. Am ajutat sute de afaceri să obțină rezultate similare—și chiar mai bune. De la startup-uri la întreprinderi stabilite, clienții noștri raportează în mod constant îmbunătățiri dramatice în performanța lor digitală.',
     'index.testimonials.cta': 'Citește Mai Multe Povești de Succes',
     
@@ -1198,11 +1359,17 @@ const translations = {
     'index.cta.view': 'Vezi Lucrările Noastre',
     
     // New Homepage Section
-    'homepage.new.title': 'Câștigă Putere Digitală cu Virtus Digital',
-    'homepage.new.subtitle': 'Partenerul tău digital de încredere – De la cod la conversie',
+    'homepage.new.title': 'Build with Virtue, Perform with Data',
+    'homepage.new.subtitle': 'O echipă de ingineri, strategi și creatori care dezvoltă tehnologie și marketing ce oferă rezultate reale.',
     'homepage.new.desc1': 'Virtus Digital este o companie de tehnologie și marketing care oferă ecosisteme digitale complete — de la site-uri web personalizate și CRM-uri până la publicitate și analiză la nivel Google. Ca agenție Google Partner, combinăm 15 ani de experiență, precizia tehnologică și marketingul bazat pe date pentru a ajuta brandurile să crească inteligent.',
-    'homepage.new.desc2': 'Fondată în 2010, extinsă sub marca Digitalize Cyprus în 2022 și reorganizată ca Virtus Digital în 2024, compania oferă acum servicii în Europa și Asia. Echipa noastră multidisciplinară creează soluții scalabile și măsurabile care transformă investițiile digitale în creștere reală.',
+    'homepage.new.desc2': '',
     'homepage.new.button': 'Află Mai Mult',
+    
+    // Trusted Partner Section
+    'homepage.trusted.title': 'Partenerul tău digital de încredere – De la cod la conversie',
+    'homepage.trusted.desc1': 'Virtus Digital este o companie de tehnologie și marketing care oferă ecosisteme digitale complete — de la site-uri web personalizate și CRM-uri până la publicitate și analiză la nivel Google. Ca agenție Google Partner, combinăm 15 ani de experiență, precizia tehnologică și marketingul bazat pe date pentru a ajuta brandurile să crească inteligent.',
+    'homepage.trusted.desc2': 'Fondată în 2010, extinsă sub marca Digitalize Cyprus în 2022 și reorganizată ca Virtus Digital în 2024, compania oferă acum servicii în Europa și Asia. Echipa noastră multidisciplinară creează soluții scalabile și măsurabile care transformă investițiile digitale în creștere reală.',
+    'homepage.trusted.button': 'Află Mai Mult',
     
     // Portfolio Page
     'portfolio.page.title': 'Portofoliul Nostru',
@@ -1338,6 +1505,11 @@ const translations = {
     'service.social-media.desc': 'Creativitate care conectează',
     'service.social-media.details': 'Gestionăm și dezvoltăm prezența ta socială prin conținut vizual, storytelling și strategie bazată pe performanță.',
     'service.social-media.features': 'Planificare lunară de conținut și producție creativă • Reels, stories, YouTube Shorts • Management comunitate și implicarea audienței • Analitice și optimizare continuă',
+    
+    'service.hosting-email.title': 'Servicii de Hosting și Email',
+    'service.hosting-email.desc': 'Infrastructură Digitală De Încredere',
+    'service.hosting-email.details': 'Soluții de hosting rapide, sigure și scalabile cu servicii email profesionale.',
+    'service.hosting-email.features': 'Hosting SSD, certificate SSL • Hosting email și email de afaceri • Suport tehnic 24/7 • Servicii de backup și securitate',
     
     // CTA
     'cta.title': 'Gata să-ți Transformi Prezența Digitală?',

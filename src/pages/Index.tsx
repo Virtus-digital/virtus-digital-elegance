@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Carousel3D from "@/components/3DCarousel";
 import BannerSlider from "@/components/BannerSlider";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, TrendingUp, Users, Award, Monitor, Code2, Search, Megaphone, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Star, TrendingUp, Users, Award, Monitor, Code2, Search, Megaphone, ChevronLeft, ChevronRight, Share2, Server } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -37,6 +37,18 @@ const Index = () => {
       descKey: "service.seo.details",
       icon: Search,
     },
+    {
+      titleKey: "service.social-media.title",
+      taglineKey: "service.social-media.desc",
+      descKey: "service.social-media.details",
+      icon: Share2,
+    },
+    {
+      titleKey: "service.hosting-email.title",
+      taglineKey: "service.hosting-email.desc",
+      descKey: "service.hosting-email.details",
+      icon: Server,
+    },
   ];
 
   const scrollToSection = (id: string) => {
@@ -45,6 +57,7 @@ const Index = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
 
   // Keyboard navigation
   useEffect(() => {
@@ -129,10 +142,12 @@ const Index = () => {
       <Navbar />
       
       {/* Banner Slider */}
-      <BannerSlider />
+      <div id="banner">
+        <BannerSlider />
+      </div>
 
       {/* New Homepage Section */}
-      <section className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
+      <section id="homepage-intro" className="py-16 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -147,9 +162,8 @@ const Index = () => {
               {t('homepage.new.subtitle')}
             </p>
             
-            <div className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-lg md:text-xl text-gray-300 leading-relaxed">
               <p>{t('homepage.new.desc1')}</p>
-              <p>{t('homepage.new.desc2')}</p>
             </div>
             
             <div className="mt-8">
@@ -173,24 +187,17 @@ const Index = () => {
 
         <div className="container-custom relative z-10">
           <div className="text-center mb-12 fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gradient">
               {t('index.services.title')}
             </h2>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-4">
               {t('index.services.subtitle1')}
-            </p>
-            <p className="text-base text-gray-400 max-w-2xl mx-auto">
-              {t('index.services.subtitle2')}
             </p>
           </div>
 
           {/* Accordion Slider Section */}
           <div className="max-w-4xl mx-auto sm:max-w-5xl">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary mb-4">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
-                En İyi Yaptığımız İşler
-              </div>
             </div>
 
             <div className="relative min-h-[180px] sm:h-[300px] md:h-[450px] overflow-visible md:overflow-hidden rounded-xl shadow-2xl">
@@ -243,7 +250,7 @@ const Index = () => {
                         <div className={`transition-all duration-1200 ease-out ${
                           isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4 scale-95'
                         }`}>
-                          <h3 className={`text-xs sm:text-base md:text-lg font-bold text-white transition-all duration-1200 ease-out ${
+                          <h3 className={`text-xs sm:text-sm md:text-base font-bold text-white transition-all duration-1200 ease-out ${
                             isActive ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-4 scale-95'
                           }`} style={{ 
                             transitionDelay: isActive ? '0.2s' : '0s', 
@@ -323,7 +330,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Preview with 3D Carousel */}
-      <section className="section-padding bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden section-divider">
+      <section id="portfolio" className="section-padding bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden section-divider">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl animate-starfall-2"></div>
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-starfall-2" style={{ animationDelay: "2s" }}></div>
@@ -331,30 +338,61 @@ const Index = () => {
 
         <div className="container-custom relative z-10">
           <div className="text-center mb-20 fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-gradient">
               {t('index.portfolio.title')}
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
               {t('index.portfolio.subtitle1')}
-            </p>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              {t('index.portfolio.subtitle2')}
             </p>
           </div>
 
-          {/* 3D Carousel Container */}
+          {/* Client Logos Slider */}
           <div className="relative mb-16">
-            <div className="carousel-3d-container">
-              <Carousel3D 
-                items={portfolioPreview}
-                radius={380}
-                autoRotate={true}
-                rotateSpeed={-60}
-                itemWidth={280}
-                itemHeight={170}
-                mobileItemWidth={180}
-                mobileItemHeight={240}
-              />
+            <div className="overflow-hidden">
+              <div className="flex animate-scroll-infinite">
+                {/* First set of logos */}
+                <div className="flex space-x-8 items-center">
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 1</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 2</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 3</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 4</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 5</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 6</span>
+                  </div>
+                </div>
+                {/* Duplicate set for seamless loop */}
+                <div className="flex space-x-8 items-center ml-16">
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 1</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 2</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 3</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 4</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 5</span>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-16 bg-white/10 rounded-lg flex items-center justify-center">
+                    <span className="text-white/60 text-sm font-medium">Client Logo 6</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -372,163 +410,284 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Text Heavy */}
-      <section className="py-20 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 right-10 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl"></div>
+      {/* Why Choose Us - Spacious Modern Design */}
+      <section id="why-choose" className="py-24 bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 right-10 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+          <div className="max-w-7xl mx-auto">
+            {/* Header Section */}
+            <div className="text-center mb-20">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
                 {t('index.why.title')}
               </h2>
-              <p className="text-lg md:text-xl text-white/90 font-semibold leading-relaxed mb-6">
+              <p className="text-lg md:text-xl text-white/80 font-medium leading-relaxed max-w-4xl mx-auto">
                 {t('index.why.subtitle')}
               </p>
             </div>
 
-            <div className="space-y-8 mb-12">
-              <div className="flex items-start gap-4 group animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                <div className="flex-shrink-0 mt-1">
-                  <div className="p-2 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <Award className="h-5 w-5" />
+            {/* Main Content Grid */}
+            <div className="grid lg:grid-cols-2 gap-16 mb-20">
+              {/* Left Column - Core Values */}
+              <div className="space-y-12">
+                <div className="text-center lg:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+                    {t('index.why.values.title')}
+                  </h3>
+                </div>
+
+                <div className="space-y-8">
+                  <div className="group">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-primary/30 transition-all duration-500 hover:bg-white/10">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Award className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                          {t('index.why.values.integrity.title')}
+                        </h4>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          {t('index.why.values.integrity.desc')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-primary/30 transition-all duration-500 hover:bg-white/10">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Users className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                          {t('index.why.values.customer.title')}
+                        </h4>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          {t('index.why.values.customer.desc')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-primary/30 transition-all duration-500 hover:bg-white/10">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Star className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                          {t('index.why.values.passion.title')}
+                        </h4>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          {t('index.why.values.passion.desc')}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
-                    {t('index.why.award.title')}
+              </div>
+
+              {/* Right Column - Expertise */}
+              <div className="space-y-12">
+                <div className="text-center lg:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+                    {t('index.why.expertise.title')}
                   </h3>
-                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                    {t('index.why.award.desc')}
+                </div>
+
+                <div className="space-y-8">
+                  <div className="group">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/30 transition-all duration-500 hover:bg-white/10">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <TrendingUp className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                          {t('index.why.expertise.google.title')}
+                        </h4>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          {t('index.why.expertise.google.desc')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/30 transition-all duration-500 hover:bg-white/10">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Code2 className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                          {t('index.why.expertise.team.title')}
+                        </h4>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          {t('index.why.expertise.team.desc')}
+                        </p>
+                      </div>
+                    </div>
+              </div>
+
+                  <div className="group">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/30 transition-all duration-500 hover:bg-white/10">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Server className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                          {t('index.why.expertise.experience.title')}
+                        </h4>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          {t('index.why.expertise.experience.desc')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Section - How We Work */}
+            <div className="text-center mb-16">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-white">
+                {t('index.why.work.title')}
+                  </h3>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="group">
+                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20 hover:border-accent/40 transition-all duration-500 hover:bg-accent/20">
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <ArrowRight className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                    {t('index.why.work.endtoend.title')}
+                  </h4>
+                  <p className="text-xs text-gray-300 leading-relaxed">
+                    {t('index.why.work.endtoend.desc')}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 group animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                <div className="flex-shrink-0 mt-1">
-                  <div className="p-2 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <Users className="h-5 w-5" />
+              <div className="group">
+                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20 hover:border-accent/40 transition-all duration-500 hover:bg-accent/20">
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <Search className="h-6 w-6 text-white" />
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
-                    {t('index.why.team.title')}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                    {t('index.why.team.desc')}
+                  <h4 className="text-base font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                    {t('index.why.work.agile.title')}
+                  </h4>
+                  <p className="text-xs text-gray-300 leading-relaxed">
+                    {t('index.why.work.agile.desc')}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 group animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                <div className="flex-shrink-0 mt-1">
-                  <div className="p-2 bg-gradient-to-br from-primary to-blue-600 text-primary-foreground rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <TrendingUp className="h-5 w-5" />
+              <div className="group">
+                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20 hover:border-accent/40 transition-all duration-500 hover:bg-accent/20">
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <Share2 className="h-6 w-6 text-white" />
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
-                    {t('index.why.results.title')}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                    {t('index.why.results.desc')}
+                  <h4 className="text-base font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                    {t('index.why.work.longterm.title')}
+                  </h4>
+                  <p className="text-xs text-gray-300 leading-relaxed">
+                    {t('index.why.work.longterm.desc')}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="text-center bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10 rounded-2xl p-8 border-2 border-primary/20">
-              <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6">
-                {t('index.why.more')} <span className="text-blue-400 font-semibold">{t('index.why.more.bold')}</span>
-              </p>
-              <Button size="default" variant="outline" asChild className="group border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
-                <Link to="/about">
-                  {t('index.why.cta')}
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+            {/* What Defines Us */}
+            <div className="mb-16">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-white text-center">
+                {t('index.why.defines.title')}
+              </h3>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Enhanced Testimonials Section */}
-      <section className="section-padding bg-gradient-to-b from-[#0b0f19] via-[#0d1320] to-[#0b0f19] relative overflow-hidden section-divider">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl animate-starfall-2"></div>
-          <div className="absolute top-20 right-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-starfall-2" style={{ animationDelay: "3s" }}></div>
-        </div>
-
-        <div className="container-custom relative z-10">
-          <div className="text-center mb-12 fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">
-              {t('index.testimonials.title')}
-            </h2>
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              {t('index.testimonials.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-            {[
-              {
-                name: "Jessica Martinez",
-                role: "CEO, TechStart Inc.",
-                content: "Virtus Digital transformed our online presence completely. Their strategic approach resulted in a 300% increase in qualified leads within just 3 months.",
-                rating: 5
-              },
-              {
-                name: "Robert Thompson",
-                role: "Marketing Director, GrowthCo",
-                content: "Working with Virtus has been a game-changer. Their expertise in digital advertising helped us achieve ROI we never thought possible.",
-                rating: 5
-              },
-              {
-                name: "Amanda Lee",
-                role: "Founder, StyleHub",
-                content: "The website they built is not just beautiful—it's a conversion machine. Our online sales have doubled, and customer feedback has been overwhelmingly positive.",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div 
-                key={index}
-                className="glass-strong rounded-2xl p-6 card-hover transition-all duration-500 fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                  ))}
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="group">
+                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/20 to-blue-600/20 border border-primary/30 hover:border-primary/50 transition-all duration-500 hover:bg-primary/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                    {t('index.why.defines.honest.title')}
+                  </h4>
+                  <p className="text-xs text-gray-300 leading-relaxed">
+                    {t('index.why.defines.honest.desc')}
+                  </p>
                 </div>
-                <p className="text-gray-300 leading-relaxed mb-4 italic text-sm">
-                  "{testimonial.content}"
+              </div>
+
+              <div className="group">
+                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/20 to-blue-600/20 border border-primary/30 hover:border-primary/50 transition-all duration-500 hover:bg-primary/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <Award className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                    {t('index.why.defines.trusted.title')}
+                  </h4>
+                  <p className="text-xs text-gray-300 leading-relaxed">
+                    {t('index.why.defines.trusted.desc')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="group">
+                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/20 to-blue-600/20 border border-primary/30 hover:border-primary/50 transition-all duration-500 hover:bg-primary/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <Star className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                    {t('index.why.defines.creation.title')}
+                  </h4>
+                  <p className="text-xs text-gray-300 leading-relaxed">
+                    {t('index.why.defines.creation.desc')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10 rounded-3xl p-12 border-2 border-primary/20">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                  {t('index.why.cta.title')}
+                </h3>
+                <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+                  {t('index.why.cta.subtitle')}
                 </p>
-                <div>
-                  <div className="font-bold text-white text-base">{testimonial.name}</div>
-                  <div className="text-gray-400 text-sm">{testimonial.role}</div>
-                </div>
+                <Button size="lg" variant="outline" asChild className="group border-primary text-primary hover:bg-primary hover:text-white text-lg px-12 py-4">
+                  <Link to="/about">
+                    {t('index.why.cta.button')}
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
               </div>
-            ))}
-          </div>
-
-          <div className="text-center fade-in-up">
-            <p className="text-base text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
-              {t('index.testimonials.more')}
-            </p>
-            <Button size="default" asChild className="btn-secondary group">
-              <Link to="/about">
-                {t('index.testimonials.cta')}
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Enhanced CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary via-blue-600 to-primary relative overflow-hidden">
+      <section id="cta" className="section-padding bg-gradient-to-r from-primary via-blue-600 to-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-starfall-2"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-starfall-2" style={{ animationDelay: "2s" }}></div>
@@ -536,10 +695,10 @@ const Index = () => {
 
         <div className="container-custom relative z-10 text-center">
           <div className="max-w-3xl mx-auto fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('index.cta.title')}
           </h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
               {t('index.cta.subtitle')}
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
