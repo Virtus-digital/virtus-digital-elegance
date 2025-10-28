@@ -22,7 +22,7 @@ const Navbar = () => {
     { code: 'en', name: 'English', flag: GB },
     { code: 'it', name: 'Italiano', flag: IT },
     { code: 'ro', name: 'Română', flag: RO },
-  ];
+  ] as const;
 
   // Seçili dilin bilgilerini bul
   const currentLanguage = languageOptions.find(lang => lang.code === language) || languageOptions[0];
@@ -61,8 +61,13 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex-shrink-0 ml-4">
-              <Link to="/" className="text-2xl font-bold text-white hover:text-primary transition-colors">
-                Virtus
+              <Link to="/" aria-label="Virtus Digital Home" className="block">
+                <img
+                  src="/logo_4.png"
+                  alt="Virtus Digital"
+                  className="h-9 sm:h-11 md:h-12 w-auto object-contain select-none"
+                  draggable={false}
+                />
               </Link>
             </div>
             
@@ -70,7 +75,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-8">
               <Link
                 to="/"
-                className={`text-base font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
+                className={`text-base font-medium transition-colors relative [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
                   isActive('/') 
                     ? 'text-primary after:w-full' 
                     : 'text-gray-300 hover:text-primary after:w-0 hover:after:w-full'
@@ -80,7 +85,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/services"
-                className={`text-base font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
+                className={`text-base font-medium transition-colors relative [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
                   isActive('/services') 
                     ? 'text-primary after:w-full' 
                     : 'text-gray-300 hover:text-primary after:w-0 hover:after:w-full'
@@ -90,7 +95,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/portfolio"
-                className={`text-base font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
+                className={`text-base font-medium transition-colors relative [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
                   isActive('/portfolio') 
                     ? 'text-primary after:w-full' 
                     : 'text-gray-300 hover:text-primary after:w-0 hover:after:w-full'
@@ -100,7 +105,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/about"
-                className={`text-base font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
+                className={`text-base font-medium transition-colors relative [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
                   isActive('/about') 
                     ? 'text-primary after:w-full' 
                     : 'text-gray-300 hover:text-primary after:w-0 hover:after:w-full'
@@ -110,7 +115,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/blog"
-                className={`text-base font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
+                className={`text-base font-medium transition-colors relative [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-blue-600 after:transition-all after:duration-300 ${
                   isActive('/blog') 
                     ? 'text-primary after:w-full' 
                     : 'text-gray-300 hover:text-primary after:w-0 hover:after:w-full'
