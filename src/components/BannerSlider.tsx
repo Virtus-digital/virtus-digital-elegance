@@ -135,12 +135,9 @@ const BannerSlider = () => {
                 className={`absolute inset-0 transition-all duration-1000 ease-in-out ${getAnimationClasses()}`}
               >
               <div className="flex flex-col items-center justify-center h-full text-center max-w-4xl mx-auto">
-                {/* Ana Başlık */}
+                {/* Alt Başlık */}
                 <h1 className="fade-in-up mb-8" style={{ animationDelay: "0.2s" }}>
-                  <span className="block text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 text-white">
-                    {slide.title}
-                  </span>
-                  <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400">
+                  <span className="block text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-400">
                     {slide.subtitle}
                   </span>
                 </h1>
